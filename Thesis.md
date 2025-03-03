@@ -54,8 +54,10 @@ Your school, lecture, class, organization, etc...
 
 ## 3. 새로운 수열 δ
 
-$X = \{A,B\} \quad Y=\{\overbrace{A,B,\cdots X}^n \}$
+$X = \{A,B\} \quad Y=\{\overbrace{A,B,\cdots X}^n\}$ 이고 
+
 $f:X\rightarrow Y$ 인 함수 $f(x)$에 대해서 
+
 A와 B를 A,B가 포함된 총 n개의 것들에 대응시킬 때 모든 x에 대하여 $f(x)\neq x$인 함수의 개수가 몇개일까?  
 
 ## 4. 일반화와 정의
