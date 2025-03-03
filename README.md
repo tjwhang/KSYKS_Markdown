@@ -11,6 +11,7 @@ Easy thesis/academic writing with pandoc, LaTeX and any text editor. Much more e
 - stringenc
 - kotex
 - fontconfig
+- xecjk
 ### Font
 Google Noto Serif as default.
 Use `fc-list :lang=<language you want to use in your file>` in your command line to get valid list of fonts in your machine. 
