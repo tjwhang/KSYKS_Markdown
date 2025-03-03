@@ -1,7 +1,7 @@
 ---
-title: ""
-subtitle: "Subtitle"
-author: "Author"
+title: "Deranged Injection"
+subtitle: "An extension of derangement sequences"
+author: ""
 date: "2025년 03월 03일"
 
 papersize: a4
@@ -31,10 +31,12 @@ Your school, lecture, class, organization, etc...
 
 요 약
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+//TODO
 
 \end{center}
 
 \pagebreak
 
-## 1. Demonstration
+## 1. 발상
+한국 정보 올림피아드 2023년 고등부 1교시 10번 문제를
+![KOI_2023_HS_1_10](KOI_2023_HS_1_10.png)
