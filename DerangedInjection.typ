@@ -5,7 +5,7 @@
     name: "STIX Two Text",
     covers: "latin-in-cjk",
   ),
-  "Noto Serif CJK KR"
+  "Source Han Serif K"
 ))
 
 #show math.equation: set text(font: "STIX Two Math")
