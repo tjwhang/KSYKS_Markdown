@@ -63,6 +63,11 @@
   counter: mathcounter,
 )
 
+#let corollary = mathblock(
+  blocktitle: "추측",
+  counter: mathcounter,
+)
+
 #let remark = mathblock(
   blocktitle: "",
   prefix: [_상기._],

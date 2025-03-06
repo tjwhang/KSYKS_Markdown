@@ -66,11 +66,15 @@
   counter: mathcounter,
 )
 
+#let corollary = mathblock(
+  blocktitle: "Corollary",
+  counter: mathcounter,
+)
+
 #let remark = mathblock(
   blocktitle: "Remark",
   prefix: [_Remark._],
   inset: 5pt,
-  fill: lime,
   radius: 5pt,
 )
 
