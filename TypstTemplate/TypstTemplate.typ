@@ -1,12 +1,15 @@
 #import "@preview/physica:0.9.4": *
-#import "@preview/ilm:1.4.1": *
+#import "@preview/ilm_custom:1.4.1": *
 #import "@preview/alchemist:0.1.4": *
 #import "@preview/great-theorems:0.1.2": *
 #import "@preview/rich-counters:0.2.1": *
 
 
+// 표지
+#let title = [Standard \ Template Document]
+
 #show: ilm.with(
-  title: [Standard \ Template Document],
+  title: title,
   author: "Taejoon Whang, Dongwoo Nam",
   date: datetime(year: 2025, month: 03, day: 06),
   abstract: [#lorem(30)],
@@ -28,15 +31,13 @@
   "Source Han Serif K"
 ))
 #show math.equation: set text(font: "STIX Two Math")
-#set math.equation(numbering: "(1)")
+#set math.equation(numbering: "(1.1)", supplement: [식. ])
 #set outline()
 #show raw: set text(font: ("JetBrains Mono", "D2Coding"))
 #set page(
   paper: "a4",
   margin: 3.5cm,
-  header: align(right)[
-    Standard Template Document
-  ],
+  header: align(right, title),
   numbering: "1",
 )
 #set math.equation(numbering: none)
@@ -44,11 +45,12 @@
 #let tag(content) = {
   math.equation(
     block: true, 
-    numbering: "(1)", 
+    numbering: "(1.1)", supplement: [식. ],
     content
   )
 }
 
+// 컴포넌트
 #show: great-theorems-init
 
 #let mathcounter = rich-counter(
@@ -79,6 +81,8 @@
 )
 
 #let proof = proofblock()
+
+#set math.mat(delim: "[")
 
 // 본문
 = Sample Title
