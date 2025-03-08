@@ -1,8 +1,9 @@
 #import "@preview/physica:0.9.4": *
 #import "@preview/ilm_custom:1.4.1": *
 #import "@preview/alchemist:0.1.4": *
-#import "@preview/great-theorems:0.1.2": *
+#import "@preview/theorion:0.2.0": *
 #import "@preview/rich-counters:0.2.1": *
+#import cosmos.rainbow: *
 
 #let title = [Deranged Injection]
 
@@ -37,44 +38,9 @@
   header: align(right, title),
   numbering: "1",
 )
-#set math.equation(numbering: none)
+#set math.equation(numbering: "(1.1)", supplement: [식. ])
 
-#show: great-theorems-init
-
-#let mathcounter = rich-counter(
-  identifier: "mathblocks",
-  inherited_levels: 1
-)
-
-#let theorem = mathblock(
-  blocktitle: "정리",
-  counter: mathcounter,
-)
-
-#let definition = mathblock(
-  blocktitle: "정의",
-  counter: mathcounter,
-)
-
-#let lemma = mathblock(
-  blocktitle: "보조정리",
-  counter: mathcounter,
-)
-
-#let corollary = mathblock(
-  blocktitle: "추측",
-  counter: mathcounter,
-)
-
-#let remark = mathblock(
-  blocktitle: "",
-  prefix: [_상기._],
-  inset: 5pt,
-  radius: 5pt,
-)
-
-#let proof = proofblock()
-
+#show: show-theorion
 // 본문
 = 발상
 
