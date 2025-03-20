@@ -292,7 +292,83 @@ $
   & = sum_(j=0)^d (-1)^j binom(d, j) (a-j)!/(a-d)! \
   & = sum_(j=0)^d (-1)^j attach("C", bl: d, br: j) (a-j)!/(a-d)! wide qed
 $
+더 이상의 정리는 불가능하다. 이로써 $attach("U", bl: d, br: a)$의 일반항을 유도하였다. 
 
-#theorem(title: "일반항")[
-  $attach("U", bl: d, br: a) = sum_(j=0)^d (-1)^j attach("C", bl: d, br: j) (a-j)!/(a-d)!$
+== $attach("U", bl: d, br: a)$의 점화식
+사실 $attach("U", bl: d, br: a)$에서 $d$는 차원이라고 볼 수도 있다. 이는 $a$를 고정해 두고 $d$의 변화에 따라 모든 경우의 수형도를 표 형식를 그려보면 이해할 수 있다. 각 항목에 대해 경우의 수가 $d$개 만큼 나오게 되므로 행과 열에 합당한 라벨을 붙인 표를 그리게 된다면 $d=3$일 때는 3차원 표가, $d=4$일 때는 4차원 표가 필요해 진다.
+
+분명히 각 차원에서의 경우의 수 간 관계도 수열일 것이다. 하지만 그 전에 먼저 같은 차원 내에서 $a$만 늘릴 때부터 생각해 보자.
+
+=== $a$에 대한 점화식
+@defU 에서 $Y$ 원소의 개수를 한 개 늘린 집합 $Y'$에 대해 고정점 없는 일대일 함수 $g: X -> Y'$의 경우를 크게 다음과 같이 분류할 수 있다.
+
+i) $g$가 $Y'$에 새로 추가된 원소를 사용하지 않는 경우\
+개수는 그대로 $attach("U", bl: d, br: a)$이다.
+
+ii) $g$가 $Y'$에 새로 추가된 원소 $z$를 사용하는 경우\
+일대일 함수이므로 $z$는 오직 한 개의 $x in X$의 상으로만 할당된다. $z$를 할당할 $x$를 $d$ 개의 원소 중에서 고르고, 나머지 $d-1$ 개의 원소에 대해 $g$는 $Y$로의 고정점 없는 일대일 함수가 되어야 하므로 그 개수는 $d thin attach("U", bl: d-1, br: a)$이다.
+
+두 경우는 서로 배타적이므로 점화식은 아래와 같다.
+$
+  therefore attach("U", bl: d, br: a+1) = attach("U", bl: d, br: a) + d thin attach("U", bl: d-1, br: a)
+$
+
+=== $d$에 대한 점화식
+$d$에 대한 점화식을 구하는 것은 조금 더 복잡하다. 먼저 계산의 편의를 위해 일반항을 분해하겠다.
+$
+  S(d,a) = sum_(k=0)^d (-1)^k attach("C", bl: d, br: k) (a-k)! \
+  ==> attach("U", bl: d, br: a) = S(d,a)/(a-d)!
+$
+
+이제 $d+1$에 대해 $S(d+1, a)$를 전개해 보면,
+$
+  S(d+1, a) & = sum_(k=0)^(d+1) (-1)^k attach("C", bl: d+1, br: k) (a-k)! \
+  & = sum_(k=0)^(d+1) (-1)^k binom(d+1, k) (a-k)! \
+  & = sum_(k=0)^(d+1) (-1)^k {binom(d, k) + binom(d, k-1)} (a-k)! \
+  & = sum_(k=0)^d (-1)^k binom(d, k) (a-k)! - sum_(k=0)^(d+1) (-1)^(k-1) binom(d, k-1) (a-k)! \
+  & = sum_(k=0)^d (-1)^k binom(d, k) (a-k)! - sum_(k=0)^d (-1)^k binom(d, k) (a-k-1)! \
+  & = S(d, a) - S(d, a-1) \
+  therefore & S(d+1, a) = S(d, a) - S(d, a-1)
+$
+
+$attach("U", bl: d, br: a) = S(d,a) \/ (a-d)!$이므로,
+$
+  attach("U", bl: d+1, br: a) & = S(d+1, a)/(a-d-1)! \
+  & = (S(d, a) - S(d, a-1))/(a-d-1)! \
+  & = S(d, a)/(a-d)! - S(d, a-1)/(a-d-1)! \
+$
+
+여기서 $S(d,a)=attach("U", bl: d, br: a) (a-d)!$임을 대입하면, 
+$
+  attach("U", bl: d+1, br: a) = (a-d)!/(a-d-1)! attach("U", bl: d, br: a) - S(d, a-1)/(a-d-1)! \
+$
+
+같은 방법으로 $S(d, a-1) = attach("U", bl: d, br: a-1)((a-1)-d)! = attach("U", bl: d, br: a-1)((a-d-1)!$임을 사용하면,
+$
+  S(d, a-1) / (a-d-1)! = attach("U", bl: d, br: a-1)
+$
+
+$
+  therefore attach("U", bl: d+1, br: a) = (a-d) attach("U", bl: d, br: a) - attach("U", bl: d, br: a-1)
+$
+
+
+== $attach("U", bl: d, br: a)$의 최종 정리
+
+#theorem(title: "고정점 없는 일대일 함수")[
+  일대일 함수 $f:X->Y$에서 $|X| = d, |Y| = a$이고 $X subset Y$일 때, \
+  모든 $x in X$에 대해 $f(x) != x$인 경우의 수는 다음과 같다.
+
+  $
+    & attach("U", bl: d, br: a) = sum_(k=0)^d (-1)^k attach("C", bl: d, br: k) thin attach("P", bl: a-k, br: d-k)=sum_(k=0)^d (-1)^k attach("C", bl: d, br: k) (a-k)!/(a-d)! \
+    & "if "d>a, attach("U", bl: d, br: a) = 0
+  $
+
+  이 때, $attach("U", bl: d, br: a)$는 아래의 두 점화식을 만족한다.
+  $
+    & attach("U", bl: d, br: a+1) = attach("U", bl: d, br: a) + d thin attach("U", bl: d-1, br: a) \
+    & attach("U", bl: d+1, br: a) = (a-d) attach("U", bl: d, br: a) - attach("U", bl: d, br: a-1)
+  $
+
+  또, $d=a$일 때 $attach("U", bl: d, br: a) = D_n$이다.
 ]
