@@ -223,10 +223,10 @@ $
 
 일반항 유도 과정에서 힌트를 얻기 위해, 처음 발상의 시작인 교란순열 일반항의 원리를 살펴보았다. 기본적으로 교란순열 일반항 유도 과정은 (점화식에서 유도해 내지 않을 때) 포함 배제의 원리를 따른다. 포함 배제의 원리는 단순하게는 집합의 크기를 계산할 때 중복하여 센 것을 빼는 것으로, 익숙한 아래 원리가 그 예시이다.
 $
-  & |A union B| = |A| + |B| - |A sect B| \
+  & |A union B| = |A| + |B| - |A inter B| \
   \
   & |A union B union C| \
-  &= |A| + |B| + |C| - |A sect B| - |B sect C| - |C sect A| + |A sect B sect C|
+  &= |A| + |B| + |C| - |A inter B| - |B inter C| - |C inter A| + |A inter B inter C|
 $
 
 이의 일반형은 아래와 같다.
@@ -234,7 +234,7 @@ $
 #corollary(title: "포함 배제의 원리")[
   유한집합인 전체집합 $U$의 부분집합 $A_1, A_2, A_3, ... A_n$에 대해, 이들의 합집합의 원소의 개수는 다음과 같다.
   $
-    & abs(union.big_(i=1)^n A_i) = sum_(emptyset != I subset [n]) (-1)^(|I| -1) abs(sect.big_(i in I) A_i) \
+    & abs(union.big_(i=1)^n A_i) = sum_(emptyset != I subset [n]) (-1)^(|I| -1) abs(inter.big_(i in I) A_i) \
     & "where" [n]={1, 2, 3, ... , n}
   $
 
@@ -268,7 +268,7 @@ $
 
 일반적으로, $J in X med (abs(J)=j)$에 대해 아래와 같다고 하자.
 $
-  A_J = sect.big_(x in J) A_x
+  A_J = inter.big_(x in J) A_x
 $
 
 그러면 $J$에 속한 모든 $x$가 "고정"된 상태에서, 남은 $d-j$ 개의 원소에 대해서 $Y-J$에서의 일대일 함수를 정의해야 하므로 다음과 같다.
