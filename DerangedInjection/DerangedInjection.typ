@@ -316,7 +316,7 @@ $
 === $d$에 대한 점화식
 $d$에 대한 점화식을 구하는 것은 조금 더 복잡하다. 먼저 계산의 편의를 위해 일반항을 분해하겠다.
 $
-  S(d,a) = sum_(k=0)^d (-1)^k attach("C", bl: d, br: k) (a-k)! \
+  S(d,a) := sum_(k=0)^d (-1)^k attach("C", bl: d, br: k) (a-k)! \
   ==> attach("U", bl: d, br: a) = S(d,a)/(a-d)!
 $
 
