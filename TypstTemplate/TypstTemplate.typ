@@ -3,6 +3,8 @@
 #import "@preview/alchemist:0.1.4": *
 #import "@preview/theorion:0.3.2": *
 #import "@preview/rich-counters:0.2.1": *
+#import "@preview/cetz:0.3.4": *
+#import "@preview/cetz-plot:0.1.1": *
 #import cosmos.rainbow: *
 
 // 표지
@@ -161,6 +163,55 @@ $ E_"k"=1/2 m v^2 = p^2/(2m) $
   image("RiemannZetaGraph.png", alt: "Riemann Zeta Graph", width: 10%),
   caption: [Riemann 제타(#sym.zeta) 함수의 그래프]
 )
+
+== 그래프
+#canvas({
+  draw.set-style(
+    axes: (
+      y: (label: (anchor: "north-west", offset: -0.2), mark: (end: "stealth", fill: black)),
+      x: (label: (anchor: "north", offset: 0.1), mark: (end: "stealth", fill: black)),
+    ),
+  )
+  plot.plot(
+    size: (8, 5),
+    x-label: $x$,
+    y-label: $y$,
+    y-tick-step: none,
+    x-tick-step: none,
+    // x-grid: true,
+    // y-grid: true,
+    legend: "inner-south-east",
+    legend-style: (stroke: .5pt),
+    axis-style: "school-book",
+    {
+      // x ln(x) function
+      plot.add(
+        style: (stroke: red + 1.5pt),
+        domain: (0.01, 2.7), // avoid x=0 since ln(0) is undefined
+        samples: 100,
+        label: $x ln(x)$,
+        x => x * calc.ln(x),
+      )
+
+       // ln(x) function
+      plot.add(
+        style: (stroke: purple + 1.5pt),
+        domain: (0.01, 2.7), // avoid x=0 since ln(0) is undefined
+        samples: 100,
+        label: $ln(x)$,
+        x => calc.ln(x),
+      )
+
+      // x-1 function
+      plot.add(
+        style: (stroke: blue + 1.5pt),
+        domain: (-1, 2.7),
+        label: $x-1$,
+        x => x - 1,
+      )
+    },
+  )
+})
 
 == 라벨
 
