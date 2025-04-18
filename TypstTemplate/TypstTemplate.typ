@@ -42,57 +42,47 @@
   header: align(right, title),
   numbering: "1",
 )
+
+#show: show-theorion
+#set math.mat(delim: "[")
+
 #set math.equation(numbering: none)
 
 #let tag(content) = {
   math.equation(
-    block: true, 
+  block: true, 
     numbering: "(1.1)", supplement: [식. ],
     content
-  )
+   )
 }
 
 // 컴포넌트
 
-#show: show-theorion
+#let template = doc => {
+  import "@preview/physica:0.9.4": *
+import "@preview/ilm_custom:1.4.1": *
+import "@preview/alchemist:0.1.4": *
+import "@preview/theorion:0.3.2": *
+import "@preview/rich-counters:0.2.1": *
+import "@preview/cetz:0.3.4": *
+import "@preview/cetz-plot:0.1.1": *
+import cosmos.rainbow: *
 
-// #show: great-theorems-init
+  show: show-theorion
+  set math.mat(delim: "[")
 
-// #let mathcounter = rich-counter(
-//   identifier: "mathblocks",
-//   inherited_levels: 1
-// )
+  set math.equation(numbering: none)
 
-// #let theorem = mathblock(
-//   blocktitle: "Theorem",
-//   counter: mathcounter,
-// )
+  let tag(content) = {
+    math.equation(
+      block: true, 
+      numbering: "(1.1)", supplement: [식. ],
+      content
+    )
+  }
 
-// #let lemma = mathblock(
-//   blocktitle: "Lemma",
-//   counter: mathcounter,
-// )
-
-// #let corollary = mathblock(
-//   blocktitle: "Corollary",
-//   counter: mathcounter,
-// )
-
-// #let definition = mathblock(
-//   blocktitle: "Definition",
-//   counter: mathcounter,
-// )
-
-// #let remark = mathblock(
-//   blocktitle: "Remark",
-//   prefix: [_Remark._],
-//   inset: 5pt,
-//   radius: 5pt,
-// )
-
-// #let proof = proofblock()
-
-#set math.mat(delim: "[")
+  doc
+}
 
 // 본문
 = Sample Title
