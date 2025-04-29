@@ -31,7 +31,10 @@
     covers: "latin-in-cjk",
   ),
   "Source Han Serif K"
-))
+),
+cjk-latin-spacing: none,
+weight: "medium"
+)
 #show math.equation: set text(font: "STIX Two Math")
 #set math.equation(numbering: "(1.1)", supplement: [식. ])
 #set outline()
