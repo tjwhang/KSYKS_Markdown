@@ -3,8 +3,8 @@
 #import "@preview/alchemist:0.1.4": *
 #import "@preview/theorion:0.3.2": *
 #import "@preview/rich-counters:0.2.1": *
-#import "@preview/cetz:0.3.4": *
-#import "@preview/cetz-plot:0.1.1": *
+#import "@preview/cetz:0.3.4"
+#import "@preview/cetz-plot:0.1.1"
 #import cosmos.rainbow: *
 
 // 표지
@@ -158,14 +158,14 @@ $ E_"k"=1/2 m v^2 = p^2/(2m) $
 )
 
 == 그래프
-#canvas({
-  draw.set-style(
+#cetz.canvas({
+  cetz.draw.set-style(
     axes: (
       y: (label: (anchor: "north-west", offset: -0.2), mark: (end: "stealth", fill: black)),
       x: (label: (anchor: "north", offset: 0.1), mark: (end: "stealth", fill: black)),
     ),
   )
-  plot.plot(
+  cetz-plot.plot.plot(
     size: (8, 5),
     x-label: $x$,
     y-label: $y$,
@@ -178,7 +178,7 @@ $ E_"k"=1/2 m v^2 = p^2/(2m) $
     axis-style: "school-book",
     {
       // x ln(x) function
-      plot.add(
+      cetz-plot.plot.add(
         style: (stroke: red + 1.5pt),
         domain: (0.01, 2.7), // avoid x=0 since ln(0) is undefined
         samples: 100,
@@ -187,7 +187,7 @@ $ E_"k"=1/2 m v^2 = p^2/(2m) $
       )
 
        // ln(x) function
-      plot.add(
+      cetz-plot.plot.add(
         style: (stroke: purple + 1.5pt),
         domain: (0.01, 2.7), // avoid x=0 since ln(0) is undefined
         samples: 100,
@@ -196,7 +196,7 @@ $ E_"k"=1/2 m v^2 = p^2/(2m) $
       )
 
       // x-1 function
-      plot.add(
+      cetz-plot.plot.add(
         style: (stroke: blue + 1.5pt),
         domain: (-1, 2.7),
         label: $x-1$,

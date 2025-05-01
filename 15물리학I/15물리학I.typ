@@ -26,18 +26,20 @@
   //bibliography: bibliography(""),
   figure-index: (enabled: false),
   table-index: (enabled: false),
-  listing-index: (enabled: false)
+  listing-index: (enabled: false),
 )
 
-#set text(font: (
-  (
-    name: "STIX Two Text",
-    covers: "latin-in-cjk",
+#set text(
+  font: (
+    (
+      name: "STIX Two Text",
+      covers: "latin-in-cjk",
+    ),
+    "Source Han Serif K",
   ),
-  "Source Han Serif K"
-),
-cjk-latin-spacing: none,
-weight: "medium")
+  cjk-latin-spacing: none,
+  weight: "medium",
+)
 #show math.equation: set text(font: "STIX Two Math")
 #set math.equation(numbering: "(1.1)", supplement: [식. ])
 #set outline()
@@ -52,9 +54,10 @@ weight: "medium")
 
 #let tag(content) = {
   math.equation(
-    block: true, 
-    numbering: "(1.1)", supplement: [식. ],
-    content
+    block: true,
+    numbering: "(1.1)",
+    supplement: [식. ],
+    content,
   )
 }
 
