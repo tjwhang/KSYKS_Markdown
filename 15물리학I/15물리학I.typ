@@ -16,7 +16,7 @@
 
 #show: ilm.with(
   title: title,
-  author: "Taejoon Whang, Dongwoo Nam",
+  author: "Taejoon Whang",
   date: datetime(year: 2025, month: 03, day: 06),
   abstract: [#lorem(30)],
   preface: align(center + horizon)[
@@ -32,7 +32,7 @@
 #set text(
   font: (
     (
-      name: "STIX Two Text",
+      name: "New Computer Modern",
       covers: "latin-in-cjk",
     ),
     "Source Han Serif K",
@@ -40,8 +40,27 @@
   cjk-latin-spacing: none,
   weight: "medium",
 )
-#show math.equation: set text(font: "STIX Two Math")
-#set math.equation(numbering: "(1.1)", supplement: [식. ])
+#show heading.where(level: 1): it => {
+  counter(math.equation).update(0)
+  it
+}
+
+#set math.equation(
+  numbering: n => {
+    numbering("(1.1)", counter(heading).get().first(), n)
+    // if you want change the number of number of displayed
+    // section numbers, modify it this way:
+    /*
+    let count = counter(heading).get()
+    let h1 = count.first()
+    let h2 = count.at(1, default: 0)
+    numbering("(1.1.1)", h1, h2, n)
+    */
+  },
+)
+
+#set math.equation(supplement: [식. ])
+#show math.equation: set text(font: "Latain Modern Math")
 #set outline()
 #show raw: set text(font: ("JetBrains Mono", "D2Coding"))
 #set page(
@@ -50,16 +69,6 @@
   header: align(right, title),
   numbering: "1",
 )
-#set math.equation(numbering: none)
-
-#let tag(content) = {
-  math.equation(
-    block: true,
-    numbering: "(1.1)",
-    supplement: [식. ],
-    content,
-  )
-}
 
 // 컴포넌트
 

@@ -48,8 +48,27 @@
   listing-index: (enabled: false),
 )
 
+#show heading.where(level: 1): it => {
+  counter(math.equation).update(0)
+  it
+}
 
-#set math.equation(numbering: "(1.1)", supplement: [식. ])
+#set math.equation(
+  numbering: n => {
+    numbering("(1.1)", counter(heading).get().first(), n)
+    // if you want change the number of number of displayed
+    // section numbers, modify it this way:
+    /*
+    let count = counter(heading).get()
+    let h1 = count.first()
+    let h2 = count.at(1, default: 0)
+    numbering("(1.1.1)", h1, h2, n)
+    */
+  },
+)
+
+#set math.equation(supplement: [식. ])
+
 #set outline()
 #show raw: set text(font: ("JetBrains Mono", "D2Coding"))
 #set page(
@@ -61,8 +80,6 @@
 
 #show: show-theorion
 #set math.mat(delim: "[")
-
-#set math.equation(numbering: none)
 
 #let tag(content) = {
   math.equation(
@@ -88,8 +105,6 @@
 
   show: show-theorion
   set math.mat(delim: "[")
-
-  set math.equation(numbering: none)
 
   let tag(content) = {
     math.equation(
