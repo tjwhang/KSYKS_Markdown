@@ -22,18 +22,18 @@
   //bibliography: bibliography(""),
   figure-index: (enabled: false),
   table-index: (enabled: false),
-  listing-index: (enabled: false)
+  listing-index: (enabled: false),
 )
 
-#set text(font: (
-  (
-    name: "STIX Two Text",
-    covers: "latin-in-cjk",
+#set text(
+  font: (
+    (
+      name: "STIX Two Text",
+      covers: "latin-in-cjk",
+    ),
+    "Source Han Serif K",
   ),
-  "Source Han Serif K"
-),
-cjk-latin-spacing: none,
-weight: "medium"
+  cjk-latin-spacing: none,
 )
 #show math.equation: set text(font: "STIX Two Math")
 #set math.equation(numbering: "(1.1)", supplement: [식. ])
@@ -53,23 +53,24 @@ weight: "medium"
 
 #let tag(content) = {
   math.equation(
-  block: true, 
-    numbering: "(1.1)", supplement: [식. ],
-    content
-   )
+    block: true,
+    numbering: "(1.1)",
+    supplement: [식. ],
+    content,
+  )
 }
 
 // 컴포넌트
 
 #let template = doc => {
   import "@preview/physica:0.9.4": *
-import "@preview/ilm_custom:1.4.1": *
-import "@preview/alchemist:0.1.4": *
-import "@preview/theorion:0.3.2": *
-import "@preview/rich-counters:0.2.1": *
-import "@preview/cetz:0.3.4": *
-import "@preview/cetz-plot:0.1.1": *
-import cosmos.rainbow: *
+  import "@preview/ilm_custom:1.4.1": *
+  import "@preview/alchemist:0.1.4": *
+  import "@preview/theorion:0.3.2": *
+  import "@preview/rich-counters:0.2.1": *
+  import "@preview/cetz:0.3.4": *
+  import "@preview/cetz-plot:0.1.1": *
+  import cosmos.rainbow: *
 
   show: show-theorion
   set math.mat(delim: "[")
@@ -78,9 +79,10 @@ import cosmos.rainbow: *
 
   let tag(content) = {
     math.equation(
-      block: true, 
-      numbering: "(1.1)", supplement: [식. ],
-      content
+      block: true,
+      numbering: "(1.1)",
+      supplement: [식. ],
+      content,
     )
   }
 
@@ -95,7 +97,7 @@ import cosmos.rainbow: *
 #lorem(300)
 
 The Schrödinger equation is like the following.
-$ i hbar partial / (partial t) psi = {- frac(hbar^2,2m) nabla^2 + V(x)}psi $
+$ i hbar partial / (partial t) psi = {- frac(hbar^2, 2m) nabla^2 + V(x)}psi $
 
 다람쥐 헌 쳇바퀴 타고파.
 
@@ -111,8 +113,8 @@ $ i hbar partial / (partial t) psi = {- frac(hbar^2,2m) nabla^2 + V(x)}psi $
 일본어: 私はガラスを食べられます。 \
 중국 간체: 我爱北京的天安门 \
 중국 번체: 我愛北京的天安門 \
-키릴:  Привет, мир. Сука Блять! \
-그리스 문자:  Γειά σου, Κόσμε.\
+키릴: Привет, мир. Сука Блять! \
+그리스 문자: Γειά σου, Κόσμε.\
 한자: 道吾善者는 是吾賊이오, 道吾惡者는 是吾師니라.
 
 == 표
@@ -122,30 +124,32 @@ $ i hbar partial / (partial t) psi = {- frac(hbar^2,2m) nabla^2 + V(x)}psi $
   inset: 10pt,
   align: horizon,
   table.header(
-    [*Volume*], [*Parameters*],
+    [*Volume*],
+    [*Parameters*],
   ),
+
   $ pi h (D^2 - d^2) / 4 $,
   [
     $h$: height \
     $D$: outer radius \
     $d$: inner radius
   ],
-  $ sqrt(2) / 12 a^3 $,
-  [$a$: edge length]
+
+  $ sqrt(2) / 12 a^3 $, [$a$: edge length],
 )
 
 == 수식
 
 이렇게 $a^2+b^2=c^2$ 같은 인라인 수식을 쓸 수도 있고, 아래처럼 블록 수식을 쓸 수도 있다
 
-$ E_"k"=1/2 m v^2 = p^2/(2m) $
+$ E_"k"=1 / 2 m v^2 = p^2 / (2m) $
 
 위 식은 라벨이 없지만,
 
-#tag[$ 
-  hat(p)^2/(2m)
-  = hbar^2/(2m) partial^2/(partial x^2)
-  = hbar^2/(2m) nabla^2 
+#tag[$
+    hat(p)^2 / (2m)
+    = hbar^2 / (2m) partial^2 / (partial x^2)
+    = hbar^2 / (2m) nabla^2
   $]
 
 위 식은 라벨이 있다.
@@ -154,7 +158,7 @@ $ E_"k"=1/2 m v^2 = p^2/(2m) $
 
 #figure(
   image("RiemannZetaGraph.png", alt: "Riemann Zeta Graph", width: 10%),
-  caption: [Riemann 제타(#sym.zeta) 함수의 그래프]
+  caption: [Riemann 제타(#sym.zeta) 함수의 그래프],
 )
 
 == 그래프
@@ -186,7 +190,7 @@ $ E_"k"=1/2 m v^2 = p^2/(2m) $
         x => x * calc.ln(x),
       )
 
-       // ln(x) function
+      // ln(x) function
       cetz-plot.plot.add(
         style: (stroke: purple + 1.5pt),
         domain: (0.01, 2.7), // avoid x=0 since ln(0) is undefined
