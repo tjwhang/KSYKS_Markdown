@@ -1,7 +1,7 @@
-#import "@preview/physica:0.9.4": *
+#import "@preview/physica:0.9.5": *
 #import "@preview/ilm_custom:1.4.1": *
 #import "@preview/alchemist:0.1.4": *
-#import "@preview/theorion:0.3.2": *
+#import "@preview/theorion:0.3.3": *
 #import "@preview/rich-counters:0.2.1": *
 #import "@preview/cetz:0.3.4": *
 #import "@preview/cetz-plot:0.1.1": *
@@ -23,16 +23,18 @@
   //bibliography: bibliography(""),
   figure-index: (enabled: false),
   table-index: (enabled: false),
-  listing-index: (enabled: false)
+  listing-index: (enabled: false),
 )
 
-#set text(font: (
-  (
-    name: "STIX Two Text",
-    covers: "latin-in-cjk",
+#set text(
+  font: (
+    (
+      name: "STIX Two Text",
+      covers: "latin-in-cjk",
+    ),
+    "Source Han Serif K",
   ),
-  "Source Han Serif K"
-))
+)
 #show math.equation: set text(font: "STIX Two Math")
 #set math.equation(numbering: "(1.1)", supplement: [식. ])
 #set outline()
@@ -47,9 +49,10 @@
 
 #let tag(content) = {
   math.equation(
-    block: true, 
-    numbering: "(1.1)", supplement: [식. ],
-    content
+    block: true,
+    numbering: "(1.1)",
+    supplement: [식. ],
+    content,
   )
 }
 
@@ -105,7 +108,7 @@
 $
   & a^x+a^(-x) \
   & a^x-a^(-x) \
-  & (a^x-a^(-x))/(a^x+a^(-x)) \
+  & (a^x-a^(-x)) / (a^x+a^(-x)) \
   & a^x / (a^x + 1)
 $
 
@@ -123,10 +126,10 @@ $
   $
     & sinh x equiv e^x - e^(-x) \
     & cosh x equiv e^x + e^(-x) \
-    & tanh x equiv (sinh x)/(cosh x) = (e^x - e^(-x))/(e^x + e^(-x)) \
-    & sech x = 1/cosh x \
-    & csch x = 1/sinh x \
-    & coth x = 1/tanh x
+    & tanh x equiv (sinh x) / (cosh x) = (e^x - e^(-x)) / (e^x + e^(-x)) \
+    & sech x = 1 / cosh x \
+    & csch x = 1 / sinh x \
+    & coth x = 1 / tanh x
   $
 ]
 
@@ -135,7 +138,7 @@ $
 $
   & sinh x = sin i x \
   & cosh x = cos i x \
-  & tanh x = tan i x 
+  & tanh x = tan i x
 $
 
 이 증명은 $e^(i x) = cos x + i sin x$의 대입을 통해 간단히 된다.
@@ -148,7 +151,7 @@ $
 
 #canvas({
   import cetz.draw: *
-  
+
   draw.set-style(
     axes: (
       y: (label: (anchor: "north-west", offset: -0.2), mark: (end: "stealth", fill: black)),
@@ -174,13 +177,12 @@ $
         samples: 100,
         label: $y = sinh x$,
         x => calc.sinh(x),
-        
       )
 
       plot.annotate({
-        content((0.05,1.1), [1], anchor: "north-east", padding: 0)
+        content((0.05, 1.1), [1], anchor: "north-east", padding: 0)
       })
-      
+
       // cosh x
       plot.add(
         style: (stroke: purple + 1.5pt),
@@ -204,10 +206,10 @@ $
         domain: (-2, 2),
         label: $y = e^x \/ (e^x + 1)$,
         x => calc.exp(x) / (calc.exp(x) + 1),
-      ) 
+      )
 
       plot.annotate({
-        content((0.05,0.4), [$1/2$], anchor: "north-east", padding: 0)
+        content((0.05, 0.4), [$1 / 2$], anchor: "north-east", padding: 0)
       })
     },
   )
@@ -221,87 +223,82 @@ $
 #grid(
   columns: 2,
   rows: 1,
-
   canvas({
-  import cetz.draw: *
-  
-  draw.set-style(
-    axes: (
-      y: (label: (anchor: "north-west", offset: -0.2), mark: (end: "stealth", fill: black)),
-      x: (label: (anchor: "north", offset: 0.1), mark: (end: "stealth", fill: black)),
-    ),
-  )
-  plot.plot(
-    size: (5, 5),
-    x-label: $x$,
-    y-label: $y$,
-    y-tick-step: none,
-    x-tick-step: none,
-    // x-grid: true,
-    // y-grid: true,
-    legend: "inner-south-east",
-    legend-style: (stroke: .5pt),
-    axis-style: "school-book",
-    {
-      // sec x
-      plot.add(
-        style: (stroke: red + 1.5pt),
-        domain: (-2, 2), // avoid x=0 since ln(0) is undefined
-        samples: 100,
-        label: $y = sech x$,
-        x => 1/calc.cosh(x),
-        
-      )
+    import cetz.draw: *
 
-      plot.annotate({
-        content((0,1), [1], anchor: "north-east", padding: 0)
-      })
-    },
-  )
-}),
+    draw.set-style(
+      axes: (
+        y: (label: (anchor: "north-west", offset: -0.2), mark: (end: "stealth", fill: black)),
+        x: (label: (anchor: "north", offset: 0.1), mark: (end: "stealth", fill: black)),
+      ),
+    )
+    plot.plot(
+      size: (5, 5),
+      x-label: $x$,
+      y-label: $y$,
+      y-tick-step: none,
+      x-tick-step: none,
+      // x-grid: true,
+      // y-grid: true,
+      legend: "inner-south-east",
+      legend-style: (stroke: .5pt),
+      axis-style: "school-book",
+      {
+        // sec x
+        plot.add(
+          style: (stroke: red + 1.5pt),
+          domain: (-2, 2), // avoid x=0 since ln(0) is undefined
+          samples: 100,
+          label: $y = sech x$,
+          x => 1 / calc.cosh(x),
+        )
 
-canvas({
-  import cetz.draw: *
-  
-  draw.set-style(
-    axes: (
-      y: (label: (anchor: "north-west", offset: -0.2), mark: (end: "stealth", fill: black)),
-      x: (label: (anchor: "north", offset: 0.1), mark: (end: "stealth", fill: black)),
-    ),
-  )
-  plot.plot(
-    size: (5, 5),
-    x-label: $x$,
-    y-label: $y$,
-    y-tick-step: none,
-    x-tick-step: none,
-    // x-grid: true,
-    // y-grid: true,
-    legend: "inner-south-east",
-    legend-style: (stroke: .5pt),
-    axis-style: "school-book",
-    {
-      // csch x
-      plot.add(
-        style: (stroke: blue + 1.5pt),
-        domain: (-2, 2), // avoid x=0 since ln(0) is undefined
-        samples: 100,
-        label: $y = csch x$,
-        x => 1/calc.sinh(x),
-        
-      )
-      
-      plot.add(
-        style: (stroke: purple + 1.5pt),
-        domain: (-2, 2), // avoid x=0 since ln(0) is undefined
-        samples: 100,
-        label: $y = coth x$,
-        x => 1/calc.tanh(x),
-        
-      )
-    },
-  )
-})
+        plot.annotate({
+          content((0, 1), [1], anchor: "north-east", padding: 0)
+        })
+      },
+    )
+  }),
+  canvas({
+    import cetz.draw: *
+
+    draw.set-style(
+      axes: (
+        y: (label: (anchor: "north-west", offset: -0.2), mark: (end: "stealth", fill: black)),
+        x: (label: (anchor: "north", offset: 0.1), mark: (end: "stealth", fill: black)),
+      ),
+    )
+    plot.plot(
+      size: (5, 5),
+      x-label: $x$,
+      y-label: $y$,
+      y-tick-step: none,
+      x-tick-step: none,
+      // x-grid: true,
+      // y-grid: true,
+      legend: "inner-south-east",
+      legend-style: (stroke: .5pt),
+      axis-style: "school-book",
+      {
+        // csch x
+        plot.add(
+          style: (stroke: blue + 1.5pt),
+          domain: (-2, 2), // avoid x=0 since ln(0) is undefined
+          samples: 100,
+          label: $y = csch x$,
+          x => 1 / calc.sinh(x),
+        )
+
+        plot.add(
+          style: (stroke: purple + 1.5pt),
+          domain: (-2, 2), // avoid x=0 since ln(0) is undefined
+          samples: 100,
+          label: $y = coth x$,
+          x => 1 / calc.tanh(x),
+        )
+      },
+    )
+  }),
 )
 
 역수 쌍곡함수들은 별로 의미도 없다. $sech x$는 종 모양이고, $csch x$와 $coth x$는 비슷한 개형으로 발산한다.
@@ -316,15 +313,15 @@ canvas({
 이 문제를 $2 cosh (x ln 2) = 3$과 같이 푸는 것은 헛수고다. 가장 좋은 방법은 양변에 $2^x$를 곱한 후 $2^x$에 대한 이차방정식을 푸는 것이다.
 
 $
-  & 2^(2x) -3 dot 2^x + 1 = 0 <==> 2^x = (3 plus.minus sqrt(5))/(2) \
-  & therefore x = log_2(3 plus.minus sqrt(5))/(2)
+  & 2^(2x) -3 dot 2^x + 1 = 0 <==> 2^x = (3 plus.minus sqrt(5)) / (2) \
+  & therefore x = log_2(3 plus.minus sqrt(5)) / (2)
 $
 
 주의할 점은 $cosh x$는 우함수이므로, 두 근의 합은 무조건 0이고, 최솟값은 1이므로 1 이하의 값을 갖도록 하는 실근은 존재하지 않는다. 문제 상황에서 이것이 유리하게 작용할 수도, 불리하게 작용할 수도 있다.
 
 === 쌍곡함수 항등식
 
-하지만 특정 상황에서는 잘 알려진 쌍곡함수 항등식을 이용해 문제를 빨리 풀어낼 수 있다. 아래 공식은 어차피 삼각함수에도 비슷하게 적용되니 암기해 두자. 
+하지만 특정 상황에서는 잘 알려진 쌍곡함수 항등식을 이용해 문제를 빨리 풀어낼 수 있다. 아래 공식은 어차피 삼각함수에도 비슷하게 적용되니 암기해 두자.
 
 ==== 정의에 따른 항등식
 $
@@ -336,7 +333,7 @@ $
 $
   & sinh (x plus.minus y) = sinh x cosh y plus.minus cosh x sinh y \
   & cosh (x plus.minus y) = cosh x cosh y plus.minus sinh x sinh y \
-  & tanh (x plus.minus y) = (tanh x plus.minus tanh y)/(1 plus.minus tanh x tanh y) \
+  & tanh (x plus.minus y) = (tanh x plus.minus tanh y) / (1 plus.minus tanh x tanh y) \
 $
 
 ==== 배각 공식
@@ -344,8 +341,8 @@ $
 $
   & sinh (2x) = 2 sinh x cosh x \
   & cosh (2x) = cosh^2 x + sinh^2 x = 2 cosh^2 x - 1 = 1 + 2 sinh^2 x \
-  & wide wide = (1 + tanh^2 x)/(1 - tanh^2 x) \
-  & tanh (2x) = (2 tanh x)/(1 + tanh^2 x) \
+  & wide wide = (1 + tanh^2 x) / (1 - tanh^2 x) \
+  & tanh (2x) = (2 tanh x) / (1 + tanh^2 x) \
   \
   & sinh (3x) = 3 sinh x + 4 sinh^3 x \
   & cosh (3x) = 4 cosh^3 x - 3 cosh x \
@@ -356,9 +353,9 @@ $
 
 === 기타 항등식
 $
-  & sinh ln a = (a^2 - 1)/(2a) \
-  & cosh ln a = (a^2 + 1)/(2a) \
-  & tanh ln a = (a^2 -1)/(a^2 + 1) \
+  & sinh ln a = (a^2 - 1) / (2a) \
+  & cosh ln a = (a^2 + 1) / (2a) \
+  & tanh ln a = (a^2 -1) / (a^2 + 1) \
 $
 
 유용한 것만 모았으나, 과한 부분도 있으니 모두 암기하지는 않아도 된다. 어차피 쌍곡함수의 출제 빈도는 그렇게 높은 편은 아니다. 공식을 모른다면, 항상 이차방정식을 주저 없이 사용하도록 한다.
@@ -368,24 +365,24 @@ $
 ]
 
 #problem[
-  $f(x) = (a^x + a^(-x))/(a^x - a^(-x))$이고, $f(alpha)=2, f(beta)=3$일 때, $f(alpha + beta)$의 값은?\
+  $f(x) = (a^x + a^(-x)) / (a^x - a^(-x))$이고, $f(alpha)=2, f(beta)=3$일 때, $f(alpha + beta)$의 값은?\
   (단, $a > 0$)
 ]
 
 #solution[
   이는 실제로 모 수I 문제집에 있는 문제이다. 본래라면 $f(x)$의 분모와 분자에 $a^x$를 곱한 후 대입해야 하지만, 이는 사실 $tanh$의 합의 공식을 대놓고 묻고 있는 문제이다.
 
-  $f(x)=coth(x ln a) = 1\/(tanh(x ln a))$ 이므로 $tanh$ 합의 공식을 역수 취해서 사용하면 $(2 times 3 + 1) / (2 + 3) = 7/5$ 로 너무 쉽게 풀린다. 당연하게도 $tanh$ 합의 공식을 알면 $coth$ 합의 공식은 알 필요가 없는 것이다.
+  $f(x)=coth(x ln a) = 1\/(tanh(x ln a))$ 이므로 $tanh$ 합의 공식을 역수 취해서 사용하면 $(2 times 3 + 1) / (2 + 3) = 7 / 5$ 로 너무 쉽게 풀린다. 당연하게도 $tanh$ 합의 공식을 알면 $coth$ 합의 공식은 알 필요가 없는 것이다.
 ]
 
 #problem[
-  $(3^x - 3^(-x))/(3^x + 3^(-x)) = 1/11$일 때, $9^x + 9^(-x)$의 값을 구하여라.
+  $(3^x - 3^(-x)) / (3^x + 3^(-x)) = 1 / 11$일 때, $9^x + 9^(-x)$의 값을 구하여라.
 ]
 
 #solution[
   이는 아래와 같이 재해석할 수 있다.
 
-  $tanh (x ln a) = 1/11$일 때, $cosh (2x ln a)$의 값을 구하여라.
+  $tanh (x ln a) = 1 / 11$일 때, $cosh (2x ln a)$의 값을 구하여라.
 
   그렇다면 이 문제는 특수한 2배각 공식을 활용하여 쉽게 해결된다. \
   $2cosh x = 2 dot (1 + (1\/11)^2 )\/(1-(1\/11)^2)=61\/30$

@@ -1,7 +1,7 @@
-#import "@preview/physica:0.9.4": *
+#import "@preview/physica:0.9.5": *
 #import "@preview/ilm_custom:1.4.1": *
 #import "@preview/alchemist:0.1.4": *
-#import "@preview/theorion:0.3.2": *
+#import "@preview/theorion:0.3.3": *
 #import "@preview/rich-counters:0.2.1": *
 #import "@preview/cetz:0.3.4": *
 #import "@preview/cetz-plot:0.1.1": *
@@ -22,17 +22,18 @@
   //bibliography: bibliography(""),
   figure-index: (enabled: false),
   table-index: (enabled: false),
-  listing-index: (enabled: false)
+  listing-index: (enabled: false),
 )
 
-#set text(font: (
-  (
-    name: "STIX Two Text",
-    covers: "latin-in-cjk",
+#set text(
+  font: (
+    (
+      name: "STIX Two Text",
+      covers: "latin-in-cjk",
+    ),
+    "Source Han Serif K",
   ),
-  "Source Han Serif K"
-),
-cjk-latin-spacing: none
+  cjk-latin-spacing: none,
 )
 #show math.equation: set text(font: "STIX Two Math")
 #set math.equation(numbering: "(1.1)", supplement: [식. ])
@@ -52,23 +53,24 @@ cjk-latin-spacing: none
 
 #let tag(content) = {
   math.equation(
-  block: true, 
-    numbering: "(1.1)", supplement: [식. ],
-    content
-   )
+    block: true,
+    numbering: "(1.1)",
+    supplement: [식. ],
+    content,
+  )
 }
 
 // 컴포넌트
 
 #let template = doc => {
-  import "@preview/physica:0.9.4": *
-import "@preview/ilm_custom:1.4.1": *
-import "@preview/alchemist:0.1.4": *
-import "@preview/theorion:0.3.2": *
-import "@preview/rich-counters:0.2.1": *
-import "@preview/cetz:0.3.4": *
-import "@preview/cetz-plot:0.1.1": *
-import cosmos.rainbow: *
+  import "@preview/physica:0.9.5": *
+  import "@preview/ilm_custom:1.4.1": *
+  import "@preview/alchemist:0.1.4": *
+  import "@preview/theorion:0.3.3": *
+  import "@preview/rich-counters:0.2.1": *
+  import "@preview/cetz:0.3.4": *
+  import "@preview/cetz-plot:0.1.1": *
+  import cosmos.rainbow: *
 
   show: show-theorion
   set math.mat(delim: "[")
@@ -77,9 +79,10 @@ import cosmos.rainbow: *
 
   let tag(content) = {
     math.equation(
-      block: true, 
-      numbering: "(1.1)", supplement: [식. ],
-      content
+      block: true,
+      numbering: "(1.1)",
+      supplement: [식. ],
+      content,
     )
   }
 
@@ -97,30 +100,30 @@ import cosmos.rainbow: *
 #emph-box[
   격식 있는 대화
 
-  A:  Здравствуйте. Меня зовут Оксана. \
-  B:  Здравствуйте, а меня - Эрик. \
-  A:  Очень приятно. \
-  B:  Взаимно.
+  A: Здравствуйте. Меня зовут Оксана. \
+  B: Здравствуйте, а меня - Эрик. \
+  A: Очень приятно. \
+  B: Взаимно.
 ]
 
-A:  안녕, 내 이름은 옥사나야.\
-B:  안녕, 그리고 나는 에릭이야.\
-C:  만나서 반가워.\
-D:  마찬가지야.\
+A: 안녕, 내 이름은 옥사나야.\
+B: 안녕, 그리고 나는 에릭이야.\
+C: 만나서 반가워.\
+D: 마찬가지야.\
 
 #emph-box[
   편한 대화
 
-  A:	Привет, я - Оксана.\
-  B:	Привет, Оксана, а я - Эрик.\
-  A:	Очень приятно.\
-  B:	Мне тоже.\
+  A: Привет, я - Оксана.\
+  B: Привет, Оксана, а я - Эрик.\
+  A: Очень приятно.\
+  B: Мне тоже.\
 ]
 
-A:  안녕, 난 옥사나야. \
-B:  안녕 옥사나, 난 에릭이야.\
-A:  만나서 반가워.\
-B:  나도.
+A: 안녕, 난 옥사나야. \
+B: 안녕 옥사나, 난 에릭이야.\
+A: 만나서 반가워.\
+B: 나도.
 
 === 어휘
 - приятно: 즐겁게, 유쾌하게, 쾌적하게, 상냥하게, 쾌활하게.
@@ -134,7 +137,7 @@ B:  나도.
 - мне тоже: 나도
 
 === 설명
-첫 번째, 격식 있는 대화를 보자. 
+첫 번째, 격식 있는 대화를 보자.
 
 Оксана: Здравствуйте. Меня зовут Оксана.\
 Эрик: Здравствуйте, а меня - Эрик.\
@@ -173,7 +176,7 @@ B:  나도.
 
 *Привет*은 '안녕'이라는 뜻이고, 가벼운 말이다. 처음보는 사람에게는 하지 않는 것이 좋다.
 
-*Я*는 '나'를 뜻한다. 
+*Я*는 '나'를 뜻한다.
 
 #example[
   1. Я Эрик: 나는 에릭이다.
@@ -181,7 +184,7 @@ B:  나도.
   3. Я голодный: 나는 배고프다.
 ]
 
-Мне тоже는 "나도" 정도로 해석될 수 있다. Мне는 지금은 대명사 Я의 변형 정도로 생각하면 된다. 
+Мне тоже는 "나도" 정도로 해석될 수 있다. Мне는 지금은 대명사 Я의 변형 정도로 생각하면 된다.
 그런데, тоже를 "나도 그렇다"라는 의미로 사용하려면 Мне가 아니라 Я를 써야 한다.
 
 #example[

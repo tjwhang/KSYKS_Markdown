@@ -5,7 +5,7 @@
 #import "@preview/rich-counters:0.2.1": *
 #import "@preview/cetz:0.3.4": *
 #import "@preview/cetz-plot:0.1.1": *
-#import cosmos.fancy: *
+#import cosmos.clouds: *
 
 //#import "../TypstTemplate/TypstTemplate.typ": *
 
@@ -17,16 +17,19 @@
 )
 
 // 표지
-#let title = [15/22 물리학 I]
+#let title = [양자역학]
 
 #show: ilm.with(
   title: title,
   author: "Taejoon Whang",
   date: datetime(year: 2025, month: 03, day: 06),
   abstract: [#lorem(30)],
-  preface: align(center + horizon)[
+  preface: align(horizon)[
     = 서 문
-    #lorem(100)
+    \<숙지 사항>
+    1. 아무리 교양부터라고 하더라도 고등학교 수학, 과학을 이해하는 정도의 수준은 필요합니다.
+    2. 용어는 영어를 우선으로 하며, 한국어 용어는 이상한 경우 적히지 않을 수도 있습니다.
+    3. 이 문서는 Griffiths, Ziok 등의 양자역학 교재와 각종 교양서, 인터넷 자료, MIT의 8.03 교양 양자역학 과정, 그리고 불변의 고전인 \<Feynman Lectures on Physics>를 참고했습니다.
   ],
   //bibliography: bibliography(""),
   figure-index: (enabled: false),
@@ -37,12 +40,13 @@
 #set text(
   font: (
     (
-      name: "Libertinus Serif",
+      name: "LXGW Wenkai",
       covers: "latin-in-cjk",
     ),
-    "KoPubBatang",
+    "LXGW Wenkai",
   ),
   cjk-latin-spacing: none,
+  // weight: "medium",
 )
 #show heading.where(level: 1): it => {
   counter(math.equation).update(0)
@@ -63,16 +67,17 @@
   },
 )
 
-#set math.equation(supplement: [식. ])
+#set math.equation(supplement: [식])
 #show math.equation: set text(
   font: (
     (
-      name: "Libertinus Math",
+      name: "STIX Two Math",
       covers: "latin-in-cjk",
     ),
-    "KoPubBatang",
+    "LXGW Wenkai",
   ),
   cjk-latin-spacing: none,
+  weight: "regular",
 )
 #set outline()
 #show raw: set text(font: "JetBrains Mono")
@@ -90,13 +95,5 @@
 #set math.mat(delim: "[")
 
 // 본문
-#include "chapters/물체의운동.typ"
+#include "chapters/사전지식.typ"
 
-#include "chapters/열역학.typ"
-
-#include "chapters/특수상대성이론.typ"
-
-
-= 물질과 전자기장
-
-= 파동과 정보통신

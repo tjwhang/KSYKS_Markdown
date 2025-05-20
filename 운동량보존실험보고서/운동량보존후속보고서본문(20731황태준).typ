@@ -1,9 +1,8 @@
-#import "@preview/physica:0.9.4": *
+#import "@preview/physica:0.9.5": *
 #import "@preview/ilm_custom:1.4.1": *
 #import "@preview/alchemist:0.1.4": *
-#import "@preview/theorion:0.3.2": *
+#import "@preview/theorion:0.3.3": *
 #import "@preview/rich-counters:0.2.1": *
-#import "@preview/diverential:0.2.0": *
 #import "@preview/cetz:0.3.4"
 #import "@preview/cetz-plot:0.1.1"
 
@@ -11,18 +10,6 @@
 
 // 표지
 #let title = [운동량 보존 후속 연구 \ 작용\_action]
-
-#set text(
-  font: (
-    (
-      name: "STIX Two Text",
-      covers: "latin-in-cjk",
-    ),
-    "Source Han Sans K",
-  ),
-  cjk-latin-spacing: none,
-)
-#show math.equation: set text(font: "STIX Two Math")
 
 #show: ilm.with(
   title: title,
@@ -52,6 +39,18 @@
   counter(math.equation).update(0)
   it
 }
+
+#set text(
+  font: (
+    (
+      name: "Libertinus Serif",
+      covers: "latin-in-cjk",
+    ),
+    "KoPubBatang",
+  ),
+  cjk-latin-spacing: none,
+)
+#show math.equation: set text(font: "Libertinus Math")
 
 #set math.equation(
   numbering: n => {
@@ -93,10 +92,10 @@
 // 컴포넌트
 
 #let template = doc => {
-  import "@preview/physica:0.9.4": *
+  import "@preview/physica:0.9.5": *
   import "@preview/ilm_custom:1.4.1": *
   import "@preview/alchemist:0.1.4": *
-  import "@preview/theorion:0.3.2": *
+  import "@preview/theorion:0.3.3": *
   import "@preview/rich-counters:0.2.1": *
   import "@preview/cetz:0.3.4": *
   import "@preview/cetz-plot:0.1.1": *
@@ -312,7 +311,7 @@ $
 
 그러므로 다음이 성립해야 한다.
 $
-  delta I = dv(I, epsilon, eval: epsilon = 0) = 0
+  delta I = evaluated(dv(I, epsilon))_(epsilon=0) = 0
 $
 
 테일러 전개를 통해 $F$를 근사하면
@@ -325,7 +324,7 @@ $
   I(epsilon) = integral_a^b [F + epsilon(pdv(F, y)eta + pdv(F, y')eta') ] dif x
 $
 $
-  therefore delta I = dv(I, epsilon, eval: epsilon = 0) = integral_a^b [ pdv(F, y)eta + pdv(F, y')eta' ] dif x
+  therefore delta I = evaluated(dv(I, epsilon))_(epsilon=0) = integral_a^b [ pdv(F, y)eta + pdv(F, y')eta' ] dif x
 $
 
 두번째 항에 부분적분을 사용하여 정리하면
@@ -481,7 +480,7 @@ $
   m dot.double(x) + dv(V, x) = 0
 $
 
-여기서, $W = F s$이므로 $-dv(V, x)$는 그냥 힘 $F$이다. 또, $dot.double(x) = dv(x, t, deg: 2)$이므로 그냥 가속도 $a$이다. 그러므로 위 방정식은 아래와 동치이다.
+여기서, $W = F s$이므로 $-dv(V, x)$는 그냥 힘 $F$이다. 또, $dot.double(x) = dv(x, t, 2)$이므로 그냥 가속도 $a$이다. 그러므로 위 방정식은 아래와 동치이다.
 $
   F = m a
 $
@@ -605,7 +604,7 @@ $
 $
 검증하기 위해 꼴을 맞춰 이계 미분하면,
 $
-  dv(, t, deg: 2) [A cos(omega t + phi)] = - omega^2 A cos(omega t + phi)
+  dv(, t, 2) [A cos(omega t + phi)] = - omega^2 A cos(omega t + phi)
 $
 가 되므로 $omega^2 = k / m$이 되어야 함을 알 수 있다.
 

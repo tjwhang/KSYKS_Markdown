@@ -1,7 +1,7 @@
-#import "@preview/physica:0.9.4": *
+#import "@preview/physica:0.9.5": *
 #import "@preview/ilm_custom:1.4.1": *
 #import "@preview/alchemist:0.1.4": *
-#import "@preview/theorion:0.3.2": *
+#import "@preview/theorion:0.3.3": *
 #import "@preview/rich-counters:0.2.1": *
 #import "@preview/cetz:0.3.4": *
 #import "@preview/cetz-plot:0.1.1": *
@@ -24,23 +24,24 @@
     식사 후에는 냅킨 대신 하모니카를 장착하여 소소한 음악으로 손님들을 즐겁게 해줄 수 있다.
 
     \_루브 골드버그 장치
-    
+
   ],
   //bibliography: bibliography(""),
   figure-index: (enabled: false),
   table-index: (enabled: false),
-  listing-index: (enabled: false)
+  listing-index: (enabled: false),
 )
 
-#set text(font: (
-  (
-    name: "Source Han Serif K",
-    covers: "latin-in-cjk",
+#set text(
+  font: (
+    (
+      name: "Source Han Serif K",
+      covers: "latin-in-cjk",
+    ),
+    "Source Han Serif K",
   ),
-  "Source Han Serif K"
-),
-cjk-latin-spacing: none,
-weight: "medium"
+  cjk-latin-spacing: none,
+  weight: "medium",
 )
 #show math.equation: set text(font: "STIX Two Math")
 #set math.equation(numbering: "(1.1)", supplement: [식. ])
@@ -56,9 +57,10 @@ weight: "medium"
 
 #let tag(content) = {
   math.equation(
-    block: true, 
-    numbering: "(1.1)", supplement: [식. ],
-    content
+    block: true,
+    numbering: "(1.1)",
+    supplement: [식. ],
+    content,
   )
 }
 
@@ -107,7 +109,7 @@ weight: "medium"
 // 본문
 
 = 서문
-요즘 세상에서는 학습을 위한 온라인 자료를 즉시 찾아볼 수 있습니다. 위키백과, 구글, 뉴스, 수많은 웹사이트와 블로그, 유튜브까지도 여러분의 호기심과 흥미를 자극하는 거의 모든 주제에 관한 정보에 접근할 수 있게 합니다. 그럼에도, 우리는 여전히 무언가에 대한 깊은 이해를 하기 위해서는 옛날 방식 그대로, 종이에 인쇄된 책이 필요하다고 믿고는 합니다. 
+요즘 세상에서는 학습을 위한 온라인 자료를 즉시 찾아볼 수 있습니다. 위키백과, 구글, 뉴스, 수많은 웹사이트와 블로그, 유튜브까지도 여러분의 호기심과 흥미를 자극하는 거의 모든 주제에 관한 정보에 접근할 수 있게 합니다. 그럼에도, 우리는 여전히 무언가에 대한 깊은 이해를 하기 위해서는 옛날 방식 그대로, 종이에 인쇄된 책이 필요하다고 믿고는 합니다.
 
 어떤 주제에 관한 책이던 간에, 일반적으로 책을 처음 열면 생각해 볼 것은 이 책이 다루는 내용은 무엇이고 이 책이 읽을 가치가 있는가입니다. 나는 여기서 여러분이 들고 있는 이 책에 대해 그 질문을 해결해 주려고 합니다.
 

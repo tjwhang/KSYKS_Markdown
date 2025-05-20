@@ -1,11 +1,11 @@
-#import "@preview/physica:0.9.4": *
+#import "@preview/physica:0.9.5": *
 #import "@preview/ilm_custom:1.4.1": *
 #import "@preview/alchemist:0.1.4": *
-#import "@preview/theorion:0.3.2": *
+#import "@preview/theorion:0.3.3": *
 #import "@preview/rich-counters:0.2.1": *
 #import "@preview/cetz:0.3.4"
 #import "@preview/cetz-plot:0.1.1"
-#import cosmos.rainbow: *
+#import cosmos.clouds: *
 
 // 표지
 #let title = [Standard \ Template Document]
@@ -28,14 +28,24 @@
 #set text(
   font: (
     (
-      name: "STIX Two Text",
+      name: "New Computer Modern",
       covers: "latin-in-cjk",
     ),
     "Source Han Serif K",
   ),
   cjk-latin-spacing: none,
 )
-#show math.equation: set text(font: "STIX Two Math")
+#show math.equation: set text(
+  font: (
+    (
+      name: "New Computer Modern Math",
+      covers: "latin-in-cjk",
+    ),
+    "KoPubBatang",
+  ),
+  cjk-latin-spacing: none,
+  weight: "regular",
+)
 
 #show heading.where(level: 1): it => {
   counter(math.equation).update(0)
@@ -56,7 +66,7 @@
   },
 )
 
-#set math.equation(supplement: [식. ])
+#set math.equation(supplement: [식])
 #set outline()
 #show raw: set text(font: ("JetBrains Mono", "D2Coding"))
 #set page(
@@ -69,28 +79,29 @@
 #show: show-theorion
 #set math.mat(delim: "[")
 
-#let tag(content) = {
+#let notag(content) = {
   math.equation(
     block: true,
-    numbering: "(1.1)",
-    supplement: [식. ],
+    numbering: none,
     content,
   )
 }
 
+#let scr(it) = text(
+  features: ("ss01",),
+  box($cal(it)$),
+)
+
 // 컴포넌트
 
 #let template = doc => {
-  import "@preview/physica:0.9.4": *
+  import "@preview/physica:0.9.5": *
   import "@preview/ilm_custom:1.4.1": *
   import "@preview/alchemist:0.1.4": *
-  import "@preview/theorion:0.3.2": *
   import "@preview/rich-counters:0.2.1": *
   import "@preview/cetz:0.3.4": *
   import "@preview/cetz-plot:0.1.1": *
-  import cosmos.rainbow: *
 
-  show: show-theorion
   set math.mat(delim: "[")
 
   show heading.where(level: 1): it => {
@@ -112,16 +123,12 @@
     },
   )
 
-  set math.equation(supplement: [식. ])
+  let scr(it) = text(
+    features: ("ss01",),
+    box($cal(it)$),
+  )
 
-  let tag(content) = {
-    math.equation(
-      block: true,
-      numbering: "(1.1)",
-      supplement: [식. ],
-      content,
-    )
-  }
+  set math.equation(supplement: [식])
 
   doc
 }
@@ -183,7 +190,7 @@ $ E_"k"=1 / 2 m v^2 = p^2 / (2m) $
 
 위 식은 라벨이 없지만,
 
-#tag[$
+#notag[$
     hat(p)^2 / (2m)
     = hbar^2 / (2m) partial^2 / (partial x^2)
     = hbar^2 / (2m) nabla^2
