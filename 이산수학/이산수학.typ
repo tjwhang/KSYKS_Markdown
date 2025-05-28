@@ -17,7 +17,7 @@
 )
 
 // 표지
-#let title = [양자역학]
+#let title = [이산수학]
 
 #show: ilm.with(
   title: title,
@@ -27,9 +27,7 @@
   preface: align(horizon)[
     = 서 문
     \<숙지 사항>
-    1. 아무리 교양부터라고 하더라도 고등학교 수학, 과학을 이해하는 정도의 수준은 필요합니다.
-    2. 용어는 영어를 우선으로 하며, 한국어 용어는 이상한 경우 적히지 않을 수도 있습니다.
-    3. 이 문서는 Griffiths, Ziok 등의 양자역학 교재와 각종 교양서, 인터넷 자료, MIT의 8.03 교양 양자역학 과정, 그리고 불변의 고전인 \<Feynman Lectures on Physics>를 참고했습니다.
+    1. Kenneth Rosen 외, Discrete Mathematics and Its Applications 7 ed. 를 참고했습니다.
   ],
   //bibliography: bibliography(""),
   figure-index: (enabled: false),
@@ -39,13 +37,12 @@
 
 #set text(
   font: (
-    //"Gowun Dodum",
+    "Gowun Dodum",
     (
-      name: "STIX Two Text",
+      name: "LXGW Wenkai",
       covers: "latin-in-cjk",
     ),
-    "Klee One",
-    "Source Han Serif K",
+    "LXGW Wenkai",
   ),
   cjk-latin-spacing: none,
   //weight: "medium",
@@ -76,15 +73,10 @@
       name: "STIX Two Math",
       covers: "latin-in-cjk",
     ),
-    (
-      name: "LXGW WenKai",
-      covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"),
-    ),
-    // "Klee One",
-    "Source Han Serif K",
+    "LXGW Wenkai",
   ),
   cjk-latin-spacing: none,
-  // weight: "regular",
+  weight: "regular",
 )
 #set outline()
 #show raw: set text(font: "JetBrains Mono")
@@ -102,10 +94,5 @@
 #set math.mat(delim: "[")
 
 // 본문
-#include "chapters/사전지식.typ"
+#include "chapters/명제.typ"
 
-#include "chapters/도입.typ"
-
-#include "chapters/언어.typ"
-
-#include "chapters/파동함수.typ"

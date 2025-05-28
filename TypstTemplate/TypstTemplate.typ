@@ -5,7 +5,7 @@
 #import "@preview/rich-counters:0.2.1": *
 #import "@preview/cetz:0.3.4"
 #import "@preview/cetz-plot:0.1.1"
-#import cosmos.clouds: *
+#import cosmos.rainbow: *
 
 // 표지
 #let title = [Standard \ Template Document]
@@ -27,11 +27,16 @@
 
 #set text(
   font: (
+    "Source Han Serif K", // 가장 우선순위 폰트
     (
-      name: "New Computer Modern",
+      name: "New Computer Modern", // 라틴 폰트
       covers: "latin-in-cjk",
     ),
-    "Source Han Serif K",
+    (
+      name: "LXGW WenKai",
+      covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"),
+    ), // 한자, 히라가나, 가타가나
+    "Source Han Serif K", // CJK fallback 폰트
   ),
   cjk-latin-spacing: none,
 )

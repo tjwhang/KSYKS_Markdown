@@ -17,11 +17,11 @@
 )
 
 // 표지
-#let title = [15/22 물리학 I]
+#let title = [15 물리학 I]
 
 #show: ilm.with(
   title: title,
-  author: "Taejoon Whang",
+  author: "황태준",
   date: datetime(year: 2025, month: 03, day: 06),
   abstract: [#lorem(30)],
   preface: align(center + horizon)[
@@ -36,14 +36,21 @@
 
 #set text(
   font: (
+    // "KoPubBatang",
     (
-      name: "Libertinus Serif",
+      name: "STIX Two Text",
       covers: "latin-in-cjk",
     ),
-    "KoPubBatang",
+    (
+      name: "LXGW WenKai",
+      covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"),
+    ),
+    // "Klee One",
+    "Source Han Serif K",
   ),
   cjk-latin-spacing: none,
 )
+
 #show heading.where(level: 1): it => {
   counter(math.equation).update(0)
   it
@@ -67,10 +74,11 @@
 #show math.equation: set text(
   font: (
     (
-      name: "Libertinus Math",
+      name: "STIX Two Math",
       covers: "latin-in-cjk",
     ),
-    "KoPubBatang",
+    // "Klee One",
+    "Source Han Serif K",
   ),
   cjk-latin-spacing: none,
 )

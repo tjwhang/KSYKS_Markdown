@@ -1,6 +1,6 @@
 #import "../../TypstTemplate/TypstTemplate.typ": *
 
-= 시작하기 전에
+= 기초 사전 지식
 앞으로 등장할 개념과 수학적 기반을 이해하기 위한 사전 지식들입니다.
 
 == 양자란?
@@ -28,9 +28,10 @@
 
 아직까지는 의문이 많이 생길 것인데, 정확한 것은 더 자세한 내용이 등장할 때 설명하도록 하겠습니다.
 
-== 수학적 기반
+== 미적분
 
-=== 미적분 표기법에 대하여
+=== 표기법에 대하여
+
 $f(x)$를 $x$에 대해 미분했을 때, 우리는 보통 이렇게 표현하고는 합니다.
 $
   f'(x) = dv(, x) f(x)
@@ -119,102 +120,6 @@ $
 
 아직 각 기호의 의미는 몰라도 됩니다. 지금은 이것이 파동함수라는 어떤 상태 함수에 작용하여 운동량을 알아내는데 쓰인다는 것 정도만 대충 알면 될 것 같습니다.
 
-=== 디랙 표기법
-디랙(Paul Dirac)이 고안한 브라-켓 표기법(bra-ket notation)은 벡터를 표기하는 새로운 방법입니다. 이름의 유래는 $angle.l angle.r$(bracket)를 반으로 잘라서 $angle.l$를 bra, $angle.r$를 ket이라고 하는데서 왔습니다.
-
-먼저, 우리가 아는 벡터 표기법은 아래와 같습니다. 굵은 글씨로 쓰는 것은 위에 화살표를 쓰는 것보다 가독성이 좋다는 장점이 있으며, 기울일지 바로 세울지는 정해져 있지 않습니다.
-$
-  va(v) = vb(v) = vbu(v)
-$
-켓을 사용한 표기는 아래와 같습니다.
-$
-  va(v) = ket(v)
-$
-
-브라는 일종의 연산자로서, 옆에 오는 항과의 내적(inner product, dot product)을 의미합니다.
-$
-  va(v) dot {} = innerproduct(vbu(v), {}) = bra(v)
-$
-
-어떤 벡터가 브라에 결합하면 아래와 같이 됩니다.
-$
-  bra(a) ket(b) = braket(a, b) = vbu(a) dot vbu(b)
-$
-
-이러한 브라-켓 표기법으로, 힐베르트 공간의 원소인 벡터를 통해 양자 상태를 $ket(psi)$처럼 표현하게 됩니다. 이것에 대한 이야기도 나중에 자세히 하겠습니다.
-
-=== 좌표계
-
-==== 직교 좌표계
-#figure(image("../Descartes_system_3D.svg", width: 30%))
-
-데카르트 좌표계(Cartesian coordinate system)이라고도 합니다 .가장 간단하고 직관적인 좌표계이죠. 3차원에서는 원점과 $x, y, z$ 축이 주어지면 다음과 같이 한 점 $"P"$의 좌표를 유일하게 특정할 수 있습니다.
-$
-  "P"(x, y, z)
-$
-
-변수의 범위는 당연히 다음과 같죠.
-$
-  -oo < x, y, z < +oo
-$
-
-==== 원통 좌표계
-영어로는 cylindrical coordinate system 입니다.
-#figure(image("../Cylindrical_Coordinates.svg", width: 30%))
-
-특정한 점 P를 경계에 포함하는 원통을 생각해보면, 인수 세 개로 점을 나타낼 수 있습니다. 원통의 반지름 $rho$, $x$ 축과의 편각 $phi$, 높이 $z$만 있으면 됩니다.
-$
-  "P"(rho, phi, z)
-$
-
-이 좌표계는 사실 2차원 극좌표계(polar coordinate system)를 $z$축에 대해서만 쌓아 올린 것입니다. 즉 $(x,y,z$는 $(rho, phi, z)$로 아래와 같이 나타낼 수 있습니다.
-$
-  x = rho cos phi \
-  y = rho sin phi \
-  z = z
-$
-반대로도 해보면 아래와 같습니다.
-$
-  rho = sqrt(x^2 + y^2) \
-  phi = arctan y / x \
-  z = z
-$
-
-변수의 범위는 다음과 같습니다.
-$
-  0 <= rho < oo \
-  0 <= phi < 2pi \
-  -oo < z < +oo
-$
-
-==== 구면 좌표계
-#figure(image("../Spherical_Coordinates.svg", width: 30%))
-영어로는 spherical coordinate system입니다. 특정한 점 P는 반지름 $rho$, $z$ 축과의 편각 $theta$, $x$축 과의 편각 $phi$로 표현될 수 있습니다.
-$
-  "P"(rho, theta, phi)
-$
-각 변수를 $(x, y, z)$를 $(rho, theta, phi)$에 대해 나타내 봅시다.
-$
-  x = rho sin theta cos phi \
-  y = rho sin theta sin phi \
-  z = rho cos theta
-$
-반대로도 해봅시다.
-$
-  rho = sqrt(x^2 + y^2 + z^2) \
-  theta = arctan sqrt(x^2 + y^2) / z \
-  phi = arctan y / x
-$
-
-변수의 범위는 아래와 같을 겁니다.
-$
-  0 <= rho < +oo \
-  0 <= theta <= pi \
-  0 <= phi < 2pi
-$
-
-$theta$와 $phi$가 함께 회전하므로 $theta$는 180#sym.degree 범위로 충분하겠죠.
-
 === 델 연산자
 델(del) 연산자는 이렇게 $nabla$ 역삼각형 모향으로 생겼습니다. 이 기호 자체는 나블라(nabla)라고 하고, 하프 모양에서 따왔다고 합니다.
 
@@ -253,7 +158,83 @@ $
 
 // 이것을 예를 들어 원자와 같은 곳에 적용하려면 구면 좌표계로의 변환이 필요합니다. 그래서 델 연산자를 원통 좌표계와 구면 좌표계에 대해 변환해 봅시다.
 
-=== 오일러 항등식
+== 선형대수
+
+
+
+== 좌표계
+
+=== 직교 좌표계
+#figure(image("../Descartes_system_3D.svg", width: 30%))
+
+데카르트 좌표계(Cartesian coordinate system)이라고도 합니다. 가장 간단하고 직관적인 좌표계이죠. 3차원에서는 원점과 $x, y, z$ 축이 주어지면 다음과 같이 한 점 $"P"$의 좌표를 유일하게 특정할 수 있습니다.
+$
+  "P"(x, y, z)
+$
+
+변수의 범위는 당연히 다음과 같죠.
+$
+  -oo < x, y, z < +oo
+$
+
+=== 원통 좌표계
+영어로는 cylindrical coordinate system 입니다.
+#figure(image("../Cylindrical_Coordinates.svg", width: 30%))
+
+특정한 점 P를 경계에 포함하는 원통을 생각해보면, 인수 세 개로 점을 나타낼 수 있습니다. 원통의 반지름 $rho$, $x$ 축과의 편각 $phi$, 높이 $z$만 있으면 됩니다.
+$
+  "P"(rho, phi, z)
+$
+
+이 좌표계는 사실 2차원 극좌표계(polar coordinate system)를 $z$축에 대해서만 쌓아 올린 것입니다. 즉 $(x,y,z$는 $(rho, phi, z)$로 아래와 같이 나타낼 수 있습니다.
+$
+  x = rho cos phi \
+  y = rho sin phi \
+  z = z
+$
+반대로도 해보면 아래와 같습니다.
+$
+  rho = sqrt(x^2 + y^2) \
+  phi = arctan y / x \
+  z = z
+$
+
+변수의 범위는 다음과 같습니다.
+$
+  0 <= rho < oo \
+  0 <= phi < 2pi \
+  -oo < z < +oo
+$
+
+=== 구면 좌표계
+#figure(image("../Spherical_Coordinates.svg", width: 30%))
+영어로는 spherical coordinate system입니다. 특정한 점 P는 반지름 $rho$, $z$ 축과의 편각 $theta$, $x$축 과의 편각 $phi$로 표현될 수 있습니다.
+$
+  "P"(rho, theta, phi)
+$
+각 변수를 $(x, y, z)$를 $(rho, theta, phi)$에 대해 나타내 봅시다.
+$
+  x = rho sin theta cos phi \
+  y = rho sin theta sin phi \
+  z = rho cos theta
+$
+반대로도 해봅시다.
+$
+  rho = sqrt(x^2 + y^2 + z^2) \
+  theta = arctan sqrt(x^2 + y^2) / z \
+  phi = arctan y / x
+$
+
+변수의 범위는 아래와 같을 겁니다.
+$
+  0 <= rho < +oo \
+  0 <= theta <= pi \
+  0 <= phi < 2pi
+$
+
+$theta$와 $phi$가 함께 회전하므로 $theta$는 180#sym.degree 범위로 충분하겠죠.
+
+== 오일러 항등식
 수학에 관심이 있는 독자들이라면 한 번쯤은 보았을 식입니다.
 $
   e^(i x) = cos x + i sin x
@@ -342,7 +323,7 @@ $ <sintayl>
 
 @sintayl 에 $i$만 곱해 @costayl 과 더하면 @cistayl 과 같습니다.
 
-== 확률 기본
+== 확률과 통계
 양자역학의 확률 해석 때문에, 확률을 다룰 줄 아는 것은 중요합니다. 조금 쉬운 부분으로 가 봅시다.
 
 이 부분의 내용은 David J. Griffiths와 Darrel F. Schröter의 \<Introduction to Quantum Mechanics> 3판에서 가져왔습니다.
@@ -455,34 +436,84 @@ $
   sigma^2 equiv expval((difference(x))^2)= expval(x^2) - expval(x)^2
 $
 
-== 상태 함수 $psi$
-$psi$는 상태 함수(state function) 또는 파동함수(wave function)로, 어떤 입자의 분포 등의 정보를 포함하고 있는 함수입니다. 상태 벡터(state vector)이기도 하므로, $ket(psi)$처럼 쓰기도 합니다. 파동함수는 그 자체로는 아무 물리적 의미도 없습니다. 대신, $psi$에 그 켤레 복소수(conjugate)를 곱하면 PDF가 나옵니다#footnote[$abs(a+b i) = sqrt(a^2 + b^2)$].
-$
-  "PDF" = psi^*psi = abs(psi)^2
-$
+== 파동
+파동에 대한 기초적인 정의는 이미 숙지하고 있다고 가정하고 생략하도록 하겠습니다. 우리가 여기서 주목하고 싶은 것은 파동방정식으로부터 유도되는 파동(평면파)의 수식입니다.
 
-예를 들어 $psi(x, t)$는 위치 $x$와 시간 $t$에서 입자가 발견될 확률을 나타낼 수 있습니다.
-
-따라서 아래가 성립합니다.
+파동은 일반적으로 주기성을 갖습니다. 파동의 위상속도를 $vbu(v)$, 위치 벡터를 $vbu(r)$, 파동을 기술하는 함수를 $psi(vbu(r), t)$라고 할 때, 아래가 성립하겠죠.
 $
-  integral_(-oo)^(+oo) abs(psi(x, t))^2 dif x = 1
+  psi(vbu(r), t) = psi(vbu(r) - vbu(v)t, 0)
 $
 
-== 슈뢰딩거 방정식
-
-독일의 물리학자 슈뢰딩거(Erwin Schrödinger)가 제안한 파동 방정식으로, 아직 식의 의미는 몰라도 됩니다. 하지만 그 모양 정도는 눈에 담아두면 좋습니다.
-
+$vbu(u) := vbu(r) - vbu(v) t$로 놓읍시다. 아래가 성립함을 확인하세요.
 $
-  hat(E) psi = hat(cal(H), size: #0pt) psi
+  psi(vbu(r), t) = psi(vbu(u), 0)
 $
 
-이를 완전히 전개하면 다음과 같이 생기게 됩니다.
+이제 공간에 대해 이계미분하겠습니다.
 $
-  i hbar pdv(, t) psi = - hbar^2 / (2m) laplacian psi + V(x) psi
+  lapl psi(vbu(r), t) = sum_i pdv(psi, x_i, 2) = sum_i pdv(, vbu(u)_i) pdv(vbu(u)_i, x_i) pdv(psi, vbu(u)_i) pdv(vbu(u)_i, x_i) = sum_i pdv(psi, vbu(u)_i, 2)
 $
 
-이 식의 해는 $psi$가 됩니다.
+시간에 대해서도 똑같이 해보면,
+$
+  pdv(psi, t) = sum_i pdv(, vbu(u)_i) pdv(vbu(u)_i, t) pdv(psi, vbu(u)_i) pdv(vbu(u)_i, t) = v^2 sum_i pdv(psi, vbu(u)_i, 2)
+$
 
-이 식은 양자역학에서, 뉴턴 역학의 뉴턴 운동 방정식($F=m a$)이라거나, 라그랑주 역학의 오일러-라그랑주 방정식#footnote[$q$는 일반화 좌표, $L$은 라그랑지언일 때 $display(dv(, t) pdv(L, dot(q)) - pdv(L, q) = 0)$]과 비슷한 역할을 가집니다.
+위 두 식에 따라 결론은 아래와 같습니다.
+$
+  lapl psi = 1 / v^2 pdv(psi, t, 2)
+$
 
-Now, Let's dive into the fascinating world of Quantum Mechanics!
+이 편미분 방정식을 파동방정식이라고 합니다.
+
+3차원 공간을 진행하는 평면파 $psi(vbu(r), t)$에 대한 파동방정식을 생각해 봅시다.
+$
+  pdv(psi, x, 2) + pdv(psi, y, 2) + pdv(psi, z, 2) = 1 / v^2 pdv(psi, t, 2)
+$
+
+이 방정식의 해를 $psi = X(x) Y(y) Z(z) T(t)$라고 한다면 아래와 같습니다.
+$
+  1 / X dv(X, x, 2) + 1 / Y dv(Y, y, 2) + 1 / Z dv(Z, z, 2) = 1 / v^2 1 / T dv(T, t, 2)
+$
+이 값을 상수의 제곱의 음이라고 가정하면 아래와 같이 됩니다.
+$
+  1 / T dv(T, t, 2) = - v^2 k^2 =: -omega^2
+$
+이 방정식의 해는
+$
+  T prop e^(plus.minus i omega t)
+$
+
+마찬가지로 다음을 가정하면
+$
+  1 / vbu(u)_i dv(vbu(u)_i, x_i, 2) = -vbu(k)_i^2
+$
+
+그 해는
+$
+  vbu(u)_i prop e^(plus.minus k_i x_i)
+$
+
+그러므로 이제 파동방정식의 해는 아래와 같습니다.
+$
+  psi = A e^(i vbu(k) dot vbu(r)) e^(plus.minus i omega t)
+$
+
+이때 파동의 주기성 조건에 따라 아래가 성립하는데,
+$
+  e^(i vbu(k) dot (vbu(r) - vbu(v) t)) = e^(i vbu(k) dot vbu(r)) e^(plus.minus i omega t)
+$
+
+일반적으로 $vbu(k)$의 방향은 $vbu(v)$의 방향과 일치하므로 아래 식을 얻습니다.
+$
+  psi(vbu(r), t) = A e^i(vbu(k) dot vbu(r) - omega t)
+$
+
+== 출발
+양자역학은 교양으로만 배우면 식은 하나도 언급하지 않고도 핵심이 되는 아이디어를 모두 알 수 있습니다. 하지만 양자역학은 처음부터 확률 해석과 식으로 태동했기 때문에 그 精髓(정수, essence)에 닿기 위해서는 수학적 이해가 필수적입니다.
+
+결코 쉽지는 않을 것이고, 당연히 필자에게도 어렵습니다. 하지만, 재미는 있을 겁니다. 그럼,
+
+#blockquote[
+  Let's dive into the fascinating world of Quantum Mechanics!
+]
