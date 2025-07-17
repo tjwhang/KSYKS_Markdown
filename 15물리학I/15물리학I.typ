@@ -46,7 +46,7 @@
       covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"),
     ),
     // "Klee One",
-    "Source Han Serif K",
+    "KoPubBatang",
   ),
   cjk-latin-spacing: none,
 )
@@ -103,6 +103,8 @@
 #include "chapters/열역학.typ"
 
 #include "chapters/특수상대성이론.typ"
+
+#include "chapters/질량과에너지.typ"
 
 
 = 물질과 전자기장
