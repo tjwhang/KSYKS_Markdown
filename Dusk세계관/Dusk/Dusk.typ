@@ -23,3 +23,4 @@
 #include "chapters/2-1.typ"
 #include "chapters/2-2.typ"
 #include "chapters/2-3.typ"
+#include "chapters/2-4.typ"
