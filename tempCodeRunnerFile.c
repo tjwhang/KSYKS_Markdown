@@ -313,7 +313,7 @@ int argmax(float* v, int n) {
     return max_i;
 }
 
-void load_tokenizer_data(char ***vocab, float **vocab_scores, int vocab_size, unsigned int *max_token_length) {
+void load_tokenizer_data(char ---vocab, float **vocab_scores, int vocab_size, unsigned int *max_token_length) {
     FILE *file = fopen("tokenizer.bin", "rb");
     if (!file) {
         printf("토크나이저 로딩 실패\n");
