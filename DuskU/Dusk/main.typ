@@ -13,30 +13,30 @@
 
 #show: book.with(
   title: "Dusk",
-  subtitle: "2026",
+  subtitle: "황혼(假題) 2026",
   edition: 0,
   volume: 0,
   authors: "Echae",
   date: datetime.today(),
   cover: auto,
   titlepage: auto,
-  catalog: (
-    id: "Dusk",
-    place: "출판장소",
-    publisher: "출판사",
-    isbn: "숫자",
-    subjects: (),
-    access: (),
-    ddc: none,
-    udc: none,
-    before: none,
-    after: none,
-  ),
+  // catalog: (
+  //   id: "Dusk",
+  //   place: "출판장소",
+  //   publisher: "출판사",
+  //   isbn: "숫자",
+  //   subjects: (),
+  //   access: (),
+  //   ddc: none,
+  //   udc: none,
+  //   before: none,
+  //   after: none,
+  // ),
   dedication: "",
   acknowledgements: [
     알림
     - 본 소설의 내용은 모두 가상이며, 현실의 모든 사건, 인물, 단체, 장소 등과 관련이 없습니다.
-    - 본 소설은 2024년 8월부터 집필하기 시작했으며, 이후 정세는 반영하지 않았습니다.
+    - 본 소설은 2024년 8월부터 집필하기 시작했으며, 그때 거시적 설정을 마쳤으므로 해당 날짜 이후 정세는 반영하지 않았습니다.
 
   ],
   epigraph: "나중에 넣을 가장 중요한 대사 한 줄.",
@@ -48,12 +48,15 @@
     page: "a5",
     lang: "dk",
     justify: false,
+    line-space: 1.35em,
+    par-margin: 1.8em,
+    
     first-line-indent: 1em,
     margin: (x: 13%, y: 13%),
     font: ("STIX Two Text", "KoPubBatang"),
-    font-math: "Erewhon Math",
-    font-mono: "Inconsolata",
-    font-size: 11pt,
+    font-math: "STIX Two Math",
+    font-mono: "Jetbrains Mono",
+    font-size: 10.5pt,
     heading-weight: "bold",
     cover-bgcolor: rgb("#ffffff"),
     cover-txtcolor: luma(0%),
@@ -70,15 +73,27 @@
 #show: show-theorion
 #set math.mat(delim: "[")
 
+#let pb = pagebreak(to: "even", weak: true)
+
 = Prelude
 
 #include "chapters/1-1.typ"
+#pb
 #include "chapters/1-2.typ"
+#pb
 #include "chapters/1-3.typ"
+#pb
 #include "chapters/1-a.typ"
+#pb
 
 = Elevation
 #include "chapters/2-1.typ"
+#pb
 #include "chapters/2-2.typ"
+#pb
 #include "chapters/2-3.typ"
+#pb
 #include "chapters/2-4.typ"
+#pb
+
+여기까지가 현재까지 집필한 것임. 언제나 수정될 수 있음.

@@ -9,26 +9,23 @@
 
 #import "template.typ": *
 
-#let title = [Introduction to \ Quantum Computing]
+#let title = [무한이란 무엇인가]
 
 #show: bubble.with(
   title: title,
-  subtitle: [양자컴퓨팅 기초],
+  subtitle: "접선의 엄밀한 정의",
   author: "황태준",
   affiliation: "중앙고등학교",
   date: datetime.today().display(),
   year: "2025",
   class: "2학년 7반 31번",
-  other: ("",),
+  other: ("수학 Ⅱ 심화 탐구",),
   // logo: image("logo.png"),
   color-words: ("important",),
 )
 
 #show: show-theorion
-#set math.mat(delim: "(")
-
-#show math.equation.where(block: false): it => math.display(it)
-// show inline math as display
+#set math.mat(delim: "[")
 
 #set page(
   paper: "a4",
@@ -36,15 +33,6 @@
   header: align(right, title),
   numbering: "1",
 )
-
-#set par(
-  justify: false,
-  leading: 1.2em,
-  spacing: 1.8em
-)
-
-#show heading: set block(above: 2em, below: 1.3em)
-
 
 #set text(
   font: (
@@ -61,9 +49,6 @@
   ),
   cjk-latin-spacing: none,
 )
-
-
-
 #show math.equation: set text(
   font: (
     (
@@ -112,7 +97,7 @@
 #show raw: set text(font: ("JetBrains Mono", "Source Han Sans K"))
 
 #show math.equation: it => {
-  let bb-font = "New Computer Modern Math"
+  let bb-font = "New Computer Modernl  Math"
   show regex("𝔸|𝔹|ℂ|𝔻|𝔼|𝔽|𝔾|ℍ|𝕀|𝕁|𝕂|𝕃|𝕄|ℕ|𝕆|ℙ|ℚ|ℝ|𝕊|𝕋|𝕌|𝕍|𝕎|𝕏|𝕐|ℤ|𝕒|𝕓|𝕔|𝕕|𝕖|𝕗|𝕘|𝕙|𝕚|𝕛|𝕜|𝕝|𝕞|𝕠|𝕡|𝕢|𝕣|𝕤|𝕥|𝕦|𝕧|𝕨|𝕩|𝕪|𝕫"): set text(font: bb-font)
   it
 }
@@ -120,6 +105,4 @@
 #outline()
 #pagebreak()
 
-#include "chapters/1_Intro.typ"
-#pagebreak()
-#include "chapters/2_QuantumStates.typ"
+#include "chapters/1_Intro.typ" 

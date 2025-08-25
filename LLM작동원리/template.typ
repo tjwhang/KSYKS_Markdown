@@ -1,4 +1,9 @@
+#import "@preview/physica:0.9.5": *
+#import "@preview/alchemist:0.1.4": *
 #import "@preview/theorion:0.3.3": *
+#import "@preview/rich-counters:0.2.1": *
+#import "@preview/cetz:0.3.4"
+#import "@preview/cetz-plot:0.1.1"
 #show: show-theorion
 
 #import cosmos.rainbow: *

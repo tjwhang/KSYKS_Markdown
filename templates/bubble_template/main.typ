@@ -27,6 +27,9 @@
 #show: show-theorion
 #set math.mat(delim: "[")
 
+#show math.equation.where(block: false): it => math.display(it)
+// show inline math as display
+
 #set page(
   paper: "a4",
   margin: 3.5cm,
@@ -34,11 +37,19 @@
   numbering: "1",
 )
 
+#set par(
+  justify: false,
+  leading: 1.35em,
+  spacing: 2em
+)
+
+#show heading: set block(above: 2em, below: 1.3em)
+
 #set text(
   font: (
     // "Source Han Serif K", // 가장 우선순위 폰트
     (
-      name: "Erewhon", // 라틴 폰트
+      name: "STIX Two Text", // 라틴 폰트
       covers: "latin-in-cjk",
     ),
     (
@@ -52,14 +63,14 @@
 #show math.equation: set text(
   font: (
     (
-      name: "Erewhon Math",
+      name: "STIX Two Math",
       covers: "latin-in-cjk",
     ),
     "KoPubBatang",
   ),
   cjk-latin-spacing: none,
   weight: "regular",
-  // stylistic-set: (2, 3, 4),
+  stylistic-set: (2, 3, 4),
   // ^ STIX Two 사용시
 )
 

@@ -38,26 +38,3 @@
   box(text(top-edge: "bounds", $wrapper(math.cal(it))$))
 })
 
-#set math.equation(numbering: n => {
-  numbering("(1.1)", counter(heading).get().first(), n)
-  // if you want change the number of number of displayed
-  // section numbers, modify it this way:
-  /*
-  let count = counter(heading).get()
-  let h1 = count.first()
-  let h2 = count.at(1, default: 0)
-  numbering("(1.1.1)", h1, h2, n)
-  */
-})
-
-#set figure(numbering: n => {
-  numbering("1.1", counter(heading).get().first(), n)
-  // if you want change the number of number of displayed
-  // section numbers, modify it this way:
-  /*
-  let count = counter(heading).get()
-  let h1 = count.first()
-  let h2 = count.at(1, default: 0)
-  numbering("(1.1.1)", h1, h2, n)
-  */
-})
