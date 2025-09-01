@@ -6,7 +6,7 @@
 #import "@preview/cetz-plot:0.1.1"
 #show: show-theorion
 
-#import cosmos.rainbow: *
+#import cosmos.clouds: *
 
 #let notag(content) = {
   math.equation(

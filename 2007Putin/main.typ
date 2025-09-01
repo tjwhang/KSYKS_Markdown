@@ -9,11 +9,11 @@
 
 #import "template.typ": *
 
-#let title = [Introduction to \ Quantum Computing]
+#let title = [영어 연설문 발표 원문]
 
 #show: bubble.with(
   title: title,
-  subtitle: [양자컴퓨팅 기초],
+  subtitle: "Speech and the Following Discussion at the Munich Conference on Security Policy. February 10, 2007",
   author: "황태준",
   affiliation: "중앙고등학교",
   date: datetime.today().display(),
@@ -21,14 +21,14 @@
   class: "2학년 7반 31번",
   other: ("",),
   // logo: image("logo.png"),
-  color-words: ("important",),
+  //color-words: ("important",),
 )
 
 #show: show-theorion
-#set math.mat(delim: "(")
+#set math.mat(delim: "[")
 
-// show inline math as display
 #show math.equation.where(block: false): it => math.display(it)
+// show inline math as display
 
 #set page(
   paper: "a4",
@@ -39,42 +39,38 @@
 
 #set par(
   justify: false,
-  leading: 1.2em,
-  spacing: 1.8em
+  leading: 1.35em,
+  spacing: 2em
 )
 
 #show heading: set block(above: 2em, below: 1.3em)
-
 
 #set text(
   font: (
     // "Source Han Serif K", // 가장 우선순위 폰트
     (
-      name: "Libertinus Serif", // 라틴 폰트
+      name: "STIX Two Text", // 라틴 폰트
       covers: "latin-in-cjk",
     ),
     (
       name: "LXGW WenKai",
       covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"),
     ), // 한자, 히라가나, 가타가나
-    "KoPubBatang" // CJK Fallback 폰트
+    "Source Han Serif K", // CJK fallback 폰트
   ),
   cjk-latin-spacing: none,
 )
-
-
-
 #show math.equation: set text(
   font: (
     (
-      name: "Libertinus Math",
+      name: "STIX Two Math",
       covers: "latin-in-cjk",
     ),
-    "SunBatang",
+    "KoPubBatang",
   ),
   cjk-latin-spacing: none,
   weight: "regular",
-  stylistic-set: (2, 3, 4, 8),
+  stylistic-set: (2, 3, 4),
   // ^ STIX Two 사용시
 )
 
@@ -112,7 +108,7 @@
 #show raw: set text(font: ("JetBrains Mono", "Source Han Sans K"))
 
 #show math.equation: it => {
-  let bb-font = "Libertinus Math"
+  let bb-font = "New Computer Modern Math"
   show regex("𝔸|𝔹|ℂ|𝔻|𝔼|𝔽|𝔾|ℍ|𝕀|𝕁|𝕂|𝕃|𝕄|ℕ|𝕆|ℙ|ℚ|ℝ|𝕊|𝕋|𝕌|𝕍|𝕎|𝕏|𝕐|ℤ|𝕒|𝕓|𝕔|𝕕|𝕖|𝕗|𝕘|𝕙|𝕚|𝕛|𝕜|𝕝|𝕞|𝕠|𝕡|𝕢|𝕣|𝕤|𝕥|𝕦|𝕧|𝕨|𝕩|𝕪|𝕫"): set text(font: bb-font)
   it
 }
@@ -120,8 +116,5 @@
 #outline()
 #pagebreak()
 
-#include "chapters/1_Intro.typ"
-#pagebreak()
-#include "chapters/2_QuantumStates.typ"
-#pagebreak()
-#include "chapters/3_Observables.typ"
+#include "chapters/english.typ"
+#include "chapters/russian.typ"
