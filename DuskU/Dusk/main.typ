@@ -53,7 +53,7 @@
         font: ("STIX Two Text", "KoPubBatang"),
         font-math: "Erewhon Math",
         font-mono: "Inconsolata",
-        font-size: 11pt,
+        font-size: 10.5pt,
         heading-weight: "bold",
         cover-bgcolor: rgb("#ffffff"),
         cover-txtcolor: luma(0%),
@@ -74,7 +74,7 @@
 
 #set par(
   justify: false,
-  leading: 1.3em,
+  leading: 1.75em,
   spacing: 1.8em
 )
 
