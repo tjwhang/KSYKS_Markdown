@@ -50,13 +50,14 @@
   font: (
     // "Source Han Serif K", // 가장 우선순위 폰트
     (
-      name: "Libertinus Serif", // 라틴 폰트
+      name: "STIX Two Text", // 라틴 폰트
       covers: "latin-in-cjk",
     ),
     (
       name: "LXGW WenKai",
       covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"),
     ), // 한자, 히라가나, 가타가나
+    "STIX Two Text",
     "KoPubBatang" // CJK Fallback 폰트
   ),
   cjk-latin-spacing: none,
@@ -67,14 +68,14 @@
 #show math.equation: set text(
   font: (
     (
-      name: "Libertinus Math",
+      name: "STIX Two Math",
       covers: "latin-in-cjk",
     ),
     "SunBatang",
   ),
   cjk-latin-spacing: none,
   weight: "regular",
-  stylistic-set: (2, 3, 4, 8),
+  stylistic-set: (2, 3, 4,),
   // ^ STIX Two 사용시
 )
 
@@ -112,7 +113,7 @@
 #show raw: set text(font: ("JetBrains Mono", "Source Han Sans K"))
 
 #show math.equation: it => {
-  let bb-font = "Libertinus Math"
+  let bb-font = "Garamond-Math"
   show regex("𝔸|𝔹|ℂ|𝔻|𝔼|𝔽|𝔾|ℍ|𝕀|𝕁|𝕂|𝕃|𝕄|ℕ|𝕆|ℙ|ℚ|ℝ|𝕊|𝕋|𝕌|𝕍|𝕎|𝕏|𝕐|ℤ|𝕒|𝕓|𝕔|𝕕|𝕖|𝕗|𝕘|𝕙|𝕚|𝕛|𝕜|𝕝|𝕞|𝕠|𝕡|𝕢|𝕣|𝕤|𝕥|𝕦|𝕧|𝕨|𝕩|𝕪|𝕫"): set text(font: bb-font)
   it
 }

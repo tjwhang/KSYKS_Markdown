@@ -72,6 +72,12 @@
 
 #let pb = pagebreak(to: "even", weak: true)
 
+#set par(
+  justify: false,
+  leading: 1.3em,
+  spacing: 1.8em
+)
+
 = Prelude
 
 #include "chapters/1-1.typ"
@@ -91,6 +97,9 @@
 #include "chapters/2-3.typ"
 #pb
 #include "chapters/2-4.typ"
+#pb
 #include "chapters/2-a.typ"
 
 = Discovery
+#include "chapters/3-1.typ"
+#pb

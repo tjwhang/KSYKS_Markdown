@@ -1,9 +1,14 @@
 #import "../template.typ": *
 
-= 강의 개요
+= 오리엔테이션
+
+== 시작하기 전에
+
+=== 참고문헌 알림
+이 문서는 캐나다 Carleton 대학의 수학 교수 Yuly Billig의 온라인 강의 『Quantum Computing』을 강하게 참고하였다. 이외에도 David J. Griffiths 외의 『Introduction to Quantum Mechanics』3판, R. Shankar의 『Principle of Quantum Mechanics』도 참고했다. 
 
 == 무어의 법칙
-캘리포니아 공과대학(CalTech)의 고든 무어(Gordon Moore) 교수는 관찰을 통해 일정 시간동안 컴퓨터 반도체에 집적되는 트랜지스터 수가 2배 이상 증가한다는 "무어의 법칙(Moore's Law)"을 제시했다. 그가 처음 법칙을 제안했을 때 그 "일정 시간"은 1년 정도였다.
+캘리포니아 공과대학(CalTech) 화학 박사이자 인텔의 공동창립자인 고든 무어(Gordon Moore, 1929 \~ 2023) 교수는 관찰을 통해 일정 시간동안 컴퓨터 반도체에 집적되는 트랜지스터 수가 2배 이상 증가한다는 "무어의 법칙(Moore's Law)"을 제시했다. 그가 처음 법칙을 제안했을 때 그 "일정 시간"은 1년 정도였다.
 
 #quote-box()[
   The complexity for minimum component costs has increased at a rate of roughly a factor of two per year. Certainly over the short term this rate can be expected to continue, if not to increase. Over the longer term, the rate of increase is a bit more uncertain, although there is no reason to believe it will not remain nearly constant for at least 10 years.
@@ -14,7 +19,7 @@
   -- Gordon Moore, 1965, "Electronics" 紙
 ]
 
-10년 뒤인 1975년, 무어는 법칙을 2년 마다 두 배로 증가한다고 수정했다. 열역학 제 2법칙의 등 여러 한계 때문에 증가 속도는 앞으로도 줄어들 예정이다. 오늘날 트랜지스터는 대략 50개의 원자 내외의 두께로 되어 있는데, 이대로 간다면 우리는 곧 원자 크기의 한계에 직면할 것이고, 물리 법칙이 달라지게 된다. 
+10년 뒤인 1975년, 무어는 법칙을 2년 마다 두 배로 증가한다고 수정했다. 열역학 제 2법칙의 등 여러 한계 때문에 증가 속도는 앞으로도 줄어들 예정이다. 오늘날 트랜지스터는 대략 50개의 원자 내외의 두께로 되어 있는데, 이대로 간다면 우리는 곧 원자 크기의 한계에 직면할 것이고, 그때 작용하는 물리 법칙은 이전과 달라지게 된다. 
 
 한 개의 원자는 한 뭉탱이의 원자와 전혀 다르게 행동하는데(적어도 그렇게 보이는데), 원자 뭉탱이는 고전역학의 지배를 받는 반면 원자 한 개는 양자역학의 지배를 받는다. 원자가 뭉탱이로 있을 때는, 큰수의 법칙에 따라 양자역학에 의한 확률적 현상들이 평균으로 수렴하여 무시해도 될 정도가 된다. 이 말은, 계속해서 트랜지스터 개수를 늘리기 위해 칩의 크기를 줄인다면(즉 집적도를 늘린다면) 곧 디지털 컴퓨터를 설계할 때도 양자 터널링#footnote[나중에 자세히 알아볼 것이므로 앞뒤 다 자르고 간단히 설명하자면, 트랜지스터 크기가 \~ 1 nm 정도로 작아지게 되면, 양자역학적 효과로 인해 전자가 트랜지스터 내부의 절연막을 개무시하고 통과해버릴 수 있다. 즉, 정보 저장 및 계산의 정확성이 보장되지 않는다.] 등의 양자역학적 효과를 고려해야한다는 뜻이다.
 
@@ -67,7 +72,7 @@ $
 $
   & ket(psi) = alpha_1 ket(arrow.t arrow.t) + alpha_2 ket(arrow.t arrow.b) + alpha_3 ket(arrow.b arrow.t) + alpha_4 ket(arrow.b arrow.b) \
   <==> & ket(psi) = alpha_1 ket(1 1) + alpha_2 ket(1 0) + alpha_3 ket(0 1) + alpha_4 ket(0 0) \
-  & "where " a_i in CC and sum abs(a_i)^2 = 1
+  & "where " a_i in CC and sum_i abs(a_i)^2 = 1
 $
 
 이것을 2-큐비트라고 한다. 여기서 볼 수 있듯, 2-큐비트는 두 개의 고전적인 비트에서 가능한 모든 고전적 상태를 선형 결합으로 갖는다. 이제, 2-큐비트에서 $n$-큐비트로 어떻게 갈지 알 수 있다. 고전적 비트 상태 $n$개를 저장하는 $n$-큐비트는 아래와 같이 문자열로 표현할 수 있다.
@@ -121,4 +126,4 @@ $ <generalQuantumState>
 
 보다시피, 양자 알고리즘을 설계하는 것은 매우 어려운 일이다. 현재 알려진 것들 중 실제로 유용한 양자 알고리즘은 얼마 없으며, 양자컴퓨팅 이론을 발전시켜 유용하고 효과적인 양자 알고리즘을 더 많이 만들어서 자연이 제공하는 방대한 양의 메모리 용량을 자유롭게 사용할 수 있게 되는 것이 미래의 목표가 되겠다. 하지만, 양자 알고리즘을 설계하는 것 외에, 실제로 양자컴퓨터를 설계하여 만드는 것도 매우 어려운 일#footnote[주석을 작성하는 현재는 좀 더 높은 온도에서 작동하는 양자컴퓨터도 있으나, 여전히 대표적인 대기업들의 선두주자 양자컴퓨터들은 수 켈빈 단위의 초저온에서밖에 작동하지 못한다.]이므로, 이러한 목표를 달성하기 위해서는 수많은 노력이 지속적으로 필요할 것이다.
 
-이 책에서는 이론적인 부분과 함께, 물리적으로 양자컴퓨터를 실현하는 방법과, 그 앞에 닥친 어려움에 대해서도 이야기해 보겠다.
+여기서는 이론적인 부분과 함께, 물리적으로 양자컴퓨터를 실현하는 방법과, 그 앞에 닥친 어려움에 대해서도 이야기해 보겠다.
