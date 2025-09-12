@@ -53,7 +53,7 @@
         font: ("STIX Two Text", "KoPubBatang"),
         font-math: "Erewhon Math",
         font-mono: "Inconsolata",
-        font-size: 10.5pt,
+        font-size: 10pt,
         heading-weight: "bold",
         cover-bgcolor: rgb("#ffffff"),
         cover-txtcolor: luma(0%),
@@ -74,8 +74,8 @@
 
 #set par(
   justify: false,
-  leading: 1.75em,
-  spacing: 1.8em
+  leading: 1.3em,
+  spacing: 1.7em
 )
 
 = Prelude
@@ -103,3 +103,4 @@
 = Discovery
 #include "chapters/3-1.typ"
 #pb
+#include "chapters/3-2.typ"
