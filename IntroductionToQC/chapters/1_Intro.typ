@@ -4,19 +4,25 @@
 
 == 시작하기 전에
 
+=== 표기법 알림
+$z$의 켤레복소수는 보통 수학에서 $overline(z)$, 물리학에서 $z^*$처럼 하는 것이 관례이다. 하지만 복잡한 식에 켤레를 씌울 때는 $overline(z)$가 가독성이 좋다고 판단되어 여기서는 켤레를 $overline(z)$로 나타낸다.
+
+벡터는 $vb(v)$와 같이 굵은 이탤릭(italic)으로 쓴다. $vbu(v)$와 같은 굵은 인쇄체(upright roman)보다 가독성이 좋을 것으로 판단되기 때문이다. ISO(국제표준화기구)에서도 벡터는 굵은 이탤릭 $vb(v)$ 또는 이탤릭 화살표 액센트 $va(v)$ 로 쓸 것을 권장하고 있다. 다만 $va(v)$ 꼴은 가독성이 떨어지며 유클리드 공간 상의 벡터로 그 의미가 한정되기 때문에 현재 고등교육 이상에서는 특별한 경우가 아니면 잘 쓰이지 않는다.
+
+연산자는 $hat(A)$처럼 모두 $hat$ 액센트를 붙이는 것이 관례이나, 혼동이 없는 범위에서는 가독성을 위해 붙이지 않았다.
+
 === 참고문헌 알림
 이 문서는 캐나다 Carleton 대학의 수학 교수 Yuly Billig의 온라인 강의 『Quantum Computing』을 강하게 참고하였다. 이외에도 David J. Griffiths 외의 『Introduction to Quantum Mechanics』3판, R. Shankar의 『Principle of Quantum Mechanics』도 참고했다. 
 
 == 무어의 법칙
 캘리포니아 공과대학(CalTech) 화학 박사이자 인텔의 공동창립자인 고든 무어(Gordon Moore, 1929 \~ 2023) 교수는 관찰을 통해 일정 시간동안 컴퓨터 반도체에 집적되는 트랜지스터 수가 2배 이상 증가한다는 "무어의 법칙(Moore's Law)"을 제시했다. 그가 처음 법칙을 제안했을 때 그 "일정 시간"은 1년 정도였다.
 
-#quote-box()[
+#quote(attribution: [Gordon Moore, 1965, "Electronics" 紙])[
   The complexity for minimum component costs has increased at a rate of roughly a factor of two per year. Certainly over the short term this rate can be expected to continue, if not to increase. Over the longer term, the rate of increase is a bit more uncertain, although there is no reason to believe it will not remain nearly constant for at least 10 years.
   #footnote[
   최소 구성 요소 비용에 대한 복잡성은 연간 약 두 배 비율로 증가했습니다. 단기적으로 이 경향은 비율이 증가하지 않더라도 확실히 계속될 것으로 예상할 수 있습니다. 장기적으로 보면 증가율이 다소 불확실하지만 적어도 10년 동안 거의 일정할 것이라고 못 할 이유는 없습니다.
-]
+  ]
 
-  -- Gordon Moore, 1965, "Electronics" 紙
 ]
 
 10년 뒤인 1975년, 무어는 법칙을 2년 마다 두 배로 증가한다고 수정했다. 열역학 제 2법칙의 등 여러 한계 때문에 증가 속도는 앞으로도 줄어들 예정이다. 오늘날 트랜지스터는 대략 50개의 원자 내외의 두께로 되어 있는데, 이대로 간다면 우리는 곧 원자 크기의 한계에 직면할 것이고, 그때 작용하는 물리 법칙은 이전과 달라지게 된다. 

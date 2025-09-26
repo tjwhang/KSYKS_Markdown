@@ -1,0 +1,41 @@
+\documentclass[a4paper,12pt]{article}
+
+% 한글 쓰려면 LuaLaTeX 또는 XeLaTeX 권장
+\usepackage{fontspec}
+\usepackage{ucharclasses}
+\usepackage{xeCJK}
+
+% \usepackage{amsmath, amssymb}
+% \usepackage{mathtime}
+\usepackage{unicode-math}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\setmainfont[
+  Path=C:/WINDOWS/Fonts/,
+  UprightFont=STIXTwoText-Regular.otf,
+  BoldFont=STIXTwoText-Bold.otf,
+  ItalicFont=STIXTwoText-Italic.otf,
+  BoldItalicFont=STIXTwoText-BoldItalic.otf
+]{STIX Two Text}
+
+\setCJKmainfont{Source Han Serif K}
+
+\setmathfont{STIX Two Math}
+
+\begin{document}
+
+\section{Introduction}
+테스트 문장: 한글, English, 数学, α, β, \textit{italic} 
+
+\textit{italic}
+
+\[
+    i \hbar  \frac{\partial}{\partial t} \psi = - \frac{\hbar ^{2}}{2m} \psi + V(x) \psi  
+\]
+
+\(V_{\lambda } \) 
+
+\end{document}

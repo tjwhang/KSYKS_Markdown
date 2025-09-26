@@ -40,7 +40,7 @@ $
 
 먼저, 우리가 아는 벡터 표기법은 아래와 같습니다. 굵은 글씨로 쓰는 것은 위에 화살표를 쓰는 것보다 가독성이 좋다는 장점이 있으며, 기울일지 바로 세울지는 정해져 있지 않습니다.
 $
-  va(v) = vb(v) = vbu(v)
+  va(v) = vb(v) = vb(v)
 $
 켓을 사용한 표기는 아래와 같습니다.
 $
@@ -49,12 +49,12 @@ $
 
 브라는 일종의 연산자로서, 옆에 오는 항과의 내적(inner product, dot product)을 의미합니다.
 $
-  va(v) dot {} = innerproduct(vbu(v), {}) = bra(v)
+  va(v) dot {} = innerproduct(vb(v), {}) = bra(v)
 $
 
 어떤 벡터가 브라에 결합하면 아래와 같이 됩니다.
 $
-  bra(a) ket(b) = braket(a, b) = vbu(a) dot vbu(b)
+  bra(a) ket(b) = braket(a, b) = vb(a) dot vb(b)
 $
 
 이러한 브라-켓 표기법으로, 힐베르트 공간의 원소인 벡터를 통해 양자 상태를 $ket(psi)$처럼 표현하게 됩니다. 이것에 대한 이야기도 나중에 자세히 하겠습니다.

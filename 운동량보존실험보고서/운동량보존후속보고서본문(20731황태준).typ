@@ -542,12 +542,12 @@ $
 
 또, 파동 함수 위상에 대해서도 비슷한 관계가 있다.
 $
-  psi = A e^(i(vb(upright(k)) dot vb(upright(r)) - omega t))
+  psi = A e^(i(vbu(upright(k)) dot vbu(upright(r)) - omega t))
 $
 이때 아래가 성립한다.
 $
-  & vb(upright(k)) = p / hbar \
-  & vb(upright(k)) dot vb(upright(r)) = (p dot r) / hbar \
+  & vbu(upright(k)) = p / hbar \
+  & vbu(upright(k)) dot vbu(upright(r)) = (p dot r) / hbar \
   & S = p dot r = integral p dif q
 $
 

@@ -7,12 +7,12 @@
 
 상태 공간 $V$는 에르미트 내적이 성립하는 복소 벡터공간이었다.
 
-관측가능량이란 $V$ 상의 자기 수반(self-adjoint) 연산자 또는, 다른 말로 에르미트(Hermitian) 연산자이다.
+관측가능량(觀測可能量, observable)이란 $V$ 상의 자기 수반(self-adjoint) 연산자 또는, 다른 말로 에르미트(Hermitian) 연산자이다. 직관적인 의미는 말 그대로 측정할 수 있는 양이라는 뜻이며, 가측량(可測量)이라고도 한다.
 
 #definition(title: [자기 수반 연산자])[
   $A: V -> V$인 어떤 연산자 $A$에 대해 다음이 성립하면 $A$는 자기 수반 연산자(에르미트 연산자)이다.
   $
-    forall vbu(v), vbu(w) in V quad braket(vbu(v), A vbu(w)) = braket(A vbu(v), vbu(w))
+    forall vb(v), vb(w) in V quad braket(vb(v), A vb(w)) = braket(A vb(v), vb(w))
   $
 
   이때 아래가 성립한다.
@@ -23,13 +23,13 @@
 
 $CC^N$ 상에서 다음과 같은 에르미트 내적을 보자.
 $
-  braket(vbu(v), vbu(w)) = overline(vbu(v))^TT dot vbu(w)
+  braket(vb(v), vb(w)) = overline(vb(v))^TT dot vb(w)
 $
 
 또, 다음 연산을 보자.
 $
-  & braket(vbu(v), A vbu(w)) = overline(vbu(v))^TT dot A dot vbu(w) \
-  & braket(A vbu(v), vbu(w)) = overline((A vbu(v)))^TT dot vbu(w) = overline(vbu(v))^TT dot overline(A)^TT dot vbu(w)
+  & braket(vb(v), A vb(w)) = overline(vb(v))^TT dot A dot vb(w) \
+  & braket(A vb(v), vb(w)) = overline((A vb(v)))^TT dot vb(w) = overline(vb(v))^TT dot overline(A)^TT dot vb(w)
 $
 
 그러므로 @defSelfJointOperator 에서 $A$가 에르미트 연산자이려면 아래가 성립해야 한다.
@@ -37,10 +37,10 @@ $
   A = overline(A)^TT = A^dagger
 $
 
-이때 $overline(A)^TT$를 $A$의 켤레 전치(conjugate transpose) 또는 에르미트 전치(Hermitian transpose)라고 하며, $A^dagger$라고도 쓴다#footnote[$dagger$는 단검을 본따 만든 기호로, $A^dagger$는 'A dagger'라고 읽는다.].
+이때 $overline(A)^TT$를 $A$의 켤레 전치(conjugate transpose) 또는 에르미트 전치(Hermitian transpose)라고 하며, $A^dagger$라고도 쓴다#footnote[$dagger$는 단검을 본따 만든 기호로, 한국어로는 칼표라고 하며, $A^dagger$는 'A dagger'라고 읽는다.].
 
 #exercise[
-  연산자 $A$에 대해 $A$가 에르미트 연산자이려면 $A = overline(A)^TT$가 성립해야함을 엄밀히 증명하여라. $vbu(v)$의 기저를 $hat(i)$, $vbu(w)$의 기저를 $hat(j)$로 놓으면 위 등식은 $a_(i j) = overline(a_(j i))$와 동치이다.
+  연산자 $A$에 대해 $A$가 에르미트 연산자이려면 $A = overline(A)^TT$가 성립해야함을 엄밀히 증명하여라. $vb(v)$의 기저를 $hat(i)$, $vb(w)$의 기저를 $hat(j)$로 놓으면 위 등식은 $a_(i j) = overline(a_(j i))$와 동치이다.
 ]
 
 이 연산자 $A$를 실수부와 허수부로 나누자. $B$와 $C$는 실수 행렬이다.
@@ -90,32 +90,32 @@ $
 ]
 
 #proof[
-  1. $vbu(v)$가 $A$의 고유벡터라고 하자. 즉, $A vbu(v) = lambda vbu(v)$이다.
+  1. $vb(v)$가 $A$의 고유벡터라고 하자. 즉, $A vb(v) = lambda vb(v)$이다.
   $
-    braket(vbu(v), A vbu(v)) = braket(vbu(v), lambda vbu(v)) = lambda braket(vbu(v), vbu(v))
+    braket(vb(v), A vb(v)) = braket(vb(v), lambda vb(v)) = lambda braket(vb(v), vb(v))
   $
   이때 $A$는 자기 수반 연산자이므로 다음도 성립한다.
   $
-    braket(vbu(v), A vbu(v)) = braket(A vbu(v), vbu(v)) = braket(lambda vbu(v), vbu(v)) = overline(lambda) braket(vbu(v), vbu(v))
+    braket(vb(v), A vb(v)) = braket(A vb(v), vb(v)) = braket(lambda vb(v), vb(v)) = overline(lambda) braket(vb(v), vb(v))
   $
-  고윳값의 정의에 따라 $vbu(v) != 0$이다. 즉, $braket(vbu(v), vbu(v))!=0$이다. 이제 아래 등식
+  고윳값의 정의에 따라 $vb(v) != 0$이다. 즉, $braket(vb(v), vb(v))!=0$이다. 이제 아래 등식
   $
-    lambda braket(vbu(v), vbu(v)) = overline(lambda) braket(vbu(v), vbu(v))
+    lambda braket(vb(v), vb(v)) = overline(lambda) braket(vb(v), vb(v))
   $
   에 의해 $lambda = overline(lambda)$이므로 $lambda in RR$이다.
 
-  2. $A$의 두 고유벡터 $vbu(v), vbu(w)$에 대해
+  2. $A$의 두 고유벡터 $vb(v), vb(w)$에 대해
   $
-    & A vbu(v) = lambda vbu(v) \
-    & A vbu(w) = mu vbu(v) \
+    & A vb(v) = lambda vb(v) \
+    & A vb(w) = mu vb(v) \
     & "s.t. " lambda != mu and lambda, mu in RR
   $
   일 때,
   $
-    braket(vbu(v), A vbu(w)) & = braket(vbu(v), A mu vbu(w)) = mu braket(vbu(v), vbu(w))\ 
-    &= braket(A vbu(v), vbu(w)) = braket(lambda vbu(v), vbu(w)) = lambda braket(vbu(v), vbu(w)) \
-    => & (lambda - mu) braket(vbu(v),vbu(w)) = 0 \
-    therefore & braket(vbu(v), vbu(w)) = 0 quad because lambda != mu
+    braket(vb(v), A vb(w)) & = braket(vb(v), A mu vb(w)) = mu braket(vb(v), vb(w))\ 
+    &= braket(A vb(v), vb(w)) = braket(lambda vb(v), vb(w)) = lambda braket(vb(v), vb(w)) \
+    => & (lambda - mu) braket(vb(v),vb(w)) = 0 \
+    therefore & braket(vb(v), vb(w)) = 0 quad because lambda != mu
   $
 
   이처럼 임의의 두 고유벡터 간 내적이 0이므로, 각 고유벡터는 대해 직교한다.
@@ -128,18 +128,18 @@ $
 
 이 행렬의 고유벡터는
 $
-  vbu(v)_1 = vec(1, i) \
-  vbu(v)_2 = vec(1, -i)
+  vb(v)_1 = vec(1, i) \
+  vb(v)_2 = vec(1, -i)
 $
 따라서
 $
-  & A vbu(v)_1 = vec(0, 0), quad lambda_1 = 0 \
-  & A vbu(v)_2 = vec(2, -2 i), quad lambda_2 = 2
+  & A vb(v)_1 = vec(0, 0), quad lambda_1 = 0 \
+  & A vb(v)_2 = vec(2, -2 i), quad lambda_2 = 2
 $
 
 $A$의 실수부는 대칭이고 허수부는 비대칭이므로 $A$는 자기 수반 행렬이다. 이때 고유벡터는 실수가 아니지만 고윳값 $lambda_1, lambda_2$는 모두 실수이다. 또, 두 고유벡터를 내적하면
 $
-  braket(vbu(v)_1, vbu(v)_2) &= overline(vbu(v)_1)^TT vbu(v)_2 \
+  braket(vb(v)_1, vb(v)_2) &= overline(vb(v)_1)^TT vb(v)_2 \
   &= vecrow(1, -i) vec(1, -i) = 1 - 1 = 0
 $
 이므로 고유벡터끼리 직교한다는 것도 알 수 있다. 이로써 정리가 성립함을 확인해 볼 수 있었다.
@@ -148,10 +148,10 @@ $
 #theorem(title: [자기 수반 연산자의 스펙트럼 정리])[
   유한차원 에르미트 공간 $V$ 상의 자기 수반 연산자 $A$는 대각화할 수 있다.
 
-  $V = {vbu(v)_1, ..., vbu(v)_N}$에 직교하고 실수 고윳값을 갖는 $A$의 고유벡터가 존재한다.
+  $V = {vb(v)_1, ..., vb(v)_N}$에 직교하고 실수 고윳값을 갖는 $A$의 고유벡터가 존재한다.
   $
-    & A vbu(v)_j = lambda_j vbu(v)_j wide "where " lambda_j in RR\
-    & braket(vbu(v)_j, vbu(v)_k) = 0 wide "if " j != k
+    & A vb(v)_j = lambda_j vb(v)_j wide "where " lambda_j in RR\
+    & braket(vb(v)_j, vb(v)_k) = 0 wide "if " j != k
   $
 ]
 
@@ -164,26 +164,26 @@ $
 
 우리는 앞서 벡터의 내적을 이렇게 표기함을 배웠다.
 $
-  iprod(vbu(v), vbu(w)) equiv braket(vbu(v), vbu(w)) = overline(vbu(v))^TT dot vbu(w)
+  iprod(vb(v), vb(w)) equiv braket(vb(v), vb(w)) = overline(vb(v))^TT dot vb(w)
 $
 
 그런데 물리학자들은 이 표기를 반갈죽내서 사용하기로 했다.
 
-$ket(vbu(w))$는 우리가 관습적으로 사용하는 일반적인 열 벡터이다.
-$bra(vbu(v))$는 $overline(vbu(v))^TT$로 행벡터이다.
+$ket(vb(w))$는 우리가 관습적으로 사용하는 일반적인 열 벡터이다.
+$bra(vb(v))$는 $overline(vb(v))^TT$로 행벡터이다.
 
 자기 수반 연산자에서 다음이 성립했었다.
 $
-  braket(vbu(v), A vbu(w)) = braket(A vbu(v), vbu(w))
+  braket(vb(v), A vb(w)) = braket(A vb(v), vb(w))
 $
 
 이건 곧 
 $
-  overline(vbu(v))^TT dot A dot vbu(w) = overline((A vbu(v)))^TT dot vbu(w) = overline(vbu(v))^TT overline(A)^TT vbu(w)
+  overline(vb(v))^TT dot A dot vb(w) = overline((A vb(v)))^TT dot vb(w) = overline(vb(v))^TT overline(A)^TT vb(w)
 $
 이라는 뜻이므로, 같은 연산에 대해 표기를 다음과 같이 하기도 한다.
 $
-  braket(vbu(v), A vbu(w)) = braket(A vbu(v), vbu(w)) = braket(vbu(v), A, vbu(w))
+  braket(vb(v), A vb(w)) = braket(A vb(v), vb(w)) = braket(vb(v), A, vb(w))
 $
 연산자 $A$가 양 옆 아무데나 작용할 수 있다는 뜻이다.
 
@@ -201,7 +201,7 @@ $
 
 이제 이 광자가 수직 편광 필터로 들어가면 어떻게 될까? 결론적으로, 이 측정의 결과는 확률적이고, 가능한 결과는 두 가지가 있다.
 - $sin^2 alpha$의 확률로 필터를 통과한다. 이때 광자는 수직 편광 상태가 된다.
-- $cos^2 alpha$의 확률로 필터에서 튕겨나온다. 이때 광재는 수평 편광 상태가 된다.
+- $cos^2 alpha$의 확률로 필터에서 튕겨나온다. 이때 광자는 수평 편광 상태가 된다.
 
 중요한 것은, 정설로 받아들여지는 코펜하겐 해석에 의하면 광자는 필터에 들어가기 전에는 수직 편광 상태도 수평 편광 상태도 아니었다. 
 
@@ -310,4 +310,300 @@ $
   psi = a_0 ket(000) + a_1 ket(001) + ... + a_7 ket(111)
 $
 
-여기서 우리는 벡터 공간을 측정값이 0인 것과 1인 것으로 나누어 볼 수 있다. 
+여기서 우리는 벡터 공간을 측정값이 0인 것과 1인 것으로 나누어 볼 수 있다. 다음과 같이 생각하면,
+$
+  ket(000), ket(001), ket(010), ket(011) space : lambda = 0 \
+  ket(100), ket(101), ket(110), ket(111) space : lambda = 1
+$
+전체 벡터공간을 두 개의 부분적 고유공간으로 나누어 볼 수 있다.
+$
+  V = V_0 plus.circle V_1
+$
+
+그러므로 상태벡터는
+$
+  psi = vb(v)_0 + vb(v)_1 \
+  "where " & vb(v)_0 = a_0 ket(000) + ... + a_3 ket(011) \
+  & vb(v)_1 = a_4 ket(100) + ... + a_7 ket(111)
+$
+
+이때 우리는 확률
+$
+  abs(vb(v)_0)^2 = sum_(k=0)^3 abs(a_k)^2
+$
+로 0을 관측하고 계는 새로운 상태로 $vb(v)_0/abs(vb(v)_0)$를 가진다.
+
+또, 확률
+$
+  abs(vb(v)_1)^2 = sum_(k=4)^7 abs(a_k)^2
+$
+로 1을 관측하고 새로운 상태는 $vb(v)_1/abs(vb(v)_1)$이 된다.
+
+이렇게 $n$-큐비트의 상황에서 부분측정이 일어나는 예시를 알아보았다.
+
+== 퍼텐셜 우물에서 입자 물리량의 측정
+이번 예시에서는 무한 차원 상태공간의 경우를 보고자 한다. 퍼텐셜 우물 속의 입자에 대해 이야기하자.
+
+상태공간 $V$의 파동함수 $psi$들은 $[0, L]$의 구간에서 정의되는 복소함수이다.
+$
+  psi: [0, L] -> CC
+$
+
+또,
+$
+  psi(0) = psi(L) = 0
+$
+
+이 함수들의 에르미트 내적은
+$
+  iprod(psi, phi) = integral_0^L overline(psi(x)) phi(x) dif x
+$
+
+관측가능량으로는 운동량 연산자를 생각해 보자. 이 연산자 $hat(p)$의 식은 다음과 같다#footnote[$hat(p)$의 꼭지 $hat$은 hat이라고 하며, 말 그대로 모자 씌운 것과 비슷하다. 일반적으로 양자역학에서는 hat을 씌워 연산자라는 것을 표시한다. 본 문서에서는 편의를 위해 씌웠다가 안 씌웠다가 혼용하지만 씌우지 않을 경우 연산자라는 것을 명시한다.].
+$
+  hat(p) = - i hslash pdv(, x)
+$
+
+이 연산자가 함수 $psi$에 작용한다면
+$
+  hat(p) psi = - i hslash pdv(psi, x)
+$
+처럼 된다는 뜻이다.
+
+여기서 고유벡터는
+$
+  hat(p) psi = lambda psi
+$
+
+이 식은 미분방정식이다.
+$
+  - i hslash pdv(psi, x) = lambda psi \
+  pdv(psi, x) = (lambda i)/hslash psi
+$
+
+해는 쉽게 구할 수 있다.
+$
+  psi(x) = C exp(- (lambda i)/hslash x)
+$
+여기서 $C$는 정규화 상수이다.
+
+이 고유함수들은 평면파로, 크기가 항상 1이기 때문에 앞서 정해둔 조건 $psi(0) = psi(L) = 0$#footnote[이런 조건을 디리클레(Johann Dirichlet, 1805 \~ 1859) 경계 조건이라고 한다.]을 만족하지 않음을 확인할 수 있다. 이 때문에 일반적인 운동량 고유상태는 퍼텐셜 우물의 경계 조건을 만족하지 않는다.
+
+지난번에 우리는 슈뢰딩거 방정식을 이용해 경계 조건을 만족하는 기본적인 해를 구해보았다.
+$
+  psi = sin lambda_k x
+$
+
+이 사인 함수들은 지수 꼴로 나타낼 수 있다#footnote[왜인지 모르겠다면 오일러 공식 $e^(i x) = cos x + i sin x$으로 유도해 보아라. 다른 방법은 $cosh x = cos i x$, $sinh x = sin i x$라는 것을 이용하는 것이다.].
+$
+  sin lambda_k x = (exp(lambda_k i x) - exp(- lambda_k i x))/ (2i)
+$
+
+각 지수항은 $hat(p)$의 고유함수이다. 
+$
+  hat(p) e^(i lambda_k x) = (+ hslash lambda_k) e^(i lambda_k x) \
+  hat(p) e^(- i lambda_k x) = (- hslash lambda_k) e^(i lambda_k x)
+$
+
+즉 $1/2$의 확률로 운동량 $hslash lambda_k$, $1/2$의 확률로 운동량 $-hslash lambda_k$를 갖는다. 
+
+#exercise[
+  운동량 연산자 $hat(p)$가 자기 수반 연산자임을 보여라.
+]
+
+#solution[
+  $braket(psi, hat(p) phi) = braket(hat(p) psi, phi)$임을 보이면 된다.
+  $
+    "LHS" =& integral_0^L overline(psi(x)) dot i hslash phi(x) dif x \
+    =& cancel(evaluated(i hslash overline(psi) phi)_(x=0)^(x=L)) - integral_0^L i hslash overline(dv(psi, x)) phi(x) dif x \
+    because psi(0) = psi(L) = 0
+  $
+  이고
+  $
+    "RHS" =& integral_0^L overline(i hslash psi(x)) dot phi(x) dif x \
+    =& - integral_0^L hslash overline(dv(psi, x)) phi(x) dif x
+  $
+
+  따라서
+  $
+    markrect(hat(p) = hat(p)^dagger)
+  $
+  즉, $hat(p)$는 자기 수반 연산자이다.
+  #align(right, $qed$)
+]
+
+
+주의할 것은, 엄밀하게 말하면 디리클레 경계 조건 하에서 정의한 운동량 연산자는 대칭이지만 일반적으로 자기 수반은 아니다.
+
+또 하나 자연스럽게 측정할 수 있는 관측가능량은 위치이다. 위치연산자를 다음과 같다고 하자.
+$
+  hat(x) = x
+$
+
+$x in RR$이므로,
+$
+  braket(psi, hat(x) phi) = integral_0^L overline(psi(x)) x phi(x) dif x = integral_0^L overline(x psi(x)) phi(x) dif x = braket(hat(x) psi, phi)
+$
+와 같이 자명하게 자기 수반 연산자이다.
+
+
+$x$의 고유함수는 일반화 함수라고 하는 것들로, 델타함수(Dirac delta)라고 한다. 델타함수는 쉽게 말해 어떤 위치 $x=a$ 외에서는 그 값이 0인 함수를 말한다. $a$에서의 값은 무한대라고 두는 것이 보통이다. 델타함수는 다음과 같은 성질이 있다.
+$
+  integral_0^L delta_a (x) phi(x) dif x = phi(a)
+$
+
+즉 델타함수는 구간 $[0, L]$에서의 함수가 아니라, $V$ 상의 선형 사상으로 보아야 한다#footnote[델타함수는 일반적인 함수가 아니며, 일반화 함수(generalized function)이다.].
+
+델타함수는 아래와 같은 성질도 가진다. 즉 $hat(x)$의 고유함수가 된다.
+$
+  x delta_a (x) = a delta_a (x)
+$
+
+== 두 물리량의 동시 측정
+
+두 관측가능량에 대해, 그에 각각 대응하는 연산자 $A, B$에 대해 아래가 성립하면 두 양을 동시에 측정할 수 있다.
+$
+  A dot B = B dot A
+$
+
+이런 것을 가환(可換, commutable)이라고 하며, 두 연산자가 공통된 고유벡터 기저를 가지고 있다는 뜻과 같다.
+
+특히, $n$-큐비트에 대해 그 기저 고유벡터가 모두 같으므로 모든 큐비트의 값을 동시에 측정할 수 있다.
+
+전자의 스핀을 예시로 들어보자. 모든 방향으로 측정이 가능하므로, 각 방향의 관측가능량을 살펴보자. 먼저, $x$ 방향으로의 측정 연산자는 아래와 같다.
+$
+  1/2 sigma_1 = 1/2 mat(0, 1; 1, 0)
+$
+
+$y$ 방향으로의 연산자는
+$
+  1/2 sigma_2 = 1/2 mat(0, -i; i, 0)
+$
+
+$z$ 방향에 대응하는 관측가능량은
+$
+  1/2 sigma_3 = 1/2 mat(1, 0; 0, -1)
+$
+
+이때 $sigma_1, sigma_2, sigma_3$은 파울리 행렬이다. 각 행렬은 자기 수반이다. 실수부는 대칭이고 허수부는 반대칭이기 때문이다. 하지만, 이 행렬들은 비가환이다($sigma_j sigma_k != sigma_k sigma_j$). 즉, 서로 다른 방향에 대한 전자의 스핀은 동시에 측정할 수 없다. 실험적으로 생각해 보자. 전자의 스핀을 측정하려면 전자를 강한 자기장 안에 넣어야 했었다. 그런데 상식적으로, 한 번에 두 방향의 자기장을 한꺼번에 걸 수 있는가? 물론 가능이야 하겠지만 자기장은 합성이 될 것이지 각각의 순수한 방향에 대한 측정 결과를 내놓지 못할 것이다.
+
+비슷하게 퍼텐셜 우물 속 입자도 살펴보자. 우리는 두 관측가능량을 보았다.
+$
+  hat(p) = - i hslash pdv(, x) \
+  hat(x) = x
+$
+
+이제 두 연산자의 곱을 보자.
+$
+  hat(p) hat(x) (psi) &= - i hslash pdv(, x) [x psi(x)] \
+  &= - i hslash [psi(x) + psi'(x)]
+$
+또,
+$
+  hat(x) hat(p) (psi) &= - x i hslash psi'(x)
+$
+그러므로 $hat(p) hat(x) != hat(x) hat(p)$이다. 즉, 퍼텐셜 우물 속 입자의 위치와 운동량을 동시에 측정할 수 없다. 우리가 살펴본 운동량 연산자와 위치 연산자는 우리가 앞서 상정한 퍼텐셜 우물의 디리클레 조건 외에서도 성립하므로, 일반적으로 입자의 위치와 운동랴은 동시에 측정할 수 없다는 결론이 나온다. 이것은 하이젠베르크(Werner Heisenberg, 1901 \~ 1976)의 불확정성 원리(uncertainty principle)로 귀결된다.
+
+#theorem(title: [불확정성 원리])[
+  두 관측가능량 $hat(A), hat(B)$에 대해 다음이 성립한다.
+  $
+    Delta A Delta B
+    >= (1/2) abs(expval([hat(A), hat(B)]))
+  $
+]
+
+#proof[
+  먼저 다음을 상정한다. 아래 둘은 쉽게 증명 가능하므로 증명은 따로 하지 않는다.
+  - 에르미트 연산자의 기댓값은 실수이다.
+  - 반 에르미트 연산자#footnote[$hat(A)^dagger = - hat(A)$를 만족하는 연산자]의 기댓값은 순허수이다.
+  
+    이제 다음의 연산자를 약속하자.
+  $
+    Delta hat(A) = hat(A) - expval(A)
+  $
+  즉, 본래의 연산자에서 기댓값을 뺀 형태이다.
+
+  참고로
+  $
+    expval((Delta hat(A))^2)
+    =& expval((hat(A) - expval(A))^2) \
+    =& expval(hat(A)^2 - 2 hat(A) expval(A) + expval(A)^2) \
+    =& expval(A^2) - expval(A)^2 \
+    =& (Delta A)^2
+  $
+  으로 분산이 된다. $Delta A$는 표준편차이다#footnote[경우에 따라 $sigma_A$와 같이 쓰기도 한다.].
+
+  코시--슈바르츠 부등식에 의해 다음이 성립한다.
+  $
+    braket(ket(alpha), ket(alpha)) ,
+    braket(ket(beta), ket(beta))
+    >= abs(braket(ket(alpha), ket(beta)))^2
+  $
+
+  이제 임의의 $ket(xi)$에 대해
+  $
+    ket(alpha) = Delta hat(A) ket(xi) \
+    ket(beta)  = Delta hat(B) ket(xi)
+  $
+  라 놓자. 한편, $Delta hat(A)$는 쉽게 에르미트 연산자임을 보일 수 있어
+  $
+    braket(ket(alpha), ket(alpha)) 
+    =& expval((Delta hat(A))^2) braket(ket(beta), ket(beta)) \
+    =& expval((Delta hat(B))^2) braket(ket(alpha), ket(beta)) \
+    =& expval(Delta hat(A)  Delta hat(B))
+  $
+  가 되고, 다음을 얻는다.
+  $
+    expval((Delta hat(A))^2)  expval((Delta hat(B))^2)
+    >= abs(expval(Delta hat(A)  Delta hat(B)))^2
+  $
+  위에서 논한 결과로 대치하면,
+  $
+    (Delta A)^2 (Delta B)^2
+    >= abs(expval(Delta hat(A)  Delta hat(B)))^2
+  $
+  이제, 우변의 항을 구하는 것으로 귀결된다.
+
+  $
+    Delta hat(A)  Delta hat(B)
+    = (1/2) [Delta hat(A), Delta hat(B)]
+      + (1/2) {Delta hat(A), Delta hat(B)}
+  $
+  으로 교환자와 반교환자의 합으로 구성할 수 있다.
+
+  한편, 여기서 $[Delta hat(A), Delta hat(B)]$라는 연산자는 반 에르미트 연산자, ${Delta hat(A), Delta hat(B)}$라는 연산자는 에르미트 연산자인데,
+  $
+    expval(Delta hat(A)  Delta hat(B))
+    = (1/2)  expval([Delta hat(A), Delta hat(B)])
+      + (1/2)  expval({Delta hat(A), Delta hat(B)})
+  $
+  으로 쓸 수 있다.
+
+  위의 논의대로, 좌변의 1항은 실수가, 2항은 순허수가 나올 것이다. 이상에서
+  $
+    & abs(expval(Delta hat(A)  Delta hat(B)))^2 \
+    =& (1/4) abs(expval([Delta hat(A), Delta hat(B)]))^2
+      + (1/4) abs(expval({Delta hat(A), Delta hat(B)}))^2
+    >= (1/4) abs(expval([Delta hat(A), Delta hat(B)]))^2
+  $
+
+  이상에서 다음의 결론을 얻는다.
+  $
+    Delta A  Delta B
+    >= (1/2)  abs(expval([Delta hat(A), Delta hat(B)]))
+  $
+  쉽게 $[Delta hat(A), Delta hat(B)] = [hat(A), hat(B)]$임을 증명 가능하므로 최종적으로
+  $
+    markrect(Delta A Delta B>= (1/2) abs(expval([hat(A), hat(B)])))
+  $
+]
+
+특히, 위치와 운동량에 대해 둘은 정준교환자(canonical commutator)
+$
+  [hat(x), hat(p)] = i hslash
+$
+이므로,
+$
+  Delta x Delta p >= hslash/2
+$
+이 성립한다#footnote[이 부분은 양자컴퓨팅이 아니라 양자역학의 영역이므로 이해가 안 된다면 넘어가도 된다.].

@@ -8,11 +8,11 @@
 #definition(title: [벡터의 유클리드 노름])[
   벡터의 크기는 노름(norm), 또는 엄밀한 용어로 유클리드 노름(Euclidean norm)#footnote[유클리드 공간 상에서 벡터의 종점이 원점과 떨어진 거리를 의미한다. 벡터는 당연하게도 유클리드 공간 상에 있지 않을 수도 있는데, 이 때는 그 노름을 유클리드 노름이라고 하지 않으며 구하는 방법도 좌표계에 따라 다르다.] 정의하며, 일반적으로 아래와 같은 벡터
   $
-    vbu(v) = vec(a_1, dots.v, a_n)
+    vb(v) = vec(a_1, dots.v, a_n)
   $
   에 대해 그 노름은
   $
-    norm(vbu(v)) equiv abs(vbu(v)) = sqrt(sum_(i=1)^n abs(a_i)^2)
+    norm(vb(v)) equiv abs(vb(v)) = sqrt(sum_(i=1)^n abs(a_i)^2)
   $
 
   기호는 절댓값 기호 $abs(bullet)$를 사용하거나, 단순한 절댓값이 아닌 노름이라는 것을 보이기 위해 작대기 두 개로 감싼 노름 기호 $norm(bullet)$를 사용하기도 한다.
@@ -31,8 +31,8 @@ $
   V = CC^N
 $
 
-#let uu = $vbu(u)$
-#let vv = $vbu(v)$
+#let uu = $vb(u)$
+#let vv = $vb(v)$
 
 이 벡터 공간에 아래 두 개의 벡터가 있다고 하자. 
 $
@@ -128,9 +128,9 @@ $
 
 == 광자의 편광 상태
 
-우선, 광자는 전자기파이다. 즉, 운동하며 전기장과 자기장을 만든다. 전기장 $vbu(E)$와 자기장 $vbu(B)$는 서로 직교하는 방향으로 동시에 진동한다.
+우선, 광자는 전자기파이다. 즉, 운동하며 전기장과 자기장을 만든다. 전기장 $vb(E)$와 자기장 $vb(B)$는 서로 직교하는 방향으로 동시에 진동한다.
 
-광자가 $z$ 방향으로 진행한다고 가정하자. 전기장 $vbu(E)$가 $y$ 방향으로 진동할 때 광자가 수직 편광(vertical polarization)을 가졌다고 한다. 반대로, 전기장이 $x$ 방향으로 진동한다면 수평 편광(horizontal polarization)을 가졌다고 한다.
+광자가 $z$ 방향으로 진행한다고 가정하자. 전기장 $vb(E)$가 $y$ 방향으로 진동할 때 광자가 수직 편광(vertical polarization)을 가졌다고 한다. 반대로, 전기장이 $x$ 방향으로 진동한다면 수평 편광(horizontal polarization)을 가졌다고 한다.
 
 #let kat = $ket(arrow.t)$
 #let kar = $ket(arrow.r)$
@@ -234,17 +234,17 @@ $
 파울리 행렬은 관측가능량(observable)의 예시이다. 관측가능량에 대해서는 다음 장에서 더 자세히 알아보도록 하겠다.
 
 #definition(title: [고윳값과 고유벡터])[
-  벡터공간 $V$ 상의 어떤 선형변환(행렬) $A: V-> V$에 대하여 다음 식에 대해 0이 아닌 해 $vbu(v)$가 존재하면 스칼라 $lambda in CC$는 $A$의 고윳값(eigenvalue)이라고 한다.
+  벡터공간 $V$ 상의 어떤 선형변환(행렬) $A: V-> V$에 대하여 다음 식에 대해 0이 아닌 해 $vb(v)$가 존재하면 스칼라 $lambda in CC$는 $A$의 고윳값(eigenvalue)이라고 한다.
   $
-    A vbu(v) = lambda vbu(v)
+    A vb(v) = lambda vb(v)
   $
-  이때 해가 되는 벡터 $vbu(v)$는 고윳값 $lambda$에 대응하는 고유벡터(eigenvector)이다.
+  이때 해가 되는 벡터 $vb(v)$는 고윳값 $lambda$에 대응하는 고유벡터(eigenvector)이다.
 
   즉, 선형변환 $A$를 적용했을 때 방향은 바뀌지 않고 크기만 $lambda$배로 바뀌는 벡터가 고유벡터이다.
 
   또, 주어진 고윳값 $lambda$에 대해
   $
-    V_lambda = Set(vbu(v) in VV, A vbu(v) = lambda vbu(v))
+    V_lambda = Set(vb(v) in VV, A vb(v) = lambda vb(v))
   $
   로 정의되는 부분공간, 즉 같은 고윳값에 속한 고유벡터의 모임을 고유공간(eigenspace)라고 한다.
 ]
@@ -311,13 +311,34 @@ $
 
 이제 이 파동함수는 특별한 의미를 갖는다. $abs(psi(x))^2$은 확률 밀도를 나타내는 확률밀도함수(PDF, Probability Density Function)라는 것이다.
 
+왜 그럴까? 그에 대한 답은 그냥 실험적으로 들어맞는다는 것이 증명되었기 때문이다. 또, 수학적으로도 확률 보존을 보장한다. 
+
+#note-box(title: [$abs(psi)^2$의 확률로서의 수학적 정당성])[
+  시간 의존 슈뢰딩거 방정식에서 $P = abs(psi)^2$으로 두면 확률 보존을 보장한다.
+  $
+    i hslash pdv(psi, t) = - hslash^2/(2m) pdv(psi, x, 2) + V psi
+  $
+
+  $P = overline(psi) psi$ 에 대해 정리하면
+  $
+    pdv(P, t) + pdv(J, x) = 0
+  $
+  이다. 여기서 $J$는 확률 흐름 밀도(probability current)라고 하며,
+  $
+    J = - (i hslash)/ (2 m i) (pdv(psi, x) overline(psi)  - pdv(overline(psi), x) psi)
+  $
+  으로, 입자의 확률 밀도가 흐르는 정도를 나타낸다.
+]
+
+이런것을 postulate(가정)이라고 하며, 막스 보른(Max Born, 1882 \~ 1970)이 정립한 규칙으로 보른 규칙(Born rule)이라고 한다. 보른 규칙에 파동함수의 진폭의 제곱이 PDF라는 것이 포함되어 있다.
+
 이 상황에서 기본 상태들은 무엇일까? 이 공간의 기저벡터를 도출하기 위해서는 슈뢰딩거 방정식(Schrödinger equation)을 사용한다. 슈뢰딩거 방정식은 양자컴퓨팅 내부가 아닌 양자역학에서 다루는 내용이기 때문에, 여기서 따로 자세히 설명하지는 않는다.
 
 파동함수로 $psi$를 갖는 입자는 다음 슈뢰딩거 방정식을 만족하면 에너지 $E$를 갖는다.
 $
-  - hbar^2/(2 m) pdv(psi, x, 2) = E psi
+  - hslash^2/(2 m) pdv(psi, x, 2) = E psi
 $
-이때 $m$은 입자의 질량, $hbar = h / (2 pi)$이며, $hbar$는 디랙 상수(Dirac constant) 또는 환산 플랑크 상수(reduced Planck constant)라고 한다.
+이때 $m$은 입자의 질량, $hslash = h / (2 pi)$이며, $hslash$는 디랙 상수(Dirac constant) 또는 환산 플랑크 상수(reduced Planck constant)라고 한다.
 
 슈뢰딩거 방정식은 파동방정식의 일종으로, 다시 쓰면
 $
@@ -329,19 +350,19 @@ $
   psi = a cos lambda x + b sin lambda x
 $
 
-이때 $psi(0) = 0$이므로 $a=0$이다. 이제 식이 선형이므로 $b$를 날릴 수 있다.
+이때 $psi(0) = 0$이므로 $a=0$이다. 이제 식이 선형이므로 $b$를 없앨 수 있다#footnote[$b psi$가 해이면 $psi$도 해이기 때문이다.].
 $
   & psi = sin lambda x
 $
 
 $psi(L) = 0$이므로
 $
-  lambda L = 0 => lambda L = pi k, lambda_k = (pi K)/L
+  sin lambda L = 0 => lambda L = pi k, lambda_k = (pi K)/L
 $
 
 그런데 원래 방정식과 계수를 비교하여
 $
-  lambda_k^2 = (2 m E_k)/hbar^2
+  lambda_k^2 = (2 m E_k)/hslash^2
 $
 임을 알 수 있다(아랫첨자 $k$는 $k$에 대한 양이라는 뜻으로 임의로 붙인 것이다).
 
@@ -352,7 +373,7 @@ $
 
 이제
 $
-  E_k = (pi^2 k^2 hbar^2)/(2 m L^2)
+  E_k = (pi^2 k^2 hslash^2)/(2 m L^2)
 $
 로 입자들의 에너지 준위가 이산적이다.
 
@@ -362,6 +383,10 @@ $
 $
 로, 이것이 기저 함수들이 된다.
 
-우리는 이로서 무한 차원 에르미트 공간과 서로 각각 직교하는 기저들을 얻는다. 이제 일반 상태는 기저들의 중첩 또는 선형결합며, 푸리에 급수로 전개될 수 있게 된다.
+우리는 이로서 무한 차원 에르미트 공간과 서로 각각 직교하는 기저(정규직교 기저)들을 얻는다. 이제 일반 상태는 기저들의 중첩 또는 선형결합이며, 푸리에 급수로 전개될 수 있게 된다. 막연한 예를 들면 아래와 같다.
+
+$
+  ket(Psi) = sum_n a_n ket(psi_n) wide "where" a_n = braket(psi_n, Psi)
+$
 
 이번 장에서는 양자계의 상태에 대해 알아보았다. 다음 장에서는 관측가능량과 양자역학의 역사에 대해 알아보도록 하자.

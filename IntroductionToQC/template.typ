@@ -4,9 +4,13 @@
 #import "@preview/rich-counters:0.2.1": *
 #import "@preview/cetz:0.3.4"
 #import "@preview/cetz-plot:0.1.1"
+#import "@preview/mannot:0.3.0": *
+#import "@preview/tyipa:0.1.0" as ipa
+#import "@preview/rubby:0.10.2": get-ruby
+
 #show: show-theorion
 
-#import cosmos.clouds: *
+#import cosmos.fancy: *
 
 #let notag(content) = {
   math.equation(
@@ -17,7 +21,7 @@
 }
 
 #let cal(it) = math.class("normal", context {
-  show math.equation: set text(font: "Garamond-Math", stylistic-set: 3)
+  show math.equation: set text(font: "Garamond-Math", stylistic-set: 8)
 
   let scaling = 100% * (1em.to-absolute() / text.size)
   let wrapper = if scaling < 60% { math.sscript }
@@ -61,3 +65,13 @@
   numbering("(1.1.1)", h1, h2, n)
   */
 })
+
+
+#let ruby = get-ruby(
+  size: 0.5em,         // Ruby font size
+  dy: 0pt,             // Vertical offset of the ruby
+  pos: top,            // Ruby position (top or bottom)
+  alignment: "center", // Ruby alignment ("center", "start", "between", "around")
+  delimiter: "|",      // The delimiter between words
+  auto-spacing: true,  // Automatically add necessary space around words
+)
