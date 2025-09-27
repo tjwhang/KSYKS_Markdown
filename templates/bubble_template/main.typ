@@ -56,7 +56,7 @@
     #h(1fr) #counter(page).display("1")
   ],
   numbering: "1",
-  fill: rgb("c7c1a9").lighten(70%)
+  fill: rgb("c7c1a9").lighten(70%) // comment this when exporting for print
 )
 
 #set par(

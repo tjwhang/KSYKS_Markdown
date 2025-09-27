@@ -60,7 +60,7 @@
     #h(1fr) #counter(page).display("1")
   ],
   numbering: "1",
-  fill: rgb("c7c1a9").lighten(70%)
+  fill: rgb("c7c1a9").lighten(70%) // comment this when exporting for print
 )
 
 #set par(
@@ -82,7 +82,7 @@
     (
       name: "LXGW WenKai",
       covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"),
-    ), // 한자, 히라가나, 가타가나
+    ), // 한자, 히라가나, 가타카나
     //"STIX Two Text",
     "Source Han Serif K" // CJK Fallback 폰트
   ),
