@@ -9,43 +9,40 @@
 #import "@preview/tyipa:0.1.0" as ipa
 #import "@preview/rubby:0.10.2": get-ruby
 
-#import cosmos.fancy: *
-
 #import "template.typ": *
 
-#let title = [
-    #set text(font: "Libertinus Serif", weight: "bold")
-    Introduction to \ Quantum Computing
-]
+#let title = [전자기학 기초]
 
 #show: bubble.with(
     title: title,
-    subtitle: [양자컴퓨팅 기초],
-    author: "황태준",
-    affiliation: "중앙고등학교",
+    subtitle: [-- 자기장에 대하여],
+    author: "김 강",
+    affiliation: "용산고등학교",
     date: datetime.today().display(),
     year: "",
-    class: "2학년 7반 31번",
-    other: ("",),
-    logo: image("cahs_ico.svg"),
+    class: "",
+    other: ("역자: 중앙고등학교 황태준",),
+    logo: text([용산고등학교], fill: rgb("020051"), size: 13pt, font: "Source Han Sans K", weight: "bold"),
     color-words: ("important",),
-    main-color: "872434",
+    main-color: "020051",
 )
 
 #show: show-theorion
 #set math.mat(delim: "[")
 #set math.vec(delim: "[")
-
 #set quote(block: true)
 
-// show inline math as display
 #show math.equation.where(block: false): it => math.display(it)
+// show inline math as display
 
 #set page(
     paper: "a4",
     margin: 3.7cm,
     header: [
-        #align(horizon, [ \ \ \ \ #box(image("cahs_ico.svg", width: 8em), baseline: 3em)])
+        #align(horizon, [ \ \ \ \ #box(
+            text([용산고등학교], fill: rgb("020051"), size: 13pt, font: "Source Han Sans K", weight: "bold"),
+            baseline: 3em,
+        )])
         #align(right, title)
     ],
     footer: context [
@@ -66,12 +63,11 @@
 
 #set par(
     justify: false,
-    leading: 1.2em,
-    spacing: 1.8em,
+    leading: 1.35em,
+    spacing: 2em,
 )
 
 #show heading: set block(above: 2em, below: 1.3em)
-
 
 #set text(
     font: (
@@ -83,31 +79,26 @@
         (
             name: "LXGW WenKai",
             covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"),
-        ), // 한자, 히라가나, 가타카나
-        //"STIX Two Text",
-        "Source Han Serif K", // CJK Fallback 폰트
+        ), // 한자, 히라가나, 가타가나
+        "Source Han Serif K", // CJK fallback 폰트
     ),
     cjk-latin-spacing: none,
-    //weight: "thin"
 )
-
-
-
 #show math.equation: set text(
     font: (
         (
-            name: "Garamond-Math",
+            name: "New Computer Modern Math",
             covers: "latin-in-cjk",
         ),
-        "SunBatang",
+        "Batang",
     ),
     cjk-latin-spacing: none,
-    stylistic-set: (2, 4, 6, 7, 10, 11),
+    // weight: "regular",
+    // stylistic-set: (2, 4, 6, 7, 10, 11),
     // ^ Garamond 사용시, hslash -> hbar는 6
 
-    //stylistic-set: (2, 4),
+    // stylistic-set: (2, 4),
     // ^ STIX Two 사용시, hslash -> hbar는 3
-    weight: "thin",
 )
 
 #show heading.where(level: 1): it => {
@@ -144,7 +135,7 @@
 #show raw: set text(font: ("JetBrains Mono", "Source Han Sans K"))
 
 #show math.equation: it => {
-    let bb-font = "Garamond-Math"
+    let bb-font = "New Computer Modern Math" //Garamond-Math
     show regex(
         "𝔸|𝔹|ℂ|𝔻|𝔼|𝔽|𝔾|ℍ|𝕀|𝕁|𝕂|𝕃|𝕄|ℕ|𝕆|ℙ|ℚ|ℝ|𝕊|𝕋|𝕌|𝕍|𝕎|𝕏|𝕐|ℤ|𝕒|𝕓|𝕔|𝕕|𝕖|𝕗|𝕘|𝕙|𝕚|𝕛|𝕜|𝕝|𝕞|𝕠|𝕡|𝕢|𝕣|𝕤|𝕥|𝕦|𝕧|𝕨|𝕩|𝕪|𝕫",
     ): set text(font: bb-font)
@@ -155,10 +146,5 @@
 #outline(title: [목차], target: heading.where(level: 1))
 #pagebreak()
 
-#include "chapters/1_Intro.typ"
-#pagebreak()
-#include "chapters/2_QuantumStates.typ"
-#pagebreak()
-#include "chapters/3_Observables.typ"
-#pagebreak()
-#include "chapters/4_UnitaryOperators.typ"
+#include "chapters/0_Writers.typ"
+#include "chapters/5_Magnetostatics.typ"
