@@ -96,13 +96,13 @@
 #show math.equation: set text(
     font: (
         (
-            name: "Garamond-Math",
+            name: "Libertinus Math",
             covers: "latin-in-cjk",
         ),
         "SunBatang",
     ),
     cjk-latin-spacing: none,
-    stylistic-set: (2, 4, 6, 7, 10, 11),
+    // stylistic-set: (2, 4, 6, 7, 10, 11),
     // ^ Garamond 사용시, hslash -> hbar는 6
 
     //stylistic-set: (2, 4),

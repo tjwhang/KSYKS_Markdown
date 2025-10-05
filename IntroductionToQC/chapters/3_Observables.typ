@@ -37,7 +37,7 @@ $
   A = overline(A)^TT = A^dagger
 $
 
-이때 $overline(A)^TT$를 $A$의 켤레 전치(conjugate transpose) 또는 에르미트 전치(Hermitian transpose)라고 하며, $A^dagger$라고도 쓴다#footnote[$dagger$는 단검을 본따 만든 기호로, 한국어로는 칼표라고 하며, $A^dagger$는 'A dagger'라고 읽는다.].
+이때 $overline(A)^TT$를 $A$의 켤레 전치(conjugate transpose) 또는 에르미트 전치(Hermitian transpose)라고 하며, $A^dagger$라고도 쓴다#footnote[$dagger$는 단검을 본따 만든 기호로, 한국어로는 칼표라고 하며, $A^dagger$는 'A dagger'라고 읽는다. 수학에서는 켤레 전치를 $A^*$로 쓰기도 한다.].
 
 #exercise[
   연산자 $A$에 대해 $A$가 에르미트 연산자이려면 $A = overline(A)^TT$가 성립해야함을 엄밀히 증명하여라. $vb(v)$의 기저를 $hat(i)$, $vb(w)$의 기저를 $hat(j)$로 놓으면 위 등식은 $a_(i j) = overline(a_(j i))$와 동치이다.
