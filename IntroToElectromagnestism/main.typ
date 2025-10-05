@@ -22,7 +22,7 @@
     year: "",
     class: "",
     other: ("역자: 중앙고등학교 황태준",),
-    logo: text([용산고등학교], fill: rgb("020051"), size: 13pt, font: "Source Han Sans K", weight: "bold"),
+    logo: text([용산고등학교], fill: rgb("020051"), size: 25pt, font: "Source Han Sans K", weight: "bold"),
     color-words: ("important",),
     main-color: "020051",
 )
@@ -40,7 +40,7 @@
     margin: 3.7cm,
     header: [
         #align(horizon, [ \ \ \ \ #box(
-            text([용산고등학교], fill: rgb("020051"), size: 13pt, font: "Source Han Sans K", weight: "bold"),
+            text([용산고등학교], fill: rgb("020051"), size: 11pt, font: "Source Han Sans K", weight: "bold"),
             baseline: 3em,
         )])
         #align(right, title)
@@ -90,7 +90,7 @@
             name: "New Computer Modern Math",
             covers: "latin-in-cjk",
         ),
-        "Batang",
+        "KoPubBatang_Pro",
     ),
     cjk-latin-spacing: none,
     // weight: "regular",

@@ -44,7 +44,7 @@ $
     abs(vb(a) times vb(b)) = abs(vb(a)) abs(vb(b)) sin 90^degree = 20
 $
 이 되고, 좌표평면에 나타내면 아래와 같이 되어#footnote[필자가 그림을 참 못 그렸다.]
-#figure(image("oprod1.png", width: 60%), caption: [$vb(a) times vb(b)$를 나타낸 모습])
+#figure(image("oprod2.svg", width: 60%), caption: [$vb(a), vb(b)$의 법선벡터를 나타낸 모습])
 
 $vb(n) = hat(vb(z))$이 되는 것을 알 수 있다.
 
