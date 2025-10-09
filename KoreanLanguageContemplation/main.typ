@@ -13,17 +13,17 @@
 
 #import "template.typ": *
 
-#let title = [제목 입력]
+#let title = [제목 미정]
 
 #show: bubble.with(
     title: title,
-    subtitle: "부제목",
+    subtitle: "언어와 매체 심화탐구 보고서",
     author: "황태준",
     affiliation: "중앙고등학교",
     date: datetime.today().display(),
     year: "2025",
     class: "2학년 7반 31번",
-    other: ("",),
+    other: ("지도교사 국어과 유 미 선생님",),
     logo: image("logo.svg"),
     color-words: ("important",),
     main-color: "872434",
@@ -79,25 +79,26 @@
             name: "LXGW WenKai",
             covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"),
         ), // 한자, 히라가나, 가타가나
-        "Source Han Sans K", // CJK fallback 폰트
+        "Source Han Serif K", // CJK fallback 폰트
     ),
     cjk-latin-spacing: none,
 )
 #show math.equation: set text(
     font: (
         (
-            name: "Garamond-Math",
+            name: "STIX Two Math",
             covers: "latin-in-cjk",
         ),
-        "Sunbatang",
+        "Source Han Serif K",
     ),
     cjk-latin-spacing: none,
-    weight: "regular",
+    // weight: "thin",
     // stylistic-set: (2, 4, 6, 7, 10, 11),
     // ^ Garamond 사용시, hslash -> hbar는 6
 
-    stylistic-set: (2, 4),
+    // stylistic-set: (2, 4),
     // ^ STIX Two 사용시, hslash -> hbar는 3
+    stylistic-set: 8,
 )
 
 #show heading.where(level: 1): it => {
@@ -142,7 +143,10 @@
 }
 
 
-#outline(title: [목차], target: heading.where(level: 1))
+#outline(title: [목차])
 #pagebreak()
 
-#include "chapters/chapter1.typ"
+#include "chapters/1.typ"
+#include "chapters/2.typ"
+
+감사합니다.

@@ -43,7 +43,7 @@
 
 #set page(
     paper: "a4",
-    margin: 3.7cm,
+    margin: 3.4cm,
     header: [
         #align(horizon, [ \ \ \ \ #box(image("cahs_ico.svg", width: 8em), baseline: 3em)])
         #align(right, title)
@@ -99,7 +99,7 @@
             name: "Libertinus Math",
             covers: "latin-in-cjk",
         ),
-        "SunBatang",
+        "KoPubBatang_Pro",
     ),
     cjk-latin-spacing: none,
     // stylistic-set: (2, 4, 6, 7, 10, 11),
