@@ -78,6 +78,8 @@
   spacing: 1.7em
 )
 
+#include "chapters/0.typ" // 3-2.5
+
 = Prelude
 
 #include "chapters/1-1.typ"
