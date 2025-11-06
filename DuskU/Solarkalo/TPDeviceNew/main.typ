@@ -15,7 +15,7 @@
     font: (
         // "Source Han Serif K", // 가장 우선순위 폰트
         (
-            name: "STIX Two Text", // 라틴 폰트
+            name: "New Computer Modern", // 라틴 폰트
             covers: "latin-in-cjk",
         ),
         // (
@@ -23,10 +23,10 @@
         //     covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"),
         // ), // 한자, 히라가나, 가타카나
         //"STIX Two Text",
-        "Source Han Serif K", // CJK Fallback 폰트
+        "KoPubBatang_Pro", // CJK Fallback 폰트
     ),
     cjk-latin-spacing: none,
-    //weight: "thin"
+    // weight: "thin"
 )
 
 #show math.equation: set text(
@@ -63,7 +63,7 @@
     ),
     (
       name: "작가놈들",
-      institute: "작성: 황태준, 이은찬.",
+      institute: "작성: 황태준/이은찬.",
       address: "Solarkalo 가상 설정자료. 실제 이론 아님.",
       email: none
     ),

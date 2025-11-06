@@ -45,15 +45,15 @@
     chapter: auto,
     cfg: (
         numbering-style: auto,
-        page: "a5",
+        page: (width: 152mm, height: 225mm),
         lang: "dk",
         justify: false,
         first-line-indent: 1em,
-        margin: (x: 13%, y: 13%),
+        margin: (x: 15mm, y: 22mm),
         font: ("STIX Two Text", "KoPubBatang"),
         font-math: "Erewhon Math",
         font-mono: "Inconsolata",
-        font-size: 10pt,
+        font-size: 9pt,
         heading-weight: "bold",
         cover-bgcolor: rgb("#ffffff"),
         cover-txtcolor: luma(0%),
@@ -74,7 +74,7 @@
 
 #set par(
   justify: false,
-  leading: 1.3em,
+  leading: 1.4em,
   spacing: 1.7em
 )
 
@@ -106,3 +106,5 @@
 #include "chapters/3-1.typ"
 #pb
 #include "chapters/3-2.typ"
+#pb
+#include "chapters/3-3.typ"
