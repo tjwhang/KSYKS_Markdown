@@ -21,13 +21,13 @@ LLM을 정확하게 만드는 방법은 단순하다. 언어 모델이 언어를
 기계학습은 이렇게 엄청난 반복을 통한 확률적인 원리로 이루어지므로 학습 알고리즘은 인간이 설계하지만, 실제로 학습이 일어나는 과정과 학습 데이터를 기반으로 예측할 때 거치는 구체적 과정들은 그저 학습 데이터에 끼워맞춘 가중치에 의해 일어나는 무작위적인 현상에 불과하다. 이러한 특성은 모델이 특정 상황에서 특정 예측을 내놓는 원인을 파악하는 것을 매우 어렵게 한다.
 
 == 트랜스포머
-본래 트랜스포머는 구글에 근무하던 8명의 연구원이 쓴 "Attention Is All You Need"라는 논문에서 처음 제안되었다. 제목은 비틀즈의 노래인 "All You Need Is Love"를 패러디한 것이며, 처음 제안된 트랜스포머 구조의 목적은 영어와 독일어 간 번역이라고 한다. 이 트랜스포머는 AI 업계에 엄청난 파급력을 행사했고 AI 붐을 일으켰다. 현재 우리가 쓰는 ChatGPT, Gemini, Claude, 딥시크, LLaMA, Grok 등등의 챗봇 모델은 모두 트랜스포머 기반이다.
+본래 트랜스포머는 구글에 근무하던 8명의 연구원이 쓴 "Attention Is All You Need"#footnote[원문: https://arxiv.org/abs/1706.03762]라는 논문에서 처음 제안되었다. 제목은 비틀즈의 노래인 "All You Need Is Love"를 패러디한 것이며, 처음 제안된 트랜스포머 구조의 목적은 영어와 독일어 간 번역이라고 한다. 이 트랜스포머는 AI 업계에 엄청난 파급력을 행사했고 AI 붐을 일으켰다. 현재 우리가 쓰는 ChatGPT, Gemini, Claude, 딥시크, LLaMA, Grok 등등의 챗봇 모델은 모두 트랜스포머 기반이다.
 
 #quote(attribution: [Attention Is All You Need (2017), Ashish Vaswani, et al.])[
   The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.
   #footnote[
     현재 주류인 시퀀스 변환(sequence transduction) 모델들은 인코더-디코더 구조에서 복잡한 순환 신경망(RNN) 또는 합성곱 신경망(CNN)에 기반하고 있다. 현재 가장 우수한 성능을 내는 모델들은 또한 어텐션을 통해 인코더와 디코더를 연결한다. 우리는 '트랜스포머'라고 이름붙인 새로운 단순한 신경망 구조를 제안한다. 이는 전적으로 어텐션에만 기반하며, 순환(recurrence)과 합성곱(convolution)을 완전히 없앴다. 기계 번역 과제에 대한 두 개의 실험에서, 이 모델이 질적으로 더 우수할 뿐 아니라, 병렬화가 더 잘 되고 학습에 드는 시간도 현저히 적게 든다는 것을 보였다. 우리 모델은 WMT 2014 영어-독일어 번역 과제에서 BLEU 점수 28.4를 달성하였으며, 이는 (앙상블 모델들을 포함한) 기존의 최고 성능 결과보다 2 BLEU 이상 향상된 수치이다. 또한 WMT 2014 영어-프랑스어 번역 과제에서는 단일 모델 기준으로 BLEU 점수 41.8을 달성하며 최고 성능 신기록을 갱신했다. 이 모델은 8개의 GPU로 3.5일 동안 학습됐으며, 이는 현존 문헌에 보고된 최고 모델들의 학습 비용의 극히 일부에 불과하다. 영어 구문 분석 과제에 적용했을 때 대규모 학습 데이터와 제한된 학습 데이터 모두에서 우수한 결과를 얻음을 근거로, 트랜스포머는 다른 일반적인 작업도 잘 수행할 수 있음을 밝힌다 (필자 의역).
-  ].
+  ]
 ]
 
 이처럼 트랜스포머는 번역 작업 이외에도 음성인식, TTS, 그림 인식, 그림 생성, 일반적인 LLM 등의 역할을 범용적으로 수행할 수 있다. 트랜스포머의 작동원리를 좀 더 깊게 알아보자.
@@ -41,7 +41,8 @@ LLM을 정확하게 만드는 방법은 단순하다. 언어 모델이 언어를
 이런 시스템을 챗봇으로 사용하는 가장 간단한 방법은, 미리 다음과 같은 프롬프트를 주고
 #quote[
   아래는 사용자와 유능하고 매우 지능적인 AI 조수의 대화이다.\
-  사용자: (a)
+  사용자: (a) \
+  AI:
 ]
 
 사용자의 입력을 (a) 부분에 넣은 뒤 LLM에게 저 글 전체를 던져주면 그 다음에 오는 출력이 곧 챗봇의 응답이 되는 것이다. 이 방식은 지금도 쓰이고 있다. 이 원리를 안다면 요즘 챗봇 서비스에서 제공하는 개인 설정 프롬프트를 작성할 때 어떻게 작성하면 효과적인지도 알 수 있을 것이다.
@@ -215,6 +216,8 @@ $
 $
   "FFN"(x) = "max"(0, x W_1 + b_1) W_2 + b_2
 $
+신경망에서는 주로 ReLU인 활성화함수에 통과시킨다. 이때 미리 학습해놓은 데이터(주로 사실 관계 등)와 행렬곱(각 벡터에 대한 내적으로 볼 수 있다) 연산을 수행하여 현재의 의미가 사실관계와 얼마나 일치하는지를 확인하고 보정하는 과정이 일어난다는 추측이 있다#footnote[출처: https://www.alignmentforum.org/posts/iGuwZTHWb6DFY3sKB/fact-finding-attempting-to-reverse-engineer-factual-recall]#footnote[기계학습의 작동 방식 설계의 아이디어는 비교적 간단해 이해하기 쉽지만 왜 특정 학습 결과나 출력이 나타나는지 알아내는 것은 매우 어렵다. LLM이 사실관계를 확인하는 방법도 설계가 아니라 "현상" 중 하나인데, 사실관계 확인이 어떻게 일어나는지 제어가 어렵다는 것은 사실이 아닌 것을 뱉어내는 것도 제어하기 어렵다는 것이다. 그래서 AI 할루시네이션을 통제하기가 어렵다.].
+
 그 다음, 다시 어텐션을 하고 퍼셉트론에 보내는 것을 여러번 반복한다. 이때, 이미 지정된 문맥적 의미를 바탕으로 또 새로운 문맥적 의미가 추가되어 의미가 구체화되고 깊어지게 된다. 말하자면 단순히 문법적 구조를 파악하는 것을 벗어나, 문장의 의도가 무엇인지, 어떤 표현법이 사용되었는지, 정서는 어떤지 등등을 알아낼 수 있다고 기대하면서 여러번 이것을 반복하는 것이다.
 
 == 트랜스포머의 한계
