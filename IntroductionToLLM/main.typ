@@ -86,7 +86,7 @@
 #show math.equation: set text(
     font: (
         (
-            name: "Libertinus Math",
+            name: "STix two Math",
             covers: "latin-in-cjk",
         ),
         "Source Han Serif K",
@@ -96,9 +96,9 @@
     // stylistic-set: (2, 4, 6, 7, 10, 11),
     // ^ Garamond 사용시, hslash -> hbar는 6
 
-    // stylistic-set: (2, 4),
+    stylistic-set: (2, 4),
     // ^ STIX Two 사용시, hslash -> hbar는 3
-    stylistic-set: 8,
+    // stylistic-set: 8,
 )
 
 #show heading.where(level: 1): it => {
@@ -164,6 +164,3 @@ Abstract
 현재는 거대 언어 모델(LLM)#footnote[대규모 언어 모델? 그냥 편하고 엘엘엠이라고 하겠습니다.]의 시대이다. 물론 기초적인 형태의 언어 모델은 특정 목적을 위해서만 만들어지기도 했지만, 구글의 '트랜스포머' 모델 개발 이후 문장 전체의 문맥을 파악할 수 있게 된 언어 모델은 급격히 범용 인공지능을 향해 달려나가 발전하고 있다. 지금 유명한 모든 또는 거의 모든 인공지능 언어 모델은 트랜스포머에 기반한다.
 
 #include "chapters/1_NeuralNetwork.typ"
-#include "chapters/2_LLM.typ"
-
-감사합니다.

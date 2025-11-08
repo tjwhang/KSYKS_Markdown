@@ -13,20 +13,20 @@
 
 #import "template.typ": *
 
-#let title = [제목 입력]
+#let title = [Theoretical Implementation of Matter Teleportation via Spatial Phase Matching]
 
 #show: bubble.with(
     title: title,
-    subtitle: "부제목",
-    author: "황태준",
-    affiliation: "중앙고등학교",
-    date: datetime.today().display(),
-    year: "2025",
-    class: "2학년 7반 31번",
-    other: ("",),
-    logo: image("logo.svg"),
-    color-words: ("important",),
-    main-color: "872434",
+    subtitle: "공간위상 정합 기반 물질 전송 시스템의 이론적 구현",
+    author: "Myoung-Jin Lee",
+    affiliation: [現 K-NSRT technical advisor \ Ph.D. Physics, Mathematics, Computer Science \ Korean National Institute of Natural Science],
+    date: [October 14th, 2039],
+    year: "Copy date - November 25th, 2053",
+    class: "",
+    other: ("[Solarkalo 가상 설정자료]","작성: 황 (부정확하고 다소 개괄적일 수 있음)"),
+    //logo: image("logo.svg"),
+    //color-words: ("important",),
+    main-color: "101010",
 )
 
 #show: show-theorion
@@ -41,7 +41,7 @@
     paper: "a4",
     margin: 3.4cm,
     header: [
-        #align(horizon, [ \ \ \ \ #box(image("logo.svg", width: 8em), baseline: 3em)])
+        //#align(horizon, [ \ \ \ \ #box(image("logo.svg", width: 8em), baseline: 3em)])
         #align(right, title)
     ],
     footer: context [
@@ -57,7 +57,7 @@
         #h(1fr) #counter(page).display("1")
     ],
     numbering: "1",
-    fill: rgb("c7c1a9").lighten(70%), // comment this when exporting for print
+    // fill: rgb("c7c1a9").lighten(70%), // comment this when exporting for print
 )
 
 #set par(
@@ -86,7 +86,7 @@
 #show math.equation: set text(
     font: (
         (
-            name: "Garamond-Math",
+            name: "STIX Two Math",
             covers: "latin-in-cjk",
         ),
         "Sunbatang",
@@ -96,7 +96,7 @@
     // stylistic-set: (2, 4, 6, 7, 10, 11),
     // ^ Garamond 사용시, hslash -> hbar는 6
 
-    stylistic-set: (2, 4),
+    stylistic-set: (2, 3, 4),
     // ^ STIX Two 사용시, hslash -> hbar는 3
 
     // stylistic-set: 8,
@@ -148,4 +148,5 @@
 #outline(title: [목차], target: heading.where(level: 1))
 #pagebreak()
 
-#include "chapters/chapter1.typ"
+#include "chapters/1.typ"
+#include "chapters/2.typ"

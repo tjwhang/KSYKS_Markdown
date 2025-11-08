@@ -13,16 +13,16 @@
 
 #import "template.typ": *
 
-#let title = [제목 입력]
+#let title = [기댓값의 벡터 해석]
 
 #show: bubble.with(
     title: title,
-    subtitle: "부제목",
-    author: "황태준",
+    subtitle: "기하 2학기 개인주제탐구",
+    author: "20731 황태준",
     affiliation: "중앙고등학교",
     date: datetime.today().display(),
-    year: "2025",
-    class: "2학년 7반 31번",
+    year: "",
+    class: "",
     other: ("",),
     logo: image("logo.svg"),
     color-words: ("important",),
@@ -46,14 +46,6 @@
     ],
     footer: context [
         #align(right, line(length: 5em))
-        #text(
-            query(
-                selector(heading.where(level: 1)).before(here()),
-            )
-                .last()
-                .body,
-            size: 9pt,
-        )
         #h(1fr) #counter(page).display("1")
     ],
     numbering: "1",
@@ -86,10 +78,10 @@
 #show math.equation: set text(
     font: (
         (
-            name: "Garamond-Math",
+            name: "stix two Math",
             covers: "latin-in-cjk",
         ),
-        "Sunbatang",
+        "kopubbatang",
     ),
     cjk-latin-spacing: none,
     weight: "regular",
