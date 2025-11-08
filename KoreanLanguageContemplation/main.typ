@@ -13,7 +13,7 @@
 
 #import "template.typ": *
 
-#let title = [제목 미정]
+#let title = [국어에 대한 고찰?]
 
 #show: bubble.with(
     title: title,
@@ -57,7 +57,7 @@
         #h(1fr) #counter(page).display("1")
     ],
     numbering: "1",
-    fill: rgb("c7c1a9").lighten(70%), // comment this when exporting for print
+    //fill: rgb("c7c1a9").lighten(70%), // comment this when exporting for print
 )
 
 #set par(
