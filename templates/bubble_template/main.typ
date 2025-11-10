@@ -69,6 +69,7 @@
 #show heading: set block(above: 2em, below: 1.3em)
 
 #set text(
+    size: 10pt,
     font: (
         // "Source Han Serif K", // 가장 우선순위 폰트
         (
