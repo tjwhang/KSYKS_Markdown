@@ -1,0 +1,16 @@
+phys2:
+    type: Book
+    title: "고등학교 물리학Ⅱ"
+    date: 2015
+
+physa:
+    type: Book
+    title: "고등학교 고급물리학"
+    date: 2015
+
+mmcm:
+    type: Book
+    title: Mathematical methods of classical mechanics, Graduate Texts in Mathematics
+    author: Arnold, V. I.
+    date: 1989
+    edition: 2

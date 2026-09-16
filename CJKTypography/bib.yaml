@@ -1,0 +1,61 @@
+infdense:
+    type: Web
+    title: Human speech may have a universal transmission rate, 39 bits per second
+    author: ["Catherine Matatic"]
+    date: 2019-9-4
+    url: https://www.science.org/content/article/human-speech-may-have-universal-transmission-rate-39-bits-second
+
+infdense2:
+    type: Article
+    title: Different languages, similar encoding efficiency, Comparable information rates across the human communicative niche
+    author:
+        ["Christophe Coupѐ", "Yoon Mi Oh", "Dan Dediu", "François Pellegrino"]
+    date: 2019-9-4
+    url: https://www.science.org/doi/10.1126/sciadv.aaw2594
+unohchr:
+    type: Web
+    title: Universal Declaration of Human Rights
+    url: https://www.ohchr.org/en/human-rights/universal-declaration/
+3b1bie:
+    type: Video
+    title: Solving Wordle using information theory
+    author: 3Blue1Brown(Grant Sanderson)
+    url: https://youtu.be/v68zYyaEmEA?si=V4Lk7VC1T6t9-P1R
+shannonie:
+    type: Article
+    title: A Mathematical Theory of Communication
+    author: Shannon, Claude. E.
+    date: 1948-10
+iecam:
+    type: Book
+    title: Information Theory, Inference, and Learning Algorithms
+    author: MacKay, David J.C.
+    date: 2014-9
+    ISBN: 0-521-64298-1
+    publisher: Cambridge University Press
+pareto:
+    type: Web
+    title: Pareto Principle (80/20 Rule) & Pareto Analysis Guide
+    author: Juran
+    url: https://www.juran.com/blog/a-guide-to-the-pareto-principle-80-20-rule-pareto-analysis/
+    date: 2019-3-12
+krl:
+    type: Web
+    title: 한영 글자당 요율
+    author: 산업번역혁명
+    url: "https://rebtion.net/learnfree/?pageid=7&mod=document&uid=508"
+weber:
+    type: book
+    title: Encyclopædia Britannica
+    volume: 28
+    edition: 11
+    publisher: Cambridge University Press
+    chapter: Weber's Law
+    page-range: 458-449
+    date: 1911
+wallsu:
+    type: Video
+    title: 한국말은 끝까지 들어봐야 하죠
+    author: Wall Su
+    url: https://www.youtube.com/watch?v=j7MXqZ5_WG0,
+    year: 2022

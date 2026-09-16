@@ -1,0 +1,100 @@
+amino1:
+    type: Book
+    title: "Biochemistry: the molecular basis of cell structure and function"
+    edition: 2
+    date: 1975
+    author: "Lehinger, A. L."
+
+amino2:
+    type: article
+    title: "Die Entdeckung der proteinogenen Aminosäuren von 1805 in Paris bis 1935 in Illinois"
+    author: "Hansen, S."
+    date: 2015-3
+
+levinthal:
+    type: article
+    title: Polypeptides Fold Rapidly by a Stepwise Process
+    author: ["Nelson, David L.", "Cox, Michael M.", "Lehninger, Albert L."]
+    date: 2017
+
+hamres:
+    type: Article
+    title: The 1:1 resonance in Hamiltonian systems
+    author: ["Heinz Hanßmann", "Igor Hoveijn"]
+    date: 2017-4-7
+
+funnel:
+    type: Web
+    title: 단백질 접힘 이야기
+    author: 최정모
+    url: https://horizon.kias.re.kr/21532/
+
+excvol1:
+    type: Book
+    title: An Introduction to Statistical Thermodynamics
+    author: Hill, T.L.
+    date: 1986
+excvol2:
+    type: Book
+    title: ソフトマター物理学入門
+    author: 土井正男
+    date: 2010
+glasstrans:
+    type: web
+    title: The Glass Transition
+    author: Polymer Science Learning Center
+    url: https://pslc.ws/macrog/tg.htm
+frustration:
+    type: Book
+    title: Theory of the frustration effect. II. Ising spins on a square lattice
+    author: ["Vannimenus, J.", "Toulouse, G."]
+    date: 1977
+thethesis:
+    type: article
+    title: Spin glasses and the statistical mechanics of protein folding
+    author: ["Bryngelson, J.D.", "Wolynes, P.G."]
+    date: 1987
+ath1:
+    type: web
+    title: 단열정리 (adiabatic theorem)
+    author: 사이언스올 과학백과사전
+    date: 2017
+    url: https://www.scienceall.com/brd/board/390/L/menu/317?brdType=R&bbsSn=170130
+ath2:
+    type: article
+    title: Beweis des Adiabatensatzes
+    author: ["Born, M.", "Fock, V.A."]
+    date: 1928
+
+aqc:
+    type: article
+    title: Quantum Computation by Adiabatic Evolution
+    author: ["Farhi, E.", "Goldstone, J.", "Gutmann, S.", "Sipser, M."]
+    date: 2000
+clath1:
+    type: article
+    title: Effect of Hydrophobicity of Amino Acids on the Structure of Water
+    author: ["Makoto Ide", "Yasushi Maeda", "Hiromi Kitano"]
+    date: 1997
+clath2:
+    type: article
+    title: Structural insights into a single semi-clathrate hydrate formed in a confined environment of porous protein crystal
+    author:
+        [
+            "Basudev Maity",
+            "Jiaxin Tian",
+            "Tadaomi Furuta",
+            "Satoshi Abe",
+            "Takafumi Ueno",
+        ]
+    date: 2023
+hpeff:
+    type: article
+    title: Forces contributing to the conformational stability of proteins
+    author: ["Pace, C.", "Shirley, B.", "McNutt, M.", "Gajiwala, K."]
+    date: 1996
+hpmodel:
+    type: article
+    title: Theory for the folding and stability of globular proteins
+    author: Dill, K. A.
+    date: 1985

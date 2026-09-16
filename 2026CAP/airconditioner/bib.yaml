@@ -1,0 +1,47 @@
+phys2:
+    type: Book
+    title: "고등학교 물리학Ⅱ"
+    date: 2015
+
+physa:
+    type: Book
+    title: "고등학교 고급물리학"
+    date: 2015
+
+eco2:
+    type: article
+    title: "초·중·고등학교의 이산화탄소 농도 및 환기량 평가"
+    author:
+        [
+            "최영태",
+            "허정",
+            "박진현",
+            "김은채",
+            "류현수",
+            "김동준",
+            "조만수",
+            "이채관",
+            "이종대",
+            "양원호",
+        ]
+    date: 2020
+    url: https://scienceon.kisti.re.kr/srch/selectPORSrchArticle.do?cn=JAKO202019550426541
+
+law:
+    type: web
+    title: "학교보건법시행규칙"
+    date: 2025
+    url: "https://www.law.go.kr/법령/학교보건법시행규칙"
+
+brief:
+    type: article
+    title: "학업 능률을 올리려면 창문을 열어라?"
+    auhtor: "대한민국 정책브리핑"
+    date: 2012-10-19
+    url: "https://www.korea.kr/news/healthView.do?newsId=148751946"
+
+hvacenc:
+    type: web
+    title: "Demand Controlled Ventilation"
+    url: https://ingener.by/ventilation-indoor-air-quality/ventilation-systems/demand-controlled-ventilation/?utm_source=chatgpt.com
+    auhtor: "HVAC Systems Encyclopedia"

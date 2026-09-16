@@ -1,0 +1,44 @@
+campbell:
+    type: Book
+    title: "Campbell Biology"
+    edition: 12
+    date: 2025
+    author: ["Lisa Urry", "Kerry Hull", "Peter Minorsky"]
+
+mdr11:
+    type: article
+    title: "MDR1 C3435T polymorphism and cancer risk: a meta-analysis based on 39 case-control studies"
+    date: 2012-2-4
+    author: ["Xiaojing Sheng", "Limei Zhang", "Na Tong"]
+    url: https://pubmed.ncbi.nlm.nih.gov/22311042/
+
+mdr12:
+    type: article
+    title: "한국인에서 C3435T MDR1 유전자 다형성은 염증성 장질환 및 대장암과 관련성이 있는가?"
+    date: 2006-1-25
+    author: ["이보인", "최규용", "이강문", "정우철", "김병욱"]
+    url: "https://www.kjg.or.kr/journal/view.html?spage=22&volume=47&number=1"
+
+isocod:
+    type: article
+    title: "Assessing optimal: inequalities in codon optimization algorithms"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7893858/
+    author:
+        [
+            "Matthew J. Ranaghan",
+            "Jeffrey J. Li",
+            "Dylan M. Laprise",
+            "Colin W. Garvie ",
+        ]
+
+codtable:
+    type: web
+    title: "Codon usage table"
+    url: "https://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=9606&aa=1&style=GCG"
+    author: "公益財団法人 かずさDNA研究所"
+
+alzh:
+    type: article
+    title: "알츠하이머병 일으키는 '불량 단백질', 왜 생기는지 알아냈다"
+    url: https://www.dongascience.com/ko/news/49125
+    author: "동아사이언스"

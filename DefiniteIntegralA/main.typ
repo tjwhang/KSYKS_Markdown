@@ -1,0 +1,136 @@
+#import "@preview/springer-spaniel:0.1.0"
+#import "@preview/physica:0.9.5": *
+#import "@preview/alchemist:0.1.4": *
+#import "@preview/theorion:0.3.3": *
+#import "@preview/rich-counters:0.2.1": *
+#import "@preview/cetz:0.3.4"
+#import "@preview/cetz-plot:0.1.1"
+#import "@preview/mannot:0.3.0": *
+#import "@preview/tyipa:0.1.0" as ipa
+#import "@preview/rubby:0.10.2": get-ruby
+
+#import "template.typ": *
+
+#set text(
+    font: (
+        // "Source Han Serif K", // 가장 우선순위 폰트
+        (
+            name: "STIX Two Math",
+            covers: regex("[†‡§¶‖#*]")
+        ),
+        (
+            name: "new computer modern", // 라틴 폰트
+            covers: "latin-in-cjk",
+        ),
+        (
+            name: "Source Han Serif",
+            covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"),
+        ), // 한자, 히라가나, 가타카나
+        //"STIX Two Text",
+        "kopubbatang_pro", // CJK Fallback 폰트
+    ),
+    cjk-latin-spacing: none,
+    //weight: "thin"
+)
+#show regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}\p{scx:Hangul}]+"): set text(size: 0.925em)
+#show regex("[\p{scx:Hangul}]+"): set text(baseline: -0.05em)
+
+#show math.equation: set text(
+    font: (
+        (
+            name: "New Computer Modern Math",
+            covers: "latin-in-cjk",
+        ),
+        (
+            name: "KoPubBatang_Pro",
+            covers: regex(".")
+        ),
+        
+    ),
+    cjk-latin-spacing: none,
+    // stylistic-set: (2, 4, 6, 7, 10, 11),
+    // ^ Garamond 사용시, hslash -> hbar는 6
+
+    // stylistic-set: (2, 4),
+    // ^ STIX Two 사용시, hslash -> hbar는 3
+    // weight: "thin",
+)
+
+#show: springer-spaniel.template(
+  title: [정적분의 의미에 대하여],
+  authors: (
+    (
+      name: "20731 황태준",
+      institute: "지도교사 박재현 선생님",
+      address: "중앙고등학교",
+      email: none
+    ),
+    // ... and so on
+  ),
+  abstract: [미적분학의 기본정리와 구분구적의 근사합으로 정적분의 진정한 수학적 의미에 대해서 탐구해(적어도 시도는 해) 봤습니다. 정적분은 넓이, 변화의 누적, 원함수의 함숫값 차 외에도 선형대수적 의미와 측도론적 의미를 가지고 있었습니다. 추가로, 미적분 연산은 선형 연산으로서 행렬이었습니다.],
+  abstract_title: [요약],
+  affiliation: [중앙고등학교]
+
+  // debug: true, // Highlights structural elements and links
+  // frame: 1pt, // A border around the page for white on white display
+  // printer-test: true, // Suitably placed CMYK printer tests
+)
+
+#show: show-theorion
+#set math.mat(delim: "[")
+#set math.vec(delim: "[")
+
+#set quote(block: true)
+
+// show inline math as display
+#show math.equation.where(block: false): it => math.display(it)
+
+#set par(
+    justify: false,
+    leading: 1.2em,
+    spacing: 1.8em,
+)
+
+
+#show heading.where(level: 1): it => {
+    counter(math.equation).update(0)
+    it
+}
+
+#set math.equation(numbering: n => {
+    numbering("(1.1)", counter(heading).get().first(), n)
+    // if you want change the number of number of displayed
+    // section numbers, modify it this way:
+    /*
+    let count = counter(heading).get()
+    let h1 = count.first()
+    let h2 = count.at(1, default: 0)
+    numbering("(1.1.1)", h1, h2, n)
+    */
+})
+
+#set figure(numbering: n => {
+    numbering("1.1", counter(heading).get().first(), n)
+    // if you want change the number of number of displayed
+    // section numbers, modify it this way:
+    /*
+    let count = counter(heading).get()
+    let h1 = count.first()
+    let h2 = count.at(1, default: 0)
+    numbering("(1.1.1)", h1, h2, n)
+    */
+})
+
+#show math.equation: it=> {
+    let special-font = "stix two math"
+    show regex(
+        "†|\*",
+    ): set text(font: special-font)
+    it
+}
+#set footnote(numbering: "*")
+#set footnote(numbering: (..v) => super(typographic: false, size: 0.9em, baseline: -.25em, numbering("*", ..v)))
+
+#include "chapters/chapter1.typ"
+
+#bibliography("bib.yaml", title: "참고문헌 및 출처")

@@ -1,0 +1,13 @@
+[package]
+name = "basho"
+version = "0.1.1"
+authors = ["KoyaTofu", "tjwhang"]
+description = "Hardened vertical CJK text layout for Japanese, Korean, and Chinese documents."
+entrypoint = "lib.typ"
+compiler = "0.14.0"
+repository = "https://github.com/KoyaTofu42/typst-basho"
+exclude = ["*.pdf", "/example", "/test", "/docs"]
+keywords = ["cjk", "tategaki", "vertical-writing", "japanese", "korean", "chinese"]
+categories = ["layout", "text", "languages"]
+disciplines = ["linguistics"]
+license = "MIT"

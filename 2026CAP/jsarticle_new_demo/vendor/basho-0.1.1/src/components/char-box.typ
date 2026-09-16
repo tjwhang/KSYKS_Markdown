@@ -1,0 +1,71 @@
+// src/char-box.typ
+// Base character box rendering
+#import "../utils/text.typ": upright-features, upright-font
+
+/// Wraps a single character in a 1em × 1em box with vertical OpenType features.
+/// Alignment within the box depends on bracket type:
+/// - Opening brackets (「 etc.) → left-aligned (or right-aligned depending on convention)
+/// - Closing brackets (」 etc.) → right-aligned (or left-aligned depending on convention)
+/// - All other characters → center-aligned
+///
+/// For U+2015 (Horizontal Bar / vertical dash), the text is rendered at
+/// `rendering.dash-scale` size so consecutive dashes concatenate seamlessly.
+///
+/// - body (content): The character content to render.
+/// - font (str): Font family name.
+/// - config (dictionary): The layout configuration.
+/// - h-align (alignment): Horizontal alignment override.
+/// -> content: A box containing the vertically-oriented character.
+#let char-box(
+  body,
+  font,
+  config,
+  h-align: center,
+  v-align: horizon,
+  height: none,
+  space-width: none,
+) = {
+  let render-module = config.rendering.first()
+  let font = upright-font(body, font, config)
+  let f-opt = if font != none { (font: font) } else { (:) }
+
+  // Half-width spaces render as a narrow vertical gap (default 0.25em)
+  if body == "\u{0020}" {
+    let resolved-space-width = if space-width == none {
+      config.at("space-width", default: 0.25em)
+    } else { space-width }
+    return box(width: config.sizing.char-box, height: resolved-space-width)
+  }
+
+  let inner = if type(body) == str {
+    // A generated glyph cell contains at most one fixed token. Running the
+    // optimized paragraph breaker for thousands of these atomic cells cannot
+    // improve line selection, so keep the cheaper breaker strictly local to
+    // string tokens. Embedded content retains the caller's paragraph policy.
+    set par(linebreaks: "simple")
+    if body == "―" {
+      text(
+        ..f-opt,
+        size: render-module.dash-scale,
+        features: upright-features(body, config.features),
+        body,
+      )
+    } else {
+      text(
+        ..f-opt,
+        features: upright-features(body, config.features),
+        body,
+      )
+    }
+  } else {
+    body
+  }
+
+  let box-height = if height != none { height } else { config.sizing.char-box }
+  box(
+    width: config.sizing.char-box,
+    height: box-height,
+    clip: false,
+    align(h-align + v-align, inner),
+  )
+}

@@ -1,0 +1,14 @@
+[conf]
+default-lang = "ko"
+
+[lang.en]
+title = "A simple linguify example"
+abstract = "Abstract"
+
+[lang.de]
+title = "Ein einfaches Linguify Beispiel"
+abstract = "Zusammenfassung"
+
+[lang.ko]
+title = "간단한 linguify 예시"
+abstract = "초록"
