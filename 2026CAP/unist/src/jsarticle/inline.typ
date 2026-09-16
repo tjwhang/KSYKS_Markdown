@@ -168,7 +168,7 @@
     (name: "STIX Two Math", covers: regex("[∑∏∐∫∬∭∮∯∰⋂⋃⋀⋁]")),
     (name: "STIX Two Math", covers: regex("[\\(\\)\\[\\]\\{\\}\\|\u{2308}-\u{230b}\u{2329}\u{232a}\u{27e8}-\u{27ef}\u{2983}-\u{2998}\u{29d8}-\u{29db}]")),
     (name: "New Computer Modern Math", covers: regex("[\u{2102}\u{2107}\u{2115}\u{2119}\u{211a}\u{211d}\u{2124}\u{213c}\u{1d538}-\u{1d56b}\u{1d7d8}-\u{1d7e1}]")),
-    (name: "Minion Math", covers: regex("[\p{sc:Latn}\p{sc:Grek}\p{sc:Cyrl}0-9\u{2100}-\u{214f}\u{1d400}-\u{1d7ff}∂∇∞+\-×]")),
+    (name: "New Computer Modern Math", covers: regex("[\p{sc:Latn}\p{sc:Grek}\p{sc:Cyrl}0-9\u{2100}-\u{214f}\u{1d400}-\u{1d7ff}∂∇∞+\-×]")),
     "New Computer Modern Math",
     (name: "Hiragino Mincho ProN", covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]")),
     (name: "Adobe Myungjo Std M", covers: regex("[\p{scx:Hang}]")),

@@ -9,10 +9,10 @@
   hangul: (baseline: -0.07em, tracking: -0em),
   punctuation: (baseline: -0.08em),
 ))
-#let apple-myungjo = jsface("AppleMyungjo", optics: (
+#let body-myung = jsface("batang", optics: (
   hangul: (baseline: 0em, tracking: -0.09em),
 ))
-#let sm-kmyungjo = jsface("munhwa myungjo std", optics: (
+#let midashi-myung = jsface("munhwa myungjo std", optics: (
   hangul: (baseline: -0.07em, tracking: -0.05em),
 ))
 #let bookk-gothic = jsface("Bookk Gothic", optics: (
@@ -26,14 +26,14 @@
 #let document-composites = (
   serif: jsfontset-override(
     js-default-composites.serif,
-    hangul: apple-myungjo,
+    hangul: body-myung,
     punct-ko: bookk-myungjo,
   ),
   serif-bold: jsfontset-override(
     js-default-composites.at("serif-bold"),
     western: minion-pro,
     number: minion-pro,
-    hangul: sm-kmyungjo,
+    hangul: midashi-myung,
     punct-ko: bookk-myungjo,
   ),
   gothic: jsfontset-override(

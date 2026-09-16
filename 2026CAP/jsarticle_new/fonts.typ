@@ -1,5 +1,4 @@
-// This document's physical faces. jsarticle owns category, language, region,
-// and fallback ordering; this file only states the intended replacements.
+
 #import "jsarticle.typ": jsface, jsfontset-override, js-default-composites
 
 #let minion-pro = jsface("Minion Pro")
@@ -11,11 +10,11 @@
   hangul: (baseline: -0.07em, tracking: -0em),
   punctuation: (baseline: -0.08em),
 ))
-#let apple-myungjo = jsface("applemyungjo", optics: (
+#let batang = jsface("batang", optics: (
   hangul: (baseline: -0.0em, tracking: -0.07em),
 ))
-#let sm-kmyungjo = jsface("munhwa myungjo std", optics: (
-  hangul: (baseline: -0.0em, tracking: -0.02em),
+#let midashi-myung = jsface("munhwa myungjo std", optics: (
+  hangul: (baseline: -0.0em, tracking: -0.05em),
 ))
 #let bookk-gothic = jsface("Bookk Gothic", optics: (
   hangul: (baseline: -0.07em),
@@ -28,14 +27,14 @@
 #let document-composites = (
   serif: jsfontset-override(
     js-default-composites.serif,
-    hangul: apple-myungjo,
+    hangul: batang,
     punct-ko: bookk-myungjo,
   ),
   serif-bold: jsfontset-override(
     js-default-composites.at("serif-bold"),
     western: minion-pro,
     number: minion-pro,
-    hangul: sm-kmyungjo,
+    hangul: midashi-myung,
     punct-ko: bookk-myungjo,
   ),
   gothic: jsfontset-override(

@@ -1,5 +1,4 @@
 #import "../../cjk.typ": *
-#import "../../engine-local.typ": engine-local
 #let js-default-faces = (
   new-computer-modern: cjk-face("New Computer Modern", optics: (
     western: (baseline: 0em),
@@ -17,7 +16,7 @@
     punctuation: (baseline: -0.07em),
   )),
   pretendard: cjk-face("Pretendard"),
-  source-han-serif-k: cjk-face(engine-local.serif-k-face),
+  source-han-serif-k: cjk-face("Source Han Serif K"),
   source-han-sans-k: cjk-face("Source Han Sans K"),
   source-han-serif-sc: cjk-face("Source Han Serif SC"),
   source-han-sans-sc: cjk-face("Source Han Sans SC"),

@@ -2,10 +2,10 @@
 // its shared footnote composite unchanged.
 #import "jsarticle.typ": js-default-composites, jsface, jsfontset-override
 
-#let minion = jsface("Minion 3")
+#let minion = jsface("crimson text")
 #let inter = jsface("Inter")
-#let sm-smyungjo = jsface("applemyungjo", optics: (hangul: (scale: 0.925, baseline: -0.0em, tracking: -0.06em)))
-#let sm-kmyungjo = jsface("munhwa myungjo std", optics: (hangul: (scale: 0.925, baseline: -0.0em, tracking: 0em)))
+#let body-myung = jsface("batang", optics: (hangul: (scale: 0.925, baseline: -0.00em, tracking: -0.07em)))
+#let midashi-myung = jsface("munhwa myungjo std", optics: (hangul: (scale: 0.925, baseline: -0.0em, tracking: -0.08em)))
 #let kopub-punctuation = jsface("bookk myungjo", optics: (punctuation: (baseline: -0.07em)))
 #let pretendard-gothic = jsface("Pretendard", optics: (hangul: (scale: 0.925, baseline: -0.04em, tracking: 0em), han: (tracking: -0.01em), punctuation: (baseline: -0.07em)))
 #let pretendard-gothic-bold = jsface("Pretendard", optics: (hangul: (scale: 0.925, baseline: -0.02em, tracking: 0em), han: (tracking: -0.01em), punctuation: (baseline: -0.07em)))
@@ -17,7 +17,7 @@
         js-default-composites.serif,
         western: minion,
         number: minion,
-        hangul: sm-smyungjo,
+        hangul: body-myung,
         han-ko: source-han-serif-k,
         punct-ko: kopub-punctuation,
     ),
@@ -25,7 +25,7 @@
         js-default-composites.at("serif-bold"),
         western: minion,
         number: minion,
-        hangul: sm-kmyungjo,
+        hangul: midashi-myung,
         han-ko: source-han-serif-k,
         punct-ko: kopub-punctuation,
     ),
